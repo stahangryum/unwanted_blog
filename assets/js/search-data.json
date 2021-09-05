@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Title",
-            "content": "f = input() . f = f**2 print(f) .",
+            "content": "f = int(input()) . f = f**2 print(f) .",
             "url": "https://stahangryum.github.io/stahangryum/2021/09/04/Untitled.html",
             "relUrl": "/2021/09/04/Untitled.html",
             "date": " • Sep 4, 2021"
