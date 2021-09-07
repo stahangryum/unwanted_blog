@@ -142,6 +142,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#(풀이1)">(풀이1) </a></li>
 <li class="toc-entry toc-h4"><a href="#(풀이2)">(풀이2) </a></li>
 <li class="toc-entry toc-h4"><a href="#(풀이3)">(풀이3) </a></li>
+<li class="toc-entry toc-h4"><a href="#(풀이4)">(풀이4) </a></li>
 </ul>
 </li>
 </ul>
@@ -264,7 +265,7 @@ $$I_d = I_0 2^{-0.25d}$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>갑 : 아 아니다 그냥 1m부터 100m까지 다 구해줘!!</p>
+<p>갑 : 아 아니다 그냥 1m부터 40m까지 다 구해줘!!</p>
 
 </div>
 </div>
@@ -350,6 +351,140 @@ $$I_d = I_0 2^{-0.25d}$$
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="m">11</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 0.1486509
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="m">7</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 0.2973018
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">d</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">40</span><span class="p">){</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 0.8408964
+[1] 0.7071068
+[1] 0.5946036
+[1] 0.5
+[1] 0.4204482
+[1] 0.3535534
+[1] 0.2973018
+[1] 0.25
+[1] 0.2102241
+[1] 0.1767767
+[1] 0.1486509
+[1] 0.125
+[1] 0.1051121
+[1] 0.08838835
+[1] 0.07432544
+[1] 0.0625
+[1] 0.05255603
+[1] 0.04419417
+[1] 0.03716272
+[1] 0.03125
+[1] 0.02627801
+[1] 0.02209709
+[1] 0.01858136
+[1] 0.015625
+[1] 0.01313901
+[1] 0.01104854
+[1] 0.009290681
+[1] 0.0078125
+[1] 0.006569503
+[1] 0.005524272
+[1] 0.00464534
+[1] 0.00390625
+[1] 0.003284752
+[1] 0.002762136
+[1] 0.00232267
+[1] 0.001953125
+[1] 0.001642376
+[1] 0.001381068
+[1] 0.001161335
+[1] 0.0009765625
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -357,7 +492,6 @@ $$I_d = I_0 2^{-0.25d}$$
 <a class="anchor" href="#(%ED%92%80%EC%9D%B43)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이3)<a class="anchor-link" href="#(%ED%92%80%EC%9D%B43)"> </a>
 </h4>
 <ul>
-<li>d를 1부터 100까지 일일이 대입하는 것은 너무 귀찮다.</li>
 <li>$y=f(d)$를 그래프로 그려볼까?</li>
 </ul>
 
@@ -437,7 +571,12 @@ $$I_d = I_0 2^{-0.25d}$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>(풀이4)</p>
+<h4 id="(풀이4)">
+<a class="anchor" href="#(%ED%92%80%EC%9D%B44)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이4)<a class="anchor-link" href="#(%ED%92%80%EC%9D%B44)"> </a>
+</h4>
+<blockquote>
+<p>작성중</p>
+</blockquote>
 
 </div>
 </div>
@@ -548,7 +687,7 @@ $$I_d = I_0 2^{-0.25d}$$
 
 
 <div class="output_html rendered_html output_subarea ">
-0
+40
 </div>
 
 </div>
