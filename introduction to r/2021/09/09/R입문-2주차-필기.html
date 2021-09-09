@@ -171,6 +171,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h4"><a href="#--기본-구조">- 기본 구조 </a></li>
 <li class="toc-entry toc-h4"><a href="#--예시">- 예시 </a></li>
+<li class="toc-entry toc-h4"><a href="#--return을-생략해도-괜찮다.">- return을 생략해도 괜찮다. </a></li>
 </ul>
 </li>
 </ul><!--
@@ -1317,7 +1318,7 @@ Traceback:
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">d</span><span class="p">){</span>
     <span class="n">y</span><span class="o">=</span><span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="m">-0.25</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
-    <span class="n">y</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1336,6 +1337,67 @@ Traceback:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">f</span><span class="p">(</span><span class="m">8</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.25
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="--return을-생략해도-괜찮다.">
+<a class="anchor" href="#--return%EC%9D%84-%EC%83%9D%EB%9E%B5%ED%95%B4%EB%8F%84-%EA%B4%9C%EC%B0%AE%EB%8B%A4." aria-hidden="true"><span class="octicon octicon-link"></span></a><code>-</code> return을 생략해도 괜찮다.<a class="anchor-link" href="#--return%EC%9D%84-%EC%83%9D%EB%9E%B5%ED%95%B4%EB%8F%84-%EA%B4%9C%EC%B0%AE%EB%8B%A4."> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">g</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">d</span><span class="p">){</span>
+    <span class="n">y</span><span class="o">=</span><span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="m">-0.25</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">y</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">g</span><span class="p">(</span><span class="m">8</span><span class="p">)</span>
 </pre></div>
 
     </div>
