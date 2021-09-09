@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>R 변수 | stahangryum</title>
+<title>R - 변수, 벡터, 함수 | stahangryum</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="R 변수" />
+<meta property="og:title" content="R - 변수, 벡터, 함수" />
 <meta name="author" content="Kim Jeewoo" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="전북대학교 R입문 2주차 필기" />
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-09-09T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2021-09-09T00:00:00-05:00","url":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/09/R%EC%9E%85%EB%AC%B8-2%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html","@type":"BlogPosting","headline":"R 변수","dateModified":"2021-09-09T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/09/R%EC%9E%85%EB%AC%B8-2%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html"},"author":{"@type":"Person","name":"Kim Jeewoo"},"description":"전북대학교 R입문 2주차 필기","@context":"https://schema.org"}</script>
+{"datePublished":"2021-09-09T00:00:00-05:00","url":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/09/R%EC%9E%85%EB%AC%B8-2%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html","@type":"BlogPosting","headline":"R - 변수, 벡터, 함수","dateModified":"2021-09-09T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/09/R%EC%9E%85%EB%AC%B8-2%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html"},"author":{"@type":"Person","name":"Kim Jeewoo"},"description":"전북대학교 R입문 2주차 필기","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -88,7 +88,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">R 변수</h1><p class="page-description">전북대학교 R입문 2주차 필기</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-09T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">R - 변수, 벡터, 함수</h1><p class="page-description">전북대학교 R입문 2주차 필기</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-09T00:00:00-05:00" itemprop="datePublished">
         Sep 9, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -96,7 +96,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -225,7 +225,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">a</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -237,11 +237,10 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
-1
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -283,7 +282,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">b</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -295,11 +294,10 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
-3
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 3
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -563,7 +561,7 @@ Traceback:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="kc">pi</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="kc">pi</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -575,11 +573,10 @@ Traceback:
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
-3.14159265358979
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 3.141593
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -612,7 +609,7 @@ Traceback:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="kc">pi</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="kc">pi</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -624,11 +621,10 @@ Traceback:
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
-333
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 333
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -722,50 +718,6 @@ Traceback:
 </pre></div>
 
     </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">v1</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-&lt;ol class=list-inline&gt;<li>1</li>
-<li>2</li>
-<li>3</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li>2</li>&lt;/ol&gt;
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -939,7 +891,7 @@ Traceback:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="m">0</span><span class="o">:</span><span class="m">56</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">56</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -951,73 +903,12 @@ Traceback:
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-&lt;ol class=list-inline&gt;<li>0</li>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li>6</li>
-<li>7</li>
-<li>8</li>
-<li>9</li>
-<li>10</li>
-<li>11</li>
-<li>12</li>
-<li>13</li>
-<li>14</li>
-<li>15</li>
-<li>16</li>
-<li>17</li>
-<li>18</li>
-<li>19</li>
-<li>20</li>
-<li>21</li>
-<li>22</li>
-<li>23</li>
-<li>24</li>
-<li>25</li>
-<li>26</li>
-<li>27</li>
-<li>28</li>
-<li>29</li>
-<li>30</li>
-<li>31</li>
-<li>32</li>
-<li>33</li>
-<li>34</li>
-<li>35</li>
-<li>36</li>
-<li>37</li>
-<li>38</li>
-<li>39</li>
-<li>40</li>
-<li>41</li>
-<li>42</li>
-<li>43</li>
-<li>44</li>
-<li>45</li>
-<li>46</li>
-<li>47</li>
-<li>48</li>
-<li>49</li>
-<li>50</li>
-<li>51</li>
-<li>52</li>
-<li>53</li>
-<li>54</li>
-<li>55</li>
-<li>56</li>&lt;/ol&gt;
-
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> [1]  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+[26] 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+[51] 50 51 52 53 54 55 56
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -1033,7 +924,7 @@ Traceback:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="m">0</span><span class="o">:</span><span class="m">56</span> <span class="o">/</span> <span class="m">56</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">56</span> <span class="o">/</span> <span class="m">56</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1045,73 +936,19 @@ Traceback:
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-&lt;ol class=list-inline&gt;<li>0</li>
-<li>0.0178571428571429</li>
-<li>0.0357142857142857</li>
-<li>0.0535714285714286</li>
-<li>0.0714285714285714</li>
-<li>0.0892857142857143</li>
-<li>0.107142857142857</li>
-<li>0.125</li>
-<li>0.142857142857143</li>
-<li>0.160714285714286</li>
-<li>0.178571428571429</li>
-<li>0.196428571428571</li>
-<li>0.214285714285714</li>
-<li>0.232142857142857</li>
-<li>0.25</li>
-<li>0.267857142857143</li>
-<li>0.285714285714286</li>
-<li>0.303571428571429</li>
-<li>0.321428571428571</li>
-<li>0.339285714285714</li>
-<li>0.357142857142857</li>
-<li>0.375</li>
-<li>0.392857142857143</li>
-<li>0.410714285714286</li>
-<li>0.428571428571429</li>
-<li>0.446428571428571</li>
-<li>0.464285714285714</li>
-<li>0.482142857142857</li>
-<li>0.5</li>
-<li>0.517857142857143</li>
-<li>0.535714285714286</li>
-<li>0.553571428571429</li>
-<li>0.571428571428571</li>
-<li>0.589285714285714</li>
-<li>0.607142857142857</li>
-<li>0.625</li>
-<li>0.642857142857143</li>
-<li>0.660714285714286</li>
-<li>0.678571428571429</li>
-<li>0.696428571428571</li>
-<li>0.714285714285714</li>
-<li>0.732142857142857</li>
-<li>0.75</li>
-<li>0.767857142857143</li>
-<li>0.785714285714286</li>
-<li>0.803571428571429</li>
-<li>0.821428571428571</li>
-<li>0.839285714285714</li>
-<li>0.857142857142857</li>
-<li>0.875</li>
-<li>0.892857142857143</li>
-<li>0.910714285714286</li>
-<li>0.928571428571429</li>
-<li>0.946428571428571</li>
-<li>0.964285714285714</li>
-<li>0.982142857142857</li>
-<li>1</li>&lt;/ol&gt;
-
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> [1] 0.00000000 0.01785714 0.03571429 0.05357143 0.07142857 0.08928571
+ [7] 0.10714286 0.12500000 0.14285714 0.16071429 0.17857143 0.19642857
+[13] 0.21428571 0.23214286 0.25000000 0.26785714 0.28571429 0.30357143
+[19] 0.32142857 0.33928571 0.35714286 0.37500000 0.39285714 0.41071429
+[25] 0.42857143 0.44642857 0.46428571 0.48214286 0.50000000 0.51785714
+[31] 0.53571429 0.55357143 0.57142857 0.58928571 0.60714286 0.62500000
+[37] 0.64285714 0.66071429 0.67857143 0.69642857 0.71428571 0.73214286
+[43] 0.75000000 0.76785714 0.78571429 0.80357143 0.82142857 0.83928571
+[49] 0.85714286 0.87500000 0.89285714 0.91071429 0.92857143 0.94642857
+[55] 0.96428571 0.98214286 1.00000000
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -1136,7 +973,7 @@ Traceback:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">22</span><span class="p">)</span> <span class="c1">#0을 22번 반복</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">22</span><span class="p">))</span> <span class="c1">#0을 22번 반복</span>
 </pre></div>
 
     </div>
@@ -1148,38 +985,10 @@ Traceback:
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-&lt;ol class=list-inline&gt;<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>
-<li>0</li>&lt;/ol&gt;
-
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -1195,7 +1004,7 @@ Traceback:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">rep</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">12</span><span class="p">)</span> <span class="c1">#4를 12번 반복</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">12</span><span class="p">))</span> <span class="c1">#4를 12번 반복</span>
 </pre></div>
 
     </div>
@@ -1207,28 +1016,10 @@ Traceback:
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-&lt;ol class=list-inline&gt;<li>4</li>
-<li>4</li>
-<li>4</li>
-<li>4</li>
-<li>4</li>
-<li>4</li>
-<li>4</li>
-<li>4</li>
-<li>4</li>
-<li>4</li>
-<li>4</li>
-<li>4</li>&lt;/ol&gt;
-
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> [1] 4 4 4 4 4 4 4 4 4 4 4 4
+</pre>
 </div>
-
 </div>
 
 </div>
