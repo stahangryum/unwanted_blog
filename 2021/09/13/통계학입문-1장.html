@@ -141,6 +141,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">stocks</span> <span class="o">&lt;-</span> <span class="nf">scan</span><span class="p">(</span><span class="s">&quot;통계학입문dat\\SamsungElectronicsStocks.txt&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">stocks</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -157,7 +158,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">stocks</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">stocks</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -169,49 +170,10 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-&lt;ol class=list-inline&gt;<li>451000</li><li>447000</li><li>443000</li><li>435000</li><li>440500</li><li>438000</li><li>442000</li><li>442000</li><li>444000</li><li>471500</li><li>492500</li><li>486000</li><li>480000</li><li>480000</li><li>486000</li><li>488000</li><li>483500</li><li>490500</li><li>492000</li><li>489000</li><li>495000</li><li>491500</li><li>490500</li><li>496000</li><li>495500</li><li>510000</li><li>506000</li><li>517000</li><li>519000</li><li>520000</li><li>517000</li><li>527000</li><li>528000</li><li>522000</li><li>511000</li><li>519000</li><li>522000</li><li>527000</li><li>517000</li><li>519000</li><li>510000</li><li>507000</li><li>502000</li><li>5e+05</li><li>499500</li><li>519000</li><li>510000</li><li>502000</li><li>503000</li><li>496000</li><li>495000</li><li>492000</li><li>496000</li><li>498500</li><li>503000</li><li>505000</li><li>510000</li><li>502000</li><li>498000</li><li>502000</li><li>512000</li><li>517000</li><li>518000</li><li>518000</li><li>522000</li><li>517000</li><li>520000</li><li>518000</li><li>502000</li><li>491500</li><li>476000</li><li>474000</li><li>470000</li><li>466000</li><li>467000</li><li>474500</li><li>471000</li><li>464000</li><li>460000</li><li>452000</li><li>455500</li><li>455000</li><li>464500</li><li>474000</li><li>475000</li><li>477000</li><li>472000</li><li>475000</li><li>481500</li><li>488000</li><li>489500</li><li>489500</li><li>498500</li><li>498500</li><li>498000</li><li>495000</li><li>484500</li><li>482000</li><li>490000</li><li>493500</li><li>489000</li><li>489000</li><li>487500</li><li>488000</li><li>480500</li><li>477500</li><li>480000</li><li>491500</li><li>498000</li><li>496500</li><li>5e+05</li><li>498500</li><li>493500</li><li>490500</li><li>488000</li><li>493000</li><li>498000</li><li>491000</li><li>488500</li><li>489500</li><li>490000</li><li>494000</li><li>501000</li><li>503000</li><li>502000</li><li>504000</li><li>516000</li><li>516000</li><li>533000</li><li>541000</li><li>547000</li><li>547000</li><li>542000</li><li>549000</li><li>561000</li><li>558000</li><li>563000</li><li>552000</li><li>555000</li><li>551000</li><li>551000</li><li>560000</li><li>565000</li><li>569000</li><li>568000</li><li>568000</li><li>566000</li><li>553000</li><li>551000</li><li>550000</li><li>555000</li><li>567000</li><li>578000</li><li>572000</li><li>572000</li><li>555000</li><li>553000</li><li>563000</li><li>562000</li><li>556000</li><li>552000</li><li>549000</li><li>540000</li><li>541000</li><li>544000</li><li>549000</li><li>554000</li><li>561000</li><li>569000</li><li>579000</li><li>587000</li><li>589000</li><li>589000</li><li>606000</li><li>613000</li><li>607000</li><li>593000</li><li>593000</li><li>601000</li><li>6e+05</li><li>585000</li><li>597000</li><li>593000</li><li>598000</li><li>590000</li><li>588000</li><li>602000</li><li>601000</li><li>586000</li><li>581000</li><li>593000</li><li>599000</li><li>578000</li><li>562000</li><li>562000</li><li>563000</li><li>565000</li><li>550000</li><li>556000</li><li>564000</li><li>567000</li><li>565000</li><li>563000</li><li>558000</li><li>546000</li><li>552000</li><li>564000</li><li>575000</li><li>587000</li><li>599000</li><li>6e+05</li><li>603000</li><li>601000</li><li>605000</li><li>618000</li><li>626000</li><li>621000</li><li>630000</li><li>624000</li><li>627000</li><li>621000</li><li>590000</li><li>607000</li><li>608000</li><li>6e+05</li><li>601000</li><li>594000</li><li>598000</li><li>606000</li><li>617000</li><li>622000</li><li>630000</li><li>641000</li><li>633000</li><li>622000</li><li>618000</li><li>618000</li><li>609000</li><li>609000</li><li>602000</li><li>608000</li><li>612000</li><li>628000</li><li>634000</li><li>645000</li><li>654000</li><li>662000</li><li>661000</li><li>659000</li>&lt;/ol&gt;
-
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 249
+</pre>
 </div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">length</span><span class="p">(</span><span class="n">stocks</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-249
-</div>
-
 </div>
 
 </div>
@@ -228,47 +190,10 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">times</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">stocks</span><span class="p">))</span>
+<span class="n">times</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">times</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-&lt;ol class=list-inline&gt;<li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li><li>32</li><li>33</li><li>34</li><li>35</li><li>36</li><li>37</li><li>38</li><li>39</li><li>40</li><li>41</li><li>42</li><li>43</li><li>44</li><li>45</li><li>46</li><li>47</li><li>48</li><li>49</li><li>50</li><li>51</li><li>52</li><li>53</li><li>54</li><li>55</li><li>56</li><li>57</li><li>58</li><li>59</li><li>60</li><li>61</li><li>62</li><li>63</li><li>64</li><li>65</li><li>66</li><li>67</li><li>68</li><li>69</li><li>70</li><li>71</li><li>72</li><li>73</li><li>74</li><li>75</li><li>76</li><li>77</li><li>78</li><li>79</li><li>80</li><li>81</li><li>82</li><li>83</li><li>84</li><li>85</li><li>86</li><li>87</li><li>88</li><li>89</li><li>90</li><li>91</li><li>92</li><li>93</li><li>94</li><li>95</li><li>96</li><li>97</li><li>98</li><li>99</li><li>100</li><li>101</li><li>102</li><li>103</li><li>104</li><li>105</li><li>106</li><li>107</li><li>108</li><li>109</li><li>110</li><li>111</li><li>112</li><li>113</li><li>114</li><li>115</li><li>116</li><li>117</li><li>118</li><li>119</li><li>120</li><li>121</li><li>122</li><li>123</li><li>124</li><li>125</li><li>126</li><li>127</li><li>128</li><li>129</li><li>130</li><li>131</li><li>132</li><li>133</li><li>134</li><li>135</li><li>136</li><li>137</li><li>138</li><li>139</li><li>140</li><li>141</li><li>142</li><li>143</li><li>144</li><li>145</li><li>146</li><li>147</li><li>148</li><li>149</li><li>150</li><li>151</li><li>152</li><li>153</li><li>154</li><li>155</li><li>156</li><li>157</li><li>158</li><li>159</li><li>160</li><li>161</li><li>162</li><li>163</li><li>164</li><li>165</li><li>166</li><li>167</li><li>168</li><li>169</li><li>170</li><li>171</li><li>172</li><li>173</li><li>174</li><li>175</li><li>176</li><li>177</li><li>178</li><li>179</li><li>180</li><li>181</li><li>182</li><li>183</li><li>184</li><li>185</li><li>186</li><li>187</li><li>188</li><li>189</li><li>190</li><li>191</li><li>192</li><li>193</li><li>194</li><li>195</li><li>196</li><li>197</li><li>198</li><li>199</li><li>200</li><li>201</li><li>202</li><li>203</li><li>204</li><li>205</li><li>206</li><li>207</li><li>208</li><li>209</li><li>210</li><li>211</li><li>212</li><li>213</li><li>214</li><li>215</li><li>216</li><li>217</li><li>218</li><li>219</li><li>220</li><li>221</li><li>222</li><li>223</li><li>224</li><li>225</li><li>226</li><li>227</li><li>228</li><li>229</li><li>230</li><li>231</li><li>232</li><li>233</li><li>234</li><li>235</li><li>236</li><li>237</li><li>238</li><li>239</li><li>240</li><li>241</li><li>242</li><li>243</li><li>244</li><li>245</li><li>246</li><li>247</li><li>248</li><li>249</li>&lt;/ol&gt;
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -834,7 +759,7 @@ CAlQQEiAAkICFBASoICQAAWEBCggJEABIQEKCAlQ8B/5SiY4GUvZpAAAAABJRU5ErkJggg==" width=
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">ts.plot</span><span class="p">(</span><span class="n">stocks</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;삼성전자 주가&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">ts.plot</span><span class="p">(</span><span class="n">stocks</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;삼성전자 주가&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1030,6 +955,92 @@ EqCAkAAFhAQo+A9XKihMj6GPgwAAAABJRU5ErkJggg==" width="420" height="420" />
 
 </div>
 
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51061;&#55192;&#47928;&#51228;">&#51061;&#55192;&#47928;&#51228;<a class="anchor-link" href="#&#51061;&#55192;&#47928;&#51228;"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>통계학의 목적은 표본에서 얻은 정보를 이용하여 모집단에 대한 것을 알아보려는 것이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>일부분인 표본을 이용하여 전체인 모집단에 대한 것을 알아보려는 것을 통계적 추론이라고 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>통계학은 통계를 사용할 때 필연적으로 수반되는 오차를 계산하여 정보이용자나 의사결정자에게 제공한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>자료의 척도형태를 크게 두 가지로 나누면 범주형 자료와 양적 자료로 나눌 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>범주형 자료를 명목형 자료와 순서형 자료로 구분할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>자료의 계층은 숫자형, 순서형, 명목형 순으로 높다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>높은 계층의 자료를 낮은 계층의 자료로 바꾸는 것은 가능하나 그 반대로는 불가능하다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>시계열 자료는 시간축 위의 자료, 횡단면 자료는 동시점에서의 자료를 뜻한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>시계열 자료와 횡단면 자료가 섞여 있는 자료는 패널 자료이다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
