@@ -607,6 +607,509 @@ ngAAAABJRU5ErkJggg==" width="420" height="420" />
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 이중에 적당한 값(TRUE)가 있을 것이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> TRUE가 있는지 체크할 수 있는 방법은 없을까?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#48372;&#52649;&#54617;&#49845;:-&#52980;&#54504;&#53552;&#44032;-TRUE,-FALSE&#47484;-&#51060;&#54644;&#54616;&#45716;-&#48169;&#49885;">&#48372;&#52649;&#54617;&#49845;: &#52980;&#54504;&#53552;&#44032; TRUE, FALSE&#47484; &#51060;&#54644;&#54616;&#45716; &#48169;&#49885;<a class="anchor-link" href="#&#48372;&#52649;&#54617;&#49845;:-&#52980;&#54504;&#53552;&#44032;-TRUE,-FALSE&#47484;-&#51060;&#54644;&#54616;&#45716;-&#48169;&#49885;"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 컴퓨터가 TRUE, FALSE를 각각 1, 0으로 인식한다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="kc">TRUE</span> <span class="o">+</span> <span class="kc">FALSE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="kc">TRUE</span> <span class="o">*</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="m">2</span> <span class="o">*</span> <span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 2 0 2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+2
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#51025;&#50857;">&#51025;&#50857;<a class="anchor-link" href="#&#51025;&#50857;"> </a></h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 어? 없네</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>사실 컴퓨터는 근사계산을 하였으므로 $f(a) = -2$인 경우를 정확하게 찾기는 힘들다.
+따라서 적당히 $f(a) \approx -2$인 경우를 찾는게 더 합리적이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$f(a) \approx -2 $인 $a$를 찾는건 $f(a) + 2 \approx 0$인 a를 찾는 것과 같다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 목표: 즉 $f(a) + 2$의 절댓값이 0에 가까운 원소를 고르면 된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="&#52280;&#44256;:-&#51208;&#45843;&#44050;&#51012;-&#44396;&#54616;&#45716;-&#48169;&#48277;">&#52280;&#44256;: &#51208;&#45843;&#44050;&#51012; &#44396;&#54616;&#45716; &#48169;&#48277;<a class="anchor-link" href="#&#52280;&#44256;:-&#51208;&#45843;&#44050;&#51012;-&#44396;&#54616;&#45716;-&#48169;&#48277;"> </a></h5>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">-2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">-4</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1 2 2 3 4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">min</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="m">2</span><span class="p">))</span> <span class="c1"># f(a) + 2d의 절댓값 중 가장 작은 값</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+3.89877657125393e-05
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="m">+2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+RK5CYII=" width="420" height="420" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">TFarray</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="m">+2</span><span class="p">)</span> <span class="o">==</span> <span class="nf">min</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="m">2</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">TFarray</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+-1
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
