@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Title | stahangryum</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://stahangryum.github.io/stahangryum/2021/09/17/R%EC%9E%85%EB%AC%B8-3%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html" />
+<meta property="og:url" content="https://stahangryum.github.io/stahangryum/2021/09/17/R%EC%9E%85%EB%AC%B8-3%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html" />
+<meta property="og:site_name" content="stahangryum" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-17T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-09-17T00:00:00-05:00","url":"https://stahangryum.github.io/stahangryum/2021/09/17/R%EC%9E%85%EB%AC%B8-3%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html","@type":"BlogPosting","headline":"Title","dateModified":"2021-09-17T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/2021/09/17/R%EC%9E%85%EB%AC%B8-3%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/stahangryum/">stahangryum</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/stahangryum/about/">About Me</a><a class="page-link" href="/stahangryum/search/">Search</a><a class="page-link" href="/stahangryum/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-17T00:00:00-05:00" itemprop="datePublished">
+        Sep 17, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/stahangryum/stahangryum/tree/master/_notebooks/2021-09-17-R입문 3주차 필기.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/stahangryum/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/stahangryum/stahangryum/master?filepath=_notebooks%2F2021-09-17-R%EC%9E%85%EB%AC%B8+3%EC%A3%BC%EC%B0%A8+%ED%95%84%EA%B8%B0.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/stahangryum/stahangryum/blob/master/_notebooks/2021-09-17-R입문 3주차 필기.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-09-17-R입문 3주차 필기.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2010-&#44256;3-6&#50900;-&#47784;&#51032;&#44256;&#49324;-&#49688;&#54617;(&#45208;)-4&#48264;&#47928;&#51228;">2010 &#44256;3 6&#50900; &#47784;&#51032;&#44256;&#49324; &#49688;&#54617;(&#45208;) 4&#48264;&#47928;&#51228;<a class="anchor-link" href="#2010-&#44256;3-6&#50900;-&#47784;&#51032;&#44256;&#49324;-&#49688;&#54617;(&#45208;)-4&#48264;&#47928;&#51228;"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>실수 $a$가 $\cfrac{2^a+2^{-a}}{2^{a}-2^{-a}}=-2$를 만족시킬 때, $4^{a} + 4^{-a}$의 값은?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(1) $\frac{3}{2}$(2) $\frac{10}{3} $   (3) $\frac{17}{4} $   (4) $\frac{26}{5}$  (5) $\frac{37}{6}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 먼저 $\cfrac{2^a+2^{-a}}{2^{a}-2^{-a}}=-2$를 만족하는 a를 찾아보자.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> $f(a) = \cfrac{2^a+2^{-a}}{2^{a}-2^{-a}}$에서 $f(a) =-2$를 만족하는 a를 찾으면 된다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">f</span> <span class="o">&lt;-</span><span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+   <span class="p">(</span><span class="m">2</span><span class="o">**</span><span class="n">a</span> <span class="o">+</span> <span class="m">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="o">**</span><span class="n">a</span> <span class="o">-</span> <span class="m">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 잘 선언됐는지 확인: $a=1$을 넣으면 $f(a)=\cfrac{2+0.5}{2-0.5} = \cfrac{2.5}{1.5}$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="m">1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="m">2.5</span><span class="o">/</span><span class="m">1.5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1.666667
+[1] 1.666667
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>잘 선언된 것 같다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> $f(a)$의 그래프를 그리고 $f(a) = -2$에 해당하는 수평선을 그려서 대략적으로 값을 유추해보자</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">-5</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span> <span class="m">-2</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+H+vTslxhPWn4BObbP1wwafLdNN2O/dBi6K2Wz/1d03X/TZ+W5Qqzhr/Df1X+rd/+tvu/BmM/
+l8lqs5qU5wZjv2n53D+0XPff9WlZLvd01Z+yCZnthm6yBPOy3Lw9/ccGY79p+dzfNV333/Vp
+WS72UqbtX8wmSzArL5u37cKswdh7Gr76vVj3e/q0LBeblpfmL+a6TBuMWtpvETatnvtOH9b9
+vj4ty6Uey1Prb6W344Rlg1H7EVKb577Vi3W/r0/LcqHtjk3rF/Nl0mTvqhchNXrub3qx7g/0
+aVku9PA2+dp652bSZuemDyG1eu5v+rDuD/VpWf7o/e9O/9vuVzR4Mff/7vW00ZmcSQ9CavXc
+XzVb9z/r07L80fs38i1/yz0x/quXh+lL5cHf7WbtXhrO2rV77ptNu3X/s/4syaXav5jLdpNW
+j9sfycsyb7UADZ/7pg/r/pv+LMl12p7JaDZ26ysbWj73Tz3KSEg3+Nfyp+LDduRm381Nn/sH
+IQU1fDGb7l6st1d/txh5qxe7VkKCsRESBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQB
+QoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAg
+QEgQICQIEBIECAkChAQBQoIAIQ3TclZa/lVzjglpkB7LlpJ6Q0iDVMrTZvNUrL3esCoGTEj9
+YVUM1MvycSqk/rAqhmm6O0hqvRh8sCoG6V95WCxfhNQfVsUgbRMSUo9YFYNUyvNm5RipR6yK
+QZrvDpFec6IfhDRM/0qZPi/LrPVy8E5IECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIE
+CAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKC
+ACFBwP8Fb8vwXQ3n5wAAAABJRU5ErkJggg==" width="420" height="420" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> $-2&lt;a&lt;0$임을 알았다. 범위를 좁히고, 'by'옵션을 사용하여 더 촘촘히 다시 그려보자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">-1</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">-0.5</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.0001</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">h</span> <span class="o">=</span> <span class="m">-2</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAAM1BMVEUAAABNTU1oaGh8fHyM
+jIyampqnp6eysrK9vb3Hx8fQ0NDZ2dnh4eHp6enw8PD/AAD///89ODILAAAACXBIWXMAABJ0
+AAASdAHeZh94AAAYZElEQVR4nO3d6ULiyhaA0QqTtAKX93/aC6h9tB0YslOpYa0fNsdjuyHw
+WSEQOx2B0dLcVwBaICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQI
+ICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQI
+ICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQI
+ICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQI
+ICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQI
+ICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIkCGkBJV54FEeH84MIyCSkCCAkCCAkCCA
+kCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCBAXSE9+Fsm
+YGpVhfT4L2yBaVUZkpYoTa0hSYmiVBXSv784cvorArepKyQpUajaQjr+29L0VwauqzAkyxLl
+qTIkKVGaSkM62sOjKPWGZFmiIDWHJCWKUXdIR3t4lKH6kKRECRoIyR4e82sipKNliZm1EpKU
+mFU7IdnDY0YthXS0LDGXxkKSEvNoLiQpMYcGQ5IS+TUZ0lFLZNZqSFIiq3ZDkhIZtRySlMim
+7ZCOfoUXeTQfkpTIoYOQ7OExvS5CkhJT6yQkKTGtbkKSElPqKKSj4w5Mpq+QpMREegtJSkyi
+v5CkxAR6DMlxB8L1GZKUCNZrSFIiVL8hSYlAPYckJcL0HdLRITxidB+SlIiQM6T9Og1Px+N2
+kYbNRCMeIyXGyhjSYTg/TrdPl4frcpIRD5MS42QMaZNO69BmSOvD8XC5HD9iBCkxRsaQhstf
+TOlw+WOYYsQoUuJxGUNK6b+Px98fqjM9jqXEo2ZYkc4fDwWuSJfBUuIhMzxH2hzeLsePCCAl
+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
+opakOUK6frWFRC5BJQmJzgkJAsQsSUKidyElCYnuCQkCRCxJDn+DkCBAwJIkJAgoSUgQsHMn
+JAhYkoQEx/FLkpDgOH5JEhKcjSxJSHAhJAgwbkkSErwSEgQYtSQJCd6MKUlI8EZIEGFESUKC
+v4QEAR5fkoQE/3m4JCHBB0KCAI8uSUKCj4QEAR5ckoQEnzxWkpDgEyFBhIdKEhL8Q0gQ4JEl
+SUjwLyFBgAeWJCHBF/eXJCT4QkgQ4e6ShATfEBIEuHdJEhJ8R0gQ4M4lSUjwLSFBgPuWJCHB
+9+4qSUjwAyFBgHuWJCHBT4QEAe5YkoQEPxISBLh9SRIS/OzmkoQEvxASBLh1SRIS/EZIEODG
+JUlI8CshQYDblqSsIb08rS7XabV5mWoERCstpMMi/Wc5yQiYwC0lZQxpk4Y/u8ul/fOQNlOM
+gAncsnOXMaQh7f5e3qVhihEwhbJC+nRNfr9aQqIkNyxJViS4qqiQTs+RnveXS54jUZfrS1LO
+w9/LD0ftFodJRsAkigrp+LK5vI40rJ68jkRVri5J3tkANxASBLi2JAkJblFoSF5HojK/lyQk
+uMnvO3d27eA2QoIAlYSUPppmBIxRWEjbIS22046ACZQS0m6Vhu3xyYl9VKqMo3a7S0GbtD4c
+96v065okJCqTMaT1+R3fm9fzJw5pMcUImEn2E/vS6sN/RI+AmWQP6c/rPp0T+2hK1l279ftJ
+SIe1E/toSs5fxzX83Z9Lvy9IQqI2WV9H2rznM/y6HgmJ6pTzzobMIyCSkCDAHCFN8qv9YU5C
+ggBCggBCggBCggBCggAOf0MAIUEAIUEAIUEAIUGAQkOCyjzwKI8Pp4rZ5psfOl9I5ptf2jer
+aLb55gvJfPNLmy8k880v7ZtVNNt884VkvvmlzReS+eaX9s0qmm2++UIy3/zS5gvJfPNL+2YV
+zTbf/GZCgmYICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQIICQLM
+E9L289jNkIbNIdv0L+NOn1g+Zxv/Zf5h3ts/4jfHh8w/HnfrlNb7XOO/zA+5+bOEtPt8rZeX
+27HINf3LuNdPPM01fz9cPjHkeiT9O/+9o2Gm+cfn1/G5fpL8O39XbUi74dO1fknD7vy5lzzT
+v4zbpuXheFin3Uzz12lz+rhJ65nmv3qebfsfh9MnDqvLVphj/i6tAr7tDCGdHrifQtqk827V
+n1xLwpdxy8s23ee6I7/Mf9sYuXatvt/chyHi0fTQ/D+XLX/ItSJ+mb8NeeTNENJpu3160KzS
+eacm5ufCDb6Me38gL2eaP7zNz/RA+n5zr1KuPasv87PtC/wwf5u2Ad92hpB2//z0zfwT+cu4
+uec/ve3aZVqRv725u1zr8TfzF+n4NKR1rpC/zF+l53Uaxt7+eY7aFRXS4vIj6mW2+cft+WjD
+EPFj8bH5x5wL0nc/yFY5j3V8E9LFyB0SIZ1WhNXhuFvOF9JT1qOG323uXa4jHd/NT+dn/4f1
+bCtySn/OL0GM3MET0vlJSrr8VJxp/va8W3V6IGVakr7b3K9PwGeany7Pkfa5Xv/44eF2GDk/
+X0gfD9Z/uhVDnpDe538dd3oQD0/zzV9cdqvG3pGPzz/+/dw88zP9IP3t9gfMLyCk18Mo+6mP
+2r3P/2HcLtcD+cv8zA+kb25/liOmP85fzX77I+YXsGv3dNmveM513OjLuOGyImxzHX7/Zv75
+Y7bXUb7Z3DEHgB+d//qJfa6XH364/8f+IC8gpLnf2XB5T8HL4vyUc6b55zd+bWZ7Zf/8Qzrj
+Kzlf5p+eHV3eWTLj9r8cbBj3NHHekF7/XEQcfrzdh3GX+YfX97rlemX/y/y3N3/Ndvvfn6XN
+Nv+piPt/5M+xEkJ6ffdztuEfxr3O369PGeU7bPVl/nHm25/tgOlP85+Xs97+8ycWY3du5wkJ
+GiMkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAk
+CCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAk
+CCCkOj2vUs5/CZxrhFSlp3ShpGIIqUop/Tke/yT3XjHcFRUTUjncFZXaPz8thVQOd0Wdlq9P
+kua+GrxzV1RpnRbb572QyuGuqNIlISEVxF1RpZRejjvPkQrirqjS5vUp0iknyiCkOq1TWr48
+p9Xc14M3QoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIA
+QoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIAQoIA/wfDzOOIwpyP
+ngAAAABJRU5ErkJggg==" width="420" height="420" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>col : color, 색 조정</li>
+<li>lty : line type, 선의 타입을 조정</li>
+<li>lwd : line width, 선의 너비, 두께 조정</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 이제  해를 찾아보자. $f(a) = -2$를 찾아야 하므로 <code>f(a) == -2</code>를 조건식으로 걸자</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="m">-2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+&lt;ol class=list-inline&gt;<li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>⋯</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li>&lt;/ol&gt;
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/stahangryum/2021/09/17/R%EC%9E%85%EB%AC%B8-3%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/stahangryum/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/stahangryum/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/stahangryum/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/stahangryum" title="stahangryum"><svg class="svg-icon grey"><use xlink:href="/stahangryum/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
