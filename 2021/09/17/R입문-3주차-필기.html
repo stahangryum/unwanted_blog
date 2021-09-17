@@ -93,7 +93,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -135,7 +135,7 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2010-&#44256;3-6&#50900;-&#47784;&#51032;&#44256;&#49324;-&#49688;&#54617;(&#45208;)-4&#48264;&#47928;&#51228;">2010 &#44256;3 6&#50900; &#47784;&#51032;&#44256;&#49324; &#49688;&#54617;(&#45208;) 4&#48264;&#47928;&#51228;<a class="anchor-link" href="#2010-&#44256;3-6&#50900;-&#47784;&#51032;&#44256;&#49324;-&#49688;&#54617;(&#45208;)-4&#48264;&#47928;&#51228;"> </a></h3>
+<h3 id="2010-&#44256;3-6&#50900;-&#47784;&#51032;&#44256;&#49324;-&#49688;&#54617;(&#45208;)-4&#48264;">2010 &#44256;3 6&#50900; &#47784;&#51032;&#44256;&#49324; &#49688;&#54617;(&#45208;) 4&#48264;<a class="anchor-link" href="#2010-&#44256;3-6&#50900;-&#47784;&#51032;&#44256;&#49324;-&#49688;&#54617;(&#45208;)-4&#48264;"> </a></h3>
 </div>
 </div>
 </div>
@@ -1068,7 +1068,368 @@ RK5CYII=" width="420" height="420" />
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">TFarray</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="m">+2</span><span class="p">)</span> <span class="o">==</span> <span class="nf">min</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="m">2</span><span class="p">)))</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">TFarray</span> <span class="o">&lt;-</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="m">+2</span><span class="p">)</span> <span class="o">==</span> <span class="nf">min</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="m">2</span><span class="p">))</span>
+<span class="n">a</span><span class="p">[</span><span class="n">TFarray</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+-0.7925
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$a = -0.7925$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 따라서 $4^{a} + 4^{-a}$는</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">4</span><span class="o">**</span><span class="m">0.7925</span> <span class="o">+</span> <span class="m">4</span><span class="o">**</span><span class="p">(</span><span class="m">-0.7925</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+3.33340264784444
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="m">10</span><span class="o">/</span><span class="m">3</span><span class="p">,</span><span class="m">17</span><span class="o">/</span><span class="m">4</span><span class="p">,</span><span class="m">26</span><span class="o">/</span><span class="m">5</span><span class="p">,</span><span class="m">37</span><span class="o">/</span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+&lt;ol class=list-inline&gt;<li>2.5</li><li>3.33333333333333</li><li>4.25</li><li>5.2</li><li>6.16666666666667</li>&lt;/ol&gt;
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\therefore$ 답은 2번이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2021-&#44256;3-9&#50900;-&#47784;&#51032;&#44256;&#49324;-&#49688;&#54617;(&#44032;)-10&#48264;">2021 &#44256;3 9&#50900; &#47784;&#51032;&#44256;&#49324; &#49688;&#54617;(&#44032;) 10&#48264;<a class="anchor-link" href="#2021-&#44256;3-9&#50900;-&#47784;&#51032;&#44256;&#49324;-&#49688;&#54617;(&#44032;)-10&#48264;"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>수열 $\{a_n\}$은 $a_1 = 12$이고, 모든 자연수 $n$에 대하여 $a_{n+1} + a_n = (-1)^{n+1} \times n$을 만족시킨다. $a_k &gt; a_1$인 자연수 $k$의 최솟값은?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(1) $2$ (2) $4$ (3) $6$ (4) $8$ (5) $10$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#54400;&#51060;-1---&#47924;&#51648;&#49457;-&#45824;&#51077;">&#54400;&#51060; 1 - &#47924;&#51648;&#49457; &#45824;&#51077;<a class="anchor-link" href="#&#54400;&#51060;-1---&#47924;&#51648;&#49457;-&#45824;&#51077;"> </a></h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a1</span><span class="o">=</span><span class="m">12</span> 
+
+<span class="n">n</span><span class="o">=</span><span class="m">1</span>
+<span class="n">a2</span><span class="o">=</span> <span class="o">-</span><span class="n">a1</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">2</span> 
+<span class="n">a3</span><span class="o">=</span> <span class="o">-</span><span class="n">a2</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">3</span>
+<span class="n">a4</span><span class="o">=</span> <span class="o">-</span><span class="n">a3</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">4</span> 
+<span class="n">a5</span><span class="o">=</span> <span class="o">-</span><span class="n">a4</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">5</span> 
+<span class="n">a6</span><span class="o">=</span> <span class="o">-</span><span class="n">a5</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">6</span> 
+<span class="n">a7</span><span class="o">=</span> <span class="o">-</span><span class="n">a6</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">7</span> 
+<span class="n">a8</span><span class="o">=</span> <span class="o">-</span><span class="n">a7</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">8</span>
+<span class="n">a9</span><span class="o">=</span> <span class="o">-</span><span class="n">a8</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">9</span> 
+<span class="n">a10</span><span class="o">=</span> <span class="o">-</span><span class="n">a9</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>
+
+<span class="n">a</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">a3</span><span class="p">,</span><span class="n">a4</span><span class="p">,</span><span class="n">a5</span><span class="p">,</span><span class="n">a6</span><span class="p">,</span><span class="n">a7</span><span class="p">,</span><span class="n">a8</span><span class="p">,</span><span class="n">a9</span><span class="p">,</span><span class="n">a10</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> [1]  12 -11   9  -6   2   3  -9  16 -24  33
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$k$의 최솟값은 $8$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(&#54400;&#51060;2)---for&#47928;">(&#54400;&#51060;2) - for&#47928;<a class="anchor-link" href="#(&#54400;&#51060;2)---for&#47928;"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="--&#50696;&#48708;&#54617;&#49845;"><code>-</code> &#50696;&#48708;&#54617;&#49845;<a class="anchor-link" href="#--&#50696;&#48708;&#54617;&#49845;"> </a></h5>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a_</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>NULL
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a_</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">12</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 12
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a_</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">-12</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1]  12 -12
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a_</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">3</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1]  12 -12  NA   3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
+<span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">12</span>
 </pre></div>
 
     </div>
@@ -1085,7 +1446,26 @@ RK5CYII=" width="420" height="420" />
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">TFarray</span><span class="p">]</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">n</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">){</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="m">+1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1097,13 +1477,126 @@ RK5CYII=" width="420" height="420" />
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
--1
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> [1]  12 -11   9  -6   2   3  -9  16 -24  33 -43
+</pre>
+</div>
 </div>
 
 </div>
+</div>
 
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">((</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">)[</span><span class="n">a</span><span class="o">&gt;</span><span class="m">12</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1]  8 10 19
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$k$의 최솟값은 $8$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#44284;&#51228;">&#44284;&#51228;<a class="anchor-link" href="#&#44284;&#51228;"> </a></h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">n</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">39</span><span class="p">){</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="m">+1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> [1] 12 13 11 14 10 15  9 16  8 17  7 18  6 19  5 20  4 21  3 22  2 23  1 24  0
+[26] 25 -1 26 -2 27 -3 28 -4 29 -5 30 -6 31 -7 32
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
