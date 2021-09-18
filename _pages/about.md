@@ -6,5 +6,5 @@ permalink: /about/
 
 Department of Statistcis, Jeonbuk National University, South Korea(2021.03 ~)
 
-##Contact
+## Contact
 - Email : stahangryum@gmail.com
