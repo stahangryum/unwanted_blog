@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>R - for문 | stahangryum</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="R - for문" />
+<meta name="author" content="Kim Jeewoo" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="전북대학교 R입문 3주차 필기" />
+<meta property="og:description" content="전북대학교 R입문 3주차 필기" />
+<link rel="canonical" href="https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/17/R%EC%9E%85%EB%AC%B8-3%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html" />
+<meta property="og:url" content="https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/17/R%EC%9E%85%EB%AC%B8-3%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html" />
+<meta property="og:site_name" content="stahangryum" />
+<meta property="og:image" content="https://stahangryum.github.io/stahangryum/images/r_logo.PNG" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-17T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-09-17T00:00:00-05:00","url":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/17/R%EC%9E%85%EB%AC%B8-3%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html","@type":"BlogPosting","image":"https://stahangryum.github.io/stahangryum/images/r_logo.PNG","headline":"R - for문","dateModified":"2021-09-17T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/17/R%EC%9E%85%EB%AC%B8-3%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html"},"author":{"@type":"Person","name":"Kim Jeewoo"},"description":"전북대학교 R입문 3주차 필기","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/stahangryum/">stahangryum</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/stahangryum/about/">About Me</a><a class="page-link" href="/stahangryum/search/">Search</a><a class="page-link" href="/stahangryum/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">R - for문</h1><p class="page-description">전북대학교 R입문 3주차 필기</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-17T00:00:00-05:00" itemprop="datePublished">
+        Sep 17, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Kim Jeewoo</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/stahangryum/categories/#Introduction to R">Introduction to R</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/stahangryum/stahangryum/tree/master/_notebooks/2021-09-17-R입문 3주차 필기.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/stahangryum/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/stahangryum/stahangryum/master?filepath=_notebooks%2F2021-09-17-R%EC%9E%85%EB%AC%B8+3%EC%A3%BC%EC%B0%A8+%ED%95%84%EA%B8%B0.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/stahangryum/stahangryum/blob/master/_notebooks/2021-09-17-R입문 3주차 필기.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Problem-<sup id='fnref--1' class='footnote-ref'><a href='#fn--1'>-1</a></sup>">Problem 1 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Solution-I">Solution I </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#True-and-False">True and False </a></li>
+<li class="toc-entry toc-h3"><a href="#Application">Application </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Problem-<sup id='fnref--2' class='footnote-ref'><a href='#fn--2'>-2</a></sup>">Problem 2 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Solution-I">Solution I </a></li>
+<li class="toc-entry toc-h2"><a href="#Solution-II">Solution II </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#--예비학습">- 예비학습 </a></li>
+<li class="toc-entry toc-h4"><a href="#과제">과제 </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-09-17-R입문 3주차 필기.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-&lt;sup id='fnref--1' class='footnote-ref'&gt;&lt;a href='#fn--1'&gt;-1&lt;/a&gt;&lt;/sup&gt;">
+<a class="anchor" href="#Problem-&lt;sup%20id='fnref--1'%20class='footnote-ref'&gt;&lt;a%20href='#fn--1'&gt;-1&lt;/a&gt;&lt;/sup&gt;" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem <sup id="fnref-1" class="footnote-ref"><a href="#fn-1">1</a></sup><a class="anchor-link" href="#Problem-&lt;sup%20id='fnref--1'%20class='footnote-ref'&gt;&lt;a%20href='#fn--1'&gt;-1&lt;/a&gt;&lt;/sup&gt;"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/stahangryum/images/copied_from_nb/image/201006math04.PNG" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-I">
+<a class="anchor" href="#Solution-I" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution I<a class="anchor-link" href="#Solution-I"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>$f(a) = \cfrac{2^a+2^{-a}}{2^{a}-2^{-a}}$에서 $f(a) =-2$를 만족하는 a를 구해보자.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">f</span> <span class="o">&lt;-</span><span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+   <span class="p">(</span><span class="m">2</span><span class="o">**</span><span class="n">a</span> <span class="o">+</span> <span class="m">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="o">**</span><span class="n">a</span> <span class="o">-</span> <span class="m">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$f(a)$의 그래프를 그리고 $f(a) = -2$에 해당하는 수평선을 그려서 a의 대략적인 범위를 구해보자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">-5</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span> <span class="m">-2</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">"red"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAAM1BMVEUAAABNTU1oaGh8fHyM%0AjIyampqnp6eysrK9vb3Hx8fQ0NDZ2dnh4eHp6enw8PD/AAD///89ODILAAAACXBIWXMAABJ0%0AAAASdAHeZh94AAAUOElEQVR4nO3d7ULqOABF0SBcRESG93/aUfADEFHgNGnLWj8QZe6kULdt%0A06JlA9ystF4AGAMhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQB%0AQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAg%0AQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBAS%0ABAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFC%0AggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBA%0ASBAgJAgQEgQICQKEBAFCgoAKIRUYmCu+y/PhNBgCkuqHtHgoZbbsdAiorWJIu63fdLchnHcy%0ABDRSO6R5ma83m5d5WXQxBDRSO6RJWb/dX5eHLoaARmqH9DG7cX6WQ0gMTO2Q/n2ENOliCGik%0Aakizx8WyPL3eXc/PzzYIiYGpGtLnmatSJusuhoBGap5HWq0Wi9lsO+UwP9uRkBgaVzZAQH9C%0AuvHCJWipPyFVHgKShAQBQoKABtPffzgMEhIDUzGkhZAYrarnkSbTroeANqoeI61+eRtSYAj+%0AwPmFvLqTDYuy6noIfnNwFT4hZu3uTtm7JUVI96YcfSRCSPdGSJ0Q0r0RUieEdHccI3VBSHfH%0ArF0XhHSHnEfKExIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAk%0ACBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKE%0ABAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGA%0AkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQI%0AEBIEVA3p+XFW3szmz10NAU1UDGn9UL5MOxkCGqkY0rxMnlbbey/LSZl3MQQ0UjGkSVl93l+V%0ASRdDQCMVQyrlp09iQ0AjtkgQUPcYafmyvecYibGpOf093Zu1e1h3MgS0Ufc80nx7Hmkye3Qe%0AiXFxZQME9Ceksq+bIaAr/Qmp8hCQJCQIEBIEVL2y4c+HQUJiYCqGtBASo1Vz1241Of/micAQ%0A0EbVY6TV+QuDEkNAE3UnGxZ71612NAS0YNYOAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQB%0AQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAg%0AQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEdLdK8TLnCOlObSuSUoyQ7lTZ%0Au+V2QrpP5egjNxLSfRJSmJDuk5DChHSnHCNlCelOmbXLEtLdch4pSUgQICQIEBIECAkChAQB%0AQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAg%0AQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQLqh7R4KGW27HQIqK1iSLs/oj0t%0AW/NOhoBGaoc0L/P1ZvMyL4suhoBGaoc0Keu3++vy0MUQXK4Ur3ZA7ZA+1tr3tVf2XTkElzpY%0AKVyvdkj/PkKadDEElyp7t9ygakizx8WyPL3eXc/PzzZYsZWUo49cq2pIn7ttpUzWXQzBhYSU%0AUvM80mq1WMxm2ymH+dmOrNdahJTiyob75hgpREj3zaxdiJDunZMNEUKCACFBgJAgQEgQICQI%0AEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQIiTfeTHEjIeHtfQFCwhvOA4SEX4ESICSEFCAk%0AhBQgJBwjBQgJs3YBQuKN80g3EhIECAkChAQBQoIAIUGAkPhi7u5qQuKDs0k3EBIfXN9wAyHx%0AzhV3txAS74R0CyHxTki3EBIfHCPdQEh8MGt3AyHxxXmkqwmJb/R0OSFxxB7eNYTEEXMO1xAS%0Ah8yCX0VIHBLSVYTEISFdRUgc+ThGMnd3CSFx5H3WztzdRYTEN28Vmbu7jJA4xZHShYTEKUK6%0AkJA45Sskcw5/IiROej9GMufwR0LipL25O+vjD4TED77m7qyQ3wmJMz5DcqT0CyFxxvuKcKT0%0AKyFxTjm4tV36kZA4Z39bZLt0hpA47+vwaPfRujlJSPzqc8/u46PN0jdC4ne7TdHRzIOc9gmJ%0A3x0cHTlgOkVI/MW3d1Z8HjDZMG0Jib86mME72jDdfU5C4u/2t0sHZ5jkJCQutD/zcPDhc4t1%0Ajz0JiQsd7uHtbvfiKkebpzupSkhcbLuH9+2A6eTe3mFVI25LSFxpm8P+pujETt/hxUWn2jpI%0AbMCFCYlb7G2YDgs6VdXm+Evle0Vfx1g/h3b14x0SErf5vp+3u/22rTq3xdq/PbX5+vlLlzx+%0Ac4hnchQSCXs5/bR5OtHWqce/H2md+9JFj98a4t6Pi+8vwF9epZv/SQ+HoAO7w6b9zdP5dq4J%0A7erHT24Erwj1h6f+64uT+Cc9HILu7G+evu/03bjFav34D9+cQqIje8cYJ2ftNnsfTtwKKUBI%0AY/Pt+P3MMcruH7z/s/1PTnzpgsdPbASFxPD9NCvW4azdZu/DiU/+9vgPz+aKF+Dyf9LDIeiv%0Ajs4jmbWDiB6fR3qeT1//79P58+X/n78OAf13W0hPD+XDwzK3UEJiaG4J6WVapovV+vXe+vnx%0A9f5Ly6WClm4IaVnm670vv8xLbKMkJAbmhpBm66MH1v9uXZrjIWAgzNpBgJAgIBXS8+zWJfl1%0ACOivW0Oaf85/p5bo2xDQfzeG9NVR8jSSkBiaG0OalKfNtLy8TMtfLm14fpxto5v9diGEkBiY%0AG0N626N7fN0arcr013+3/roMovzynwuJgQmEtCyLny+K3TMvk6fV9t7LclLm4aWClm4Mafa6%0Aa/dSHjbPfwhpUlaf91dlEl4qaOnGkJZvAb1d/11+v6qhHG/Kjh/ec/lSQUu3Tn8/vn32r5zf%0AU9uxRWK8Kl7Z8HqMtNxdIO4YibGpeYnQdG/f7eH4itfMENBG1au/n+fb80iT2aPzSIyL9yNB%0AgHfIQoDf2QABfosQBNwQ0vwxuiSnhoCBuCGkz18vmyckBuamkF6EBFs3hPSvdHZ5nJAYmBtC%0AWs+EBDuB9yN1QEgMjJAgYFi/167DP8sBtxhSSLE/FHVriD9/wr0aVEi72/LjJ398/MYQz/xp%0AxZ9DY+QGFNL7F9+/PTfl+JPL/pjuDSGe/eR0aNoau/sLqbPHPz45FdrPbalqHIRU4fHPrx1/%0A6VtVDNWAQkodI73ftg3taPMlp6EbVEg/H4P8/KUTj+8NkTxGOtr6XLHFes9JTwM0pJA+v8Nu%0Am77ucNZus/dh75NfD6sOj7FsngZoWCGl/vc3hfjjJ2dC23tW3/fpDrdY+/+ZlAbjLkPqzE+h%0A/dzWb3t79vMGQkh1/NjWV1WnjrFMQwyFkJr5XtXuy++39vMGRUj9cLQDeDxz8bGfR18JqU/2%0AZxV3X3i//ejJVqmvhNRD3/f2vrZSUuonIfXWbvO0u7f5+mAir5eE1G/fZ/VsmHpJSH13vJ93%0AMJ1HXwhpGL7mGQ57oieENByHmyJTeL0ipOE43MFzpNQrQhqSr4k8R0o9I6TBOTHzQHP9DOk/%0AGJjLv8ttkXrgc8rB2dl+6OcWybfGrz6vvtuYc+gDIQ3U/qXiXq/2hDRY20sePu43XRKENHBC%0A6gshDZqQ+kJIw/b5hiUTDm0Jadi+/149mhDS0H3NOXjVGhLSCDhSak9IIyCk9oQ0AkJqT0hj%0A4BipOSGNgVm75oQ0Ds4jNSakMZFTM0IaDzt4DQlpPEw5NCSk0TAJ3pKQRkNILQlpNITUkpDG%0AwzFSQ0IaD7N2DQlpTJxHakZIECAkCBASBAgJAoQEAUIaIZN39QlpdJxOakFIo+MChxaENDYu%0AuWtCSGMjpCaENDZCakJIo+MYqQUhjY5ZuxaENELOI9UnJAgQEgQICQKEBAFCggAhQYCQIEBI%0AECAkCBASBAgJAoQEAUKCgPohLR5KmS07HQJqqxjS7tr+admadzIEe7yZoqbaIc3LfL3ZvMzL%0Aoosh+OTtfXXVDmlS1m/31+WhiyH45A3nddUO6eNn5Pmfldb/rfwKlMpqh/TvI6RJF0PwQUiV%0AVQ1p9rhYlqfXu+v5+dkGq/9WQqqsakg727uTdRdD8MkxUl01zyOtVovFbLadcph/76jsu3YI%0APpi1q8uVDaPl51FNQoKAFiH9/pNSSAyMkCBASBAgJAgQEgQICQJMf0OAkCBASBAgJAgQEgQI%0ACQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIA%0AIUGAkCBASBAgJAgQEgQICQKEBAFCggAhjV35/e+6cTshjdu2Iil1T0jjVvZu6ZCQRq0cfaQr%0AQho1IdUipFETUi1CGjfHSJUIadzM2lUipLFzHqkKIUGAkCBASBAgJAgQEgQICQKEBAFCggAh%0AQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAg%0AJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCKga0vPjrLyZzZ+7GgKaqBjS+qF8mXYyBDRSMaR5%0AmTyttvdelpMy72IIaKRiSJOy+ry/KpMuhoBGKoZUyk+fxIaARmyRIKDuMdLyZXvPMRJjU3P6%0Ae7o3a/ew7mQIaKPueaT59jzSZPboPBLj4soGCBASBAgJAoQEAf0JqezrZgjoStUrG/7cipAY%0AmIohLYTEaNXctVtNzr95IjAEtFH1GGl1/sKgxBDQRN3JhsXedasdDQEt9GfWrvIQkCQkCBAS%0ABLQI6ffzrUJiYIQEAUKCACFBgJAgQEgQYPobAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQB%0AQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAg%0AQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBAS%0ABAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFC%0AggAhQYCQIEBI96EUr2mnhHQPthVJqUv1Q1o8lDJbdjoER8reLZ2oGNLuJ+K0bM07GYKTytFH%0A8mqHNC/z9WbzMi+LLobgJCF1r3ZIk7J+u78uD10MwUlC6l7tkD6OeM8f+VrjWY6ROlc7pH8f%0AIU26GILTzNp1rmpIs8fFsjy93l3Pz882WOVpziN1rGpIO9u7k3UXQ0AjNc8jrVaLxWy2nXKY%0An+1ISAyNKxsgQEgQICQIEBIE9Ceksq+bIaArDaa//9CKkBiYiiEthMRoVT2PNJl2PQS0UfUY%0AafXL25ACQ0ATdScbFmXV9RDQQn9m7SoPAUlCggAhQUCLkH4/3yokBkZIECAkCOhpSDAwV3Rw%0ATTyHmdz6f7h+6GYjG9/4R4RkfOMH9GphLtR62Y1/3+Mf6NXCXKj1shv/vsc/0KuFuVDrZTf+%0AfY9/oFcLc6HWy278+x7/QK8W5kKtl9349z3+gV4tzIVaL7vx73v8A71amAu1Xnbj3/f4B3q1%0AMBdqvezGv+/xD/RqYS7UetmNf9/jH+jVwlyo9bIb/77HP9CrhYGhEhIECAkChAQBQoIAIUGA%0AkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIEDD0kJ5bPoHFQ5nM123Gnk/ajf2m5XN/13Td%0AH+vTslxhPWn4BObbP1wwafLdNN2O/dBi6K2Wz/1d03X/TZ+W5Qqzhr/Df1X+rd/+tvu/BmM/%0Al8lqs5qU5wZjv2n53D+0XPff9WlZLvd01Z+yCZnthm6yBPOy3Lw9/ccGY79p+dzfNV333/Vp%0AWS72UqbtX8wmSzArL5u37cKswdh7Gr76vVj3e/q0LBeblpfmL+a6TBuMWtpvETatnvtOH9b9%0Avj4ty6Uey1Prb6W344Rlg1H7EVKb577Vi3W/r0/LcqHtjk3rF/Nl0mTvqhchNXrub3qx7g/0%0AaVku9PA2+dp652bSZuemDyG1eu5v+rDuD/VpWf7o/e9O/9vuVzR4Mff/7vW00ZmcSQ9CavXc%0AXzVb9z/r07L80fs38i1/yz0x/quXh+lL5cHf7WbtXhrO2rV77ptNu3X/s/4syaXav5jLdpNW%0Aj9sfycsyb7UADZ/7pg/r/pv+LMl12p7JaDZ26ysbWj73Tz3KSEg3+Nfyp+LDduRm381Nn/sH%0AIQU1fDGb7l6st1d/txh5qxe7VkKCsRESBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQB%0AQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAg%0AQEgQICQIEBIECAkChAQBQoIAIQ3TclZa/lVzjglpkB7LlpJ6Q0iDVMrTZvNUrL3esCoGTEj9%0AYVUM1MvycSqk/rAqhmm6O0hqvRh8sCoG6V95WCxfhNQfVsUgbRMSUo9YFYNUyvNm5RipR6yK%0AQZrvDpFec6IfhDRM/0qZPi/LrPVy8E5IECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIE%0ACAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKC%0AACFBwP8Fb8vwXQ3n5wAAAABJRU5ErkJggg==" width="420" height="420">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$-2&lt;a&lt;0$임을 알았다.</p>
+<p>범위를 좁히고, <strong>by</strong> 옵션을 사용하여 더 촘촘히 다시 그려보자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">-1</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">-0.5</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.0001</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">type</span> <span class="o">=</span> <span class="s">"l"</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">h</span> <span class="o">=</span> <span class="m">-2</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">"red"</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAAM1BMVEUAAABNTU1oaGh8fHyM%0AjIyampqnp6eysrK9vb3Hx8fQ0NDZ2dnh4eHp6enw8PD/AAD///89ODILAAAACXBIWXMAABJ0%0AAAASdAHeZh94AAAYP0lEQVR4nO3d6WLaSraA0RKTiQ007/+0DdjOseOBQVulGtb64UPn3niD%0A4HMJITnpCIyW5r4D0AIhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAh%0AQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAh%0AQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAh%0AQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAh%0AQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAh%0AQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQQAhQYAMISWozAOv8vhwZhgBkYQEAYQEAYQE%0AAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAeoK6cHf%0AMgFTqyqkx39hC0yrypC0RGlqDUlKFKWqkP79xZHT3xG4TV0hSYlC1RbS8d+Wpr8zcF2FIVmW%0AKE+VIUmJ0lQa0tEeHkWpNyTLEgWpOSQpUYy6Qzraw6MM1YckJUrQQEj28JhfEyEdLUvMrJWQ%0ApMSs2gnJHh4zaimko2WJuTQWkpSYR3MhSYk5NBiSlMivyZCOWiKzVkOSElm1G5KUyKjlkKRE%0ANm2HdPQrvMij+ZCkRA4dhGQPj+l1EZKUmFonIUmJaXUTkpSYUkchHR13YDJ9hSQlJtJbSFJi%0AEv2FJCUm0GNIjjsQrs+QpESwXkOSEqH6DUlKBOo5JCkRpu+Qjg7hEaP7kKREhJwh7ddpeDoe%0At4s0bCYa8RgpMVbGkA7D+XW6fbq8XJeTjHiYlBgnY0ibdFqHNkNaH46Hy+34ESNIiTEyhjRc%0A/mJKh8t/hilGjCIlHpcxpJT++3r8/aU60+tYSjxqhhXp/PVQ4Ip0GSwlHjLDe6TN4e12/IgA%0AUuIRjtp9HS4l7uZzpO/GS4k7ObPh+zsgJe4ipJ/ugpS4g5B+JCVuN1dIRX6O9C8pcSsh/UpJ%0A3Mau3RVS4hZCukpKXFdOSAW/ISn3nlGKckLKPOI+UuJ3QrqRlPiNkG4mJX6W9Xqkm98GlflC%0ALfhdHHPLGNK29pCkxI9y7trtht8vnggYMTkp8a2s75F2v1/OFzFiekriG3kPNmzTbuoRGUiJ%0ALxy1e4SU+IeQHiMlPhHSo6TEB3OEdP2FV8Ur0wE8/iOkEZTEOyGNIiVeCWkkKXEmpNGkhJBC%0AKAmHvyNYlLonpBhS6pyQokipa0KKI6WOCSmSkrolpFAWpV4JKZiU+iSkcFLqkZAmoKT+CGkK%0AFqXuCGkaUuqMkKaipK4IaTpS6oiQJmT/rh9CmpSUeiGkiSmpD0KanJR6IKTp2b/rgJByUFLz%0AhJSHlBonpEzs37VNSNkoqWVCykhK7RJSTvbvmiWkvJTUKCHlJqUmCSk7+3ctEtIMlNQeIc1C%0ASq0R0jyU1BghzUVKTRHSfKTUECHNSEntENKspNQKIc1MSW0Q0twsSk0Q0vyk1AAhFUBJ9RNS%0AEaRUOyGVQUmVE1IppFQ1IZVDSRUTUkEsSvUSUlGUVCshlcWiVCkhlUZKVRJScZRUIyEVSEr1%0AEVKRlFQbIZXJolQZIZVKSVURUrEsSjXJGtLL0+ryulhtXqYa0RQl1SNjSIfFh5+xy0lGtMai%0AVI2MIW3S8Gd3ubV/HtJmihHtUVIlMoY0pN3f27s0TDGiQUqqQ8aQPr0Ufn9deNF8IKUaWJHK%0Ap6QK5H2P9Ly/3PIe6U5SKl7Ow9/LDwehFodJRrRKSaXL+znS5vI50rB68jnSvaRUNmc21EJJ%0ARRNSPaRUMCFVREnlmisknyM9wilDxRJSXZRUqDJ37f4Hlbn/VS4k+OL+V/lEIX3Y/09zbxS4%0A1wOv+EdTOaxTWj6/Z/Pb/+fcGwXudX8PD1/YN1xWm9XrNxESTbk/iMdPWt2eatoOl4tjHbUb%0AyeG7smS9jOLyn/2w2AtpPCUVZYYL+w7LpZAiKKkgGUNapPdLJxZLIUWwKJUjY0jbtH67tU9L%0AIUVQUjFyntmw+ft8P1956r0ubiWlQmQ9RWi3er+1XwsphpLKUOa5dl4Ud1BSCYRUP4tSAeYI%0A6foT7hVxFyXNT0hNUNLchNQGi9LMhNQKJc1KSM2wKM1JSO1Q0owc/m6JkmYjpKZYlOYipLYo%0AaSZCao2SZiGk5liU5iCk9ihpBkJqkZKyE1KTLEq5CalNSspMSK1SUlZCapZFKSchtUtJGQmp%0AZUrKRkhNU1IuQmqb3btMhNQ6JWUhpOYpKQchtc/uXQZC6oGSJiekLihpakLqg5ImJqROeKM0%0ALSF1Q0lTElI/lDQhIXVESdMRUk+8UZqMkPqipIkIqTNKmoaQeqOkSQipP1KagJA6pKR4QuqR%0AksIJqUtKiiakTkkplpB6paRQQuqWkiIJqV9KCiSkjikpjpC6JqUoQuqbkoIIqXNKiiGk3ikp%0AhJCQUgAhoaQAQkJJAYTEUUnjCYkzJY0kJF4paRQh8caiNIaQeKekEYTEX0p6nJD4j5IeljOk%0Awzql5fPbN/n1u3gi56KkB2UM6TBcnqLV6zcRUpmU9JiMIW3S9lTTdlhevomQCmX37iEZQxpe%0A/+J+WOyFVDAlPSJjSO/PzGG5FFLJlPSAjCEt0uH91lJIJVPS/TKGtE3rt1v7tBRS0ZR0r5yH%0Avzd/n5jnK8+RJ3BuSrpT1g9kd6v3W/u1kMqmpPs4s4HveaN0FyHxAyXdQ0j8REl3mCskBxsq%0AoKTbCYmfKelmdu34jZJuJCR+paTblBNS+miaETzAU3ITF/ZxhZJu4cI+rrGfcAMX9nGVkq5z%0AYR/XKekqF/ZxCyVd4cI+bqKk37mwj9so6Vcu7ONGSvqNC/u4lZJ+Uc6ZDZlHcD8l/UxI3E5J%0AP5ojpOtPhGeqUD5Q+omQuIeSfiAk7qKk7wmJ+yjpW0LiXkr6hpC4m5K+cvib+ynpCyHxACX9%0AS0g8Qkn/EBIPUdJnQuIxSvpESDxISR8JiUcp6QMh8TAl/UdIPE5JfwmJEZT0TkiMoaQ3QmIU%0AJb0SEuMo6UJIjKSkMyExmpSERAQlCYkIShISEbovSUiE6L0kIRGj85KERJC+SxISUbouSUiE%0A6bkkIRGn45KERKB+Sxob0stmedpuy81L1B36OoKKdFvSuJD+LN43XFo8x90pIdWr15LGhLRf%0ApuV2dzjdOrw8nW7v57xXFKLTkkaE9Jw2hw9/vN+ksEWpt2ehKX2WNCKk1eGf/8NhPfbe/DuC%0AGnVZkqN2hOuxJCERr8OSokJ6WY29J1dHUI/+Shob0iZNsc06egIa1V1JI0P6r6PIj5GEVL/e%0AShoZ0pD+HJdpv1+m0FMbutn8DRPSPX/lvKGeTqvRLi3D7tJRSE3oq6SAkJ7T9njDv1T+6Ahq%0A1VVJI0NanXbt9mlxfBESX/RU0siQns+b6Xz+dwo7q+HfEdSro5LGHv5+Ov+vdUqboPvzzQjq%0A1U9JzmxgSt2UJCSm1M3HSc7+ZlK9lOR6JKbVSUmukGVifZTkdzYwtS5K8luEmFwPJY0IafMU%0Aek++G0EbOihpREjn7TLRtml5i3ep/ZJGhbQXErdpvqQRIa3TJzPfK8rWekkjQjqsHg3p6v9z%0As5u7Y42XFHA90gPfQUgdarukjCF93hP89S82urE713RJGU9afRmE1LeWS8p59vfpTdXraUR2%0A7TolpJF/5d2flP4chdSvdkvKfD3SfplWByH1q9mSsl/Y95SGZyH1q9WS8l8hu1tc347tbWfe%0AtHrAYY5LzddC6lijJfmdDWTWZklCIrcmS5orJB/IdqzFkoREfg2WZNeOGbRXkpCYg5Ame5U/%0AenETVWrtic560uo6peXbb+3yHql3jZWUMaTD62UUr//8uZC611ZJGUPanP9lv8N2uPwjmULq%0AXlu78RlDGl7/4n5Y7IVEYyVlDOl9ix2WSyFxbKukjCEt0vs/XrFYColjUyVlDGn799+Z3ael%0AkDi2VFLOw9+bvxvs+cq2a2DDchMhPWK3er+1XwuJs1ZKKufMhswjKEQjJQmJmbVR0hwhXd9o%0AtW9V7tFESUJibk0cuhMSs2uhJCExvwZKEhIFqL8kIVECIU2i4g3KY2ovSUiUofKShEQZKn+b%0AJCQKUXdJQqIUVZckJIpRc0lCohxCClblpmS8eksSEiWptiQhUZJq3yYJiaLUWpKQKEulJQmJ%0AwggpTm1bkUhVliQkilNjSUKiPBWWJCTKU+EBByFRoPpKEhIlElKIijYg06itJCFRpspKEhKF%0AqqskIVGoug44CIlSVVWSkCiWkMaqY9sxtYpKEhIFq6ckIVGyakoSEiWr5oCDkCiakMYof7uR%0ASyUlCYnC1VGSkChdFSUJidJVccBBSBRPSI8qe5uRWwUlCYkKlF+SkKhB8SUJiRoUf8BBSFRB%0ASI8od3sxl8JLEhKVKLskIVGLoksSErUo+oCDkKiGkAocQYUKLklIVKTckoRETYotSUjUREil%0AjaBOpZYkJOpSaElCojJllpQzpMNmOH19WqS0/DPRCNpX5ueyGUPaD6cHfxhet8JykhH0oPeQ%0A1ml1OH1Z709NrdNmihF0ocSSMoaU0uHty2kvLw1TjKAPBZaUNaTTlyF9+B/hI+hDgW+Tsu7a%0A7Y7Hp/OX84r065ukkrYQBeo6pF0aNrvjajiV9LxIz1OMoBfFlZTz8PfzkP56mmYEvSitpLwf%0AyP5ZL86PfvW0n2wEnSisJGc2UCchlTGC2pVVkpCoVVElzRWSz5EYraSShES1hFTACBpQUElC%0AomLllFROSOmjaUbQnGJeL1kv7FuntHw7Nch7JCL0GNLbNX2r128iJCKUUlLGkDZpe6ppO1zO%0A+xYSMQopKWNIb5ci7YfFXkhEKeRtde4L+04Oy6WQCNNdSIvXq8zPt5ZCIkwRJWUMaZvWb7f2%0AaSkkwpRQUs7D35u/j/X5ysMWEvcooKSsH8juVu+39mshEaa3kEoaQUvmL0lItGD2kuYI6frj%0AFRL3EdI0I+jN3CUJiTbMXJKQaMS8JQmJRghpghF0aNaSHP6mGXOWJCSaMecVFUKiHULKP4IW%0AzVeSkGjJbCUJiZYIKfcI2jRXSUKiLTOVJCTaMtMxcCHRGCFlHUGzZilJSDRnjpKERHOElHEE%0ADZuhJCHRoPwlCYkGCSnbCJqWvSQh0aTcJQmJNgkpzwgal3lJEhKNyluSkGiVkIREgKxLkpBo%0AVs6ShES7MpYkJNolpOlH0IN8JQmJlmUrSUi0TEgQIVdJQqJtmUoSEm0TEkTIU5KQaF2WkoRE%0A64QEEXKUJCTal6EkIdE+IUGE6UsSEj2YvCQh0QUhQYCplyQh0YeJSxISfRASRJi2JCHRi0lL%0AEhK9EBJEmLIkIdGPCUsSEv0QEkSYriQh0ZMmQtqv0/B0PG4XadhMNAJ+NdmSlDGkw3B+CNun%0AyyNZTjICrpiqpIwhbdJpHdoMaX04Hi6340fANROVlDGk4fIXUzpc/jNMMQKuqT+klP77evz9%0AkQiJyUxT0gwr0vnrwYrEXGoP6f090ubwdjt+BFw3yZLkqB3dmaIknyPRn8pDKmoEHZtgSRIS%0AHYovSUh0qJ2QfI7EnMJLEhJdaiWk2UfQt+glSUj0KbikckJKH00zAv5Tb0iHdUrL57dv4j0S%0A84r9mZ39FKG0ev0mQmJmoSVlPWl1e6ppO1xOsxMSc6s1pNfLKI77YbEXEgWILCn7hX2nRWm5%0AFBIlqDOkxetF5udbSyFRgMAlKWNI27R+u7VPSyFRgLiSch7+3vy9x89X7ryQyKPKkI671fut%0A/VpIFCBsSSrnzIbMI+BMSBAgakmaI6Trd1tI5BJUkpDonJAgQMySJCR6F1KSkOiekCBAxJLk%0A8DcICQIELElCgoCShAQBO3dCgoAlSUhwHL8kCQmO45ckIcHZyJKEBBdCggDjliQhwSshQYBR%0AS5KQ4M2YkoQEb4QEEUaUJCT4S0gQ4PElSUjwn4dLEhJ8ICQI8OiSJCT4SEgQ4MElSUjwyWMl%0ACQk+ERJEeKgkIcE/hAQBHlmShAT/EhIEeGBJEhJ8cX9JQoIvhAQR7i5JSPANIUGAe5ckIcF3%0AhAQB7lyShATfEhIEuG9JEhJ8766ShAQ/EBIEuGdJEhL8REgQ4I4lSUjwIyFBgNuXJCHBz24u%0ASUjwCyFBgFuXJCHBb4QEAW5ckoQEvxISBLhtScoa0svT6nKfVpuXqUZAtNJCOizSf5aTjIAJ%0A3FJSxpA2afizu9zaPw9pM8UImMAtO3cZQxrS7u/tXRqmGAFTKCukT/fk97slJEpyw5JkRYKr%0Aigrp9B7peX+55T0Sdbm+JOU8/L38cNRucZhkBEyiqJCOL5vL50jD6snnSFTl6pLkzAa4gZAg%0AwLUlSUhwi0JD8jkSlfm9JCHBTX7fubNrB7cREgSoJKT00TQjYIzCQtoOabGddgRMoJSQdqs0%0AbI9PLuyjUmUctdtdCtqk9eG4X6Vf1yQhUZmMIa3PZ3xvXq+fOKTFFCNgJtkv7EurD/8jegTM%0AJHtIf1736VzYR1Oy7tqt3y9COqxd2EdTcv46ruHv/lz6fUESErXJ+jnS5j2f4df1SEhUp5wz%0AGzKPgEhCggBzhDTJr/aHOQkJAggJAggJAggJAggJAjj8DQGEBAGEBAGEBAGEBAEKDQkq88Cr%0APD6cKmabb37ofCGZb35p36yi2eabLyTzzS9tvpDMN7+0b1bRbPPNF5L55pc2X0jmm1/aN6to%0AtvnmC8l880ubLyTzzS/tm1U023zzmwkJmiEkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAk%0ACCAkCCAkCCAkCCAkCCAkCDBPSNvPYzdDGjaHbNO/jDv9wfI52/gv8w/zPv4Rvzk+ZP7xuFun%0AtN7nGv9lfsjDnyWk3ed7vbw8jkWu6V/Gvf7B01zz98PlD4Zcr6R/5793NMw0//j8Oj7XT5J/%0A5++qDWk3fLrXL2nYnf/sJc/0L+O2aXk4HtZpN9P8ddqcvm7Seqb5r55n2/7H4fQHh9VlK8wx%0Af5dWAd92hpBOL9xPIW3SebfqT64l4cu45WWb7nM9kV/mv22MXLtW32/uwxDxanpo/p/Llj/k%0AWhG/zN+GvPJmCOm03T69aFbpvFMT83PhBl/Gvb+QlzPNH97mZ3ohfb+5VynXntWX+dn2BX6Y%0Av03bgG87Q0i7f376Zv6J/GXc3POf3nbtMq3I3z7cXa71+Jv5i3R8GtI6V8hf5q/S8zoNYx//%0APEftigppcfkR9TLb/OP2fLRhiPix+Nj8Y84F6bsfZKucxzq+Celi5A6JkE4rwupw3C3nC+kp%0A61HD7zb3LteRju/mp/O7/8N6thU5pT/njyBG7uAJ6fwmJV1+Ks40f3verTq9kDItSd9t7tc3%0A4DPNT5f3SPtcn3/88HI7jJyfL6SPB+s/PYohT0jv87+OO72Ih6f55i8uu1Vjn8jH5x///tk8%0A8zP9IP3t8QfMLyCk18Mo+6mP2r3P/2HcLtcL+cv8zC+kbx5/liOmP85fzf74I+YXsGv3dNmv%0AeM513OjLuOGyImxzHX7/Zv75a7bPUb7Z3DEHgB+d//oH+1wfP/zw/I/9QV5ASHOf2XA5p+Bl%0AcX7LOdP884lfm9k+2T//kM74Sc6X+ad3R5czS2bc/peDDePeJs4b0ut/FxGHH2/3Ydxl/uH1%0AXLdcn+x/mf928tdsj//9Xdps85+KeP5H/hwrIaTXs5+zDf8w7nX+fn3KKN9hqy/zjzM//mwH%0ATH+a/7yc9fGf/2Axdud2npCgMUKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKC%0AAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKC%0AAEKCAEKCAEKCAEKCAEKCAEKCAEKq0/Mq5fyXwLlGSFV6ShdKKoaQqpTSn+PxT/LsFcNTUTEh%0AlcNTUan989NSSOXwVNRp+fomae67wTtPRZXWabF93gupHJ6KKl0SElJBPBVVSunluPMeqSCe%0AiiptXt8inXKiDEKq0zql5ctzWs19P3gjJAggJAggJAggJAggJAggJAggJAggJAggJAggJAgg%0AJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAgg%0AJAggJAggJAjwf8ZL3kkucxZlAAAAAElFTkSuQmCC" width="420" height="420">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$-0.9 &lt; a &lt; -0.8$임을 알았다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 이제  해를 찾아보자. $f(a) = -2$를 찾아야 하므로 <code>f(a) == -2</code>를 조건식으로 걸자</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">-0.9</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">-0.7</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.0001</span><span class="p">)</span>
+<span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="m">-2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+&lt;ol class=list-inline&gt;<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>⋯</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>
+<li>FALSE</li>&lt;/ol&gt;
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이중에 적당한 값(TRUE)가 있을까?</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>TRUE가 있는지 체크할 수 있는 방법은 없을까?</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="True-and-False">
+<a class="anchor" href="#True-and-False" aria-hidden="true"><span class="octicon octicon-link"></span></a>True and False<a class="anchor-link" href="#True-and-False"> </a>
+</h3>
+<blockquote>
+<p>컴퓨터는 TRUE, FALSE를 각각 1, 0으로 인식한다.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="kc">TRUE</span> <span class="o">+</span> <span class="kc">FALSE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="kc">TRUE</span> <span class="o">*</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="m">2</span> <span class="o">*</span> <span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 2 0 2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+2
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Application">
+<a class="anchor" href="#Application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Application<a class="anchor-link" href="#Application"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>어? 없네</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>사실 컴퓨터는 근사계산을 하였으므로 $f(a) = -2$인 경우를 정확하게 찾기는 힘들다.</p>
+<p>따라서 적당한 근사값인 $f(a) \approx -2$인 경우를 찾는게 더 합리적이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$|f(a) + 2|$이 최솟값을 갖게하는 $a$를 구해도 무방하다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">min</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="m">2</span><span class="p">))</span> <span class="c1"># f(a) + 2d의 절댓값 중 가장 작은 값</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+3.89877657125393e-05
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>min</strong> 함수를 사용하면 최솟값을 구할 수 있다.</p>
+<p><strong>abs</strong> 함수를 사용하면 절댓값을 구할 수 있다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="m">2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0ArkJggg==" width="420" height="420">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">TFarray</span> <span class="o">&lt;-</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="m">2</span><span class="p">)</span> <span class="o">==</span> <span class="nf">min</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="m">2</span><span class="p">))</span>
+<span class="n">a</span><span class="p">[</span><span class="n">TFarray</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+-0.7925
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$a \approx -0.7925$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\therefore 4^{a} + 4^{-a} \approx 4^{-0.7925} + 4^{0.7925} $</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="m">4</span><span class="o">**</span><span class="m">0.7925</span> <span class="o">+</span> <span class="m">4</span><span class="o">**</span><span class="p">(</span><span class="m">-0.7925</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 3.333403
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="m">10</span><span class="o">/</span><span class="m">3</span><span class="p">,</span><span class="m">17</span><span class="o">/</span><span class="m">4</span><span class="p">,</span><span class="m">26</span><span class="o">/</span><span class="m">5</span><span class="p">,</span><span class="m">37</span><span class="o">/</span><span class="m">6</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 2.500000 3.333333 4.250000 5.200000 6.166667
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>고로 답은 2번이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-&lt;sup id='fnref--2' class='footnote-ref'&gt;&lt;a href='#fn--2'&gt;-2&lt;/a&gt;&lt;/sup&gt;">
+<a class="anchor" href="#Problem-&lt;sup%20id='fnref--2'%20class='footnote-ref'&gt;&lt;a%20href='#fn--2'&gt;-2&lt;/a&gt;&lt;/sup&gt;" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem <sup id="fnref-2" class="footnote-ref"><a href="#fn-2">2</a></sup><a class="anchor-link" href="#Problem-&lt;sup%20id='fnref--2'%20class='footnote-ref'&gt;&lt;a%20href='#fn--2'&gt;-2&lt;/a&gt;&lt;/sup&gt;"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/stahangryum/images/copied_from_nb/image/202109math10.PNG" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-I">
+<a class="anchor" href="#Solution-I" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution I<a class="anchor-link" href="#Solution-I"> </a>
+</h2>
+<blockquote>
+<p>무지성 대입</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$a_{n+1} + a_n = (-1)^{n+1} \times n$</p>
+<p>$a_{n+1} = -a_n + (-1)^{n+1} \times n$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a1</span><span class="o">=</span><span class="m">12</span> 
+
+<span class="n">n</span><span class="o">=</span><span class="m">1</span>
+<span class="n">a2</span><span class="o">=</span> <span class="o">-</span><span class="n">a1</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">2</span> 
+<span class="n">a3</span><span class="o">=</span> <span class="o">-</span><span class="n">a2</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">3</span>
+<span class="n">a4</span><span class="o">=</span> <span class="o">-</span><span class="n">a3</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">4</span> 
+<span class="n">a5</span><span class="o">=</span> <span class="o">-</span><span class="n">a4</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">5</span> 
+<span class="n">a6</span><span class="o">=</span> <span class="o">-</span><span class="n">a5</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">6</span> 
+<span class="n">a7</span><span class="o">=</span> <span class="o">-</span><span class="n">a6</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">7</span> 
+<span class="n">a8</span><span class="o">=</span> <span class="o">-</span><span class="n">a7</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">8</span>
+<span class="n">a9</span><span class="o">=</span> <span class="o">-</span><span class="n">a8</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>  
+
+<span class="n">n</span><span class="o">=</span><span class="m">9</span> 
+<span class="n">a10</span><span class="o">=</span> <span class="o">-</span><span class="n">a9</span><span class="o">+</span><span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span> <span class="n">n</span>
+
+<span class="n">a</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">a3</span><span class="p">,</span><span class="n">a4</span><span class="p">,</span><span class="n">a5</span><span class="p">,</span><span class="n">a6</span><span class="p">,</span><span class="n">a7</span><span class="p">,</span><span class="n">a8</span><span class="p">,</span><span class="n">a9</span><span class="p">,</span><span class="n">a10</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> [1]  12 -11   9  -6   2   3  -9  16 -24  33
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$k$의 최솟값은 $8$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-II">
+<a class="anchor" href="#Solution-II" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution II<a class="anchor-link" href="#Solution-II"> </a>
+</h2>
+<blockquote>
+<p>for문 활용</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$a_{n+1} + a_n = (-1)^{n+1} \times n$</p>
+<p>$a_{n+1} = -a_n + (-1)^{n+1} \times n$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="--예비학습">
+<a class="anchor" href="#--%EC%98%88%EB%B9%84%ED%95%99%EC%8A%B5" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>-</code> 예비학습<a class="anchor-link" href="#--%EC%98%88%EB%B9%84%ED%95%99%EC%8A%B5"> </a>
+</h5>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a_</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>NULL
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a_</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">12</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 12
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a_</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">-12</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1]  12 -12
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a_</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">3</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1]  12 -12  NA   3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
+<span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">12</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">n</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">){</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="m">+1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> [1]  12 -11   9  -6   2   3  -9  16 -24  33 -43
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">((</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">)[</span><span class="n">a</span><span class="o">&gt;</span><span class="m">12</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1]  8 10 19
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>조건을 만족하는 $k$의 최솟값은 $8$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="과제">
+<a class="anchor" href="#%EA%B3%BC%EC%A0%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>과제<a class="anchor-link" href="#%EA%B3%BC%EC%A0%9C"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">n</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">39</span><span class="p">){</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="m">+1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="m">-1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="m">+1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> [1] 12 13 11 14 10 15  9 16  8 17  7 18  6 19  5 20  4 21  3 22  2 23  1 24  0
+[26] 25 -1 26 -2 27 -3 28 -4 29 -5 30 -6 31 -7 32
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="footnotes"><p id="fn-1">1. 2005년 대학수학능력시험 6월 모의평가 수리영역(나형) 4번<a href="#fnref-1" class="footnote footnotes">↩</a></p></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="footnotes"><p id="fn-2">2. 2021년 대학수학능력시험 9월 모의평가 수학영역(가형) 10번<a href="#fnref-2" class="footnote footnotes">↩</a></p></div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="stahangryum/stahangryum"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/stahangryum/introduction%20to%20r/2021/09/17/R%EC%9E%85%EB%AC%B8-3%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/stahangryum/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/stahangryum/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/stahangryum/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/stahangryum" title="stahangryum"><svg class="svg-icon grey"><use xlink:href="/stahangryum/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
