@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "테일러 급수",
-            "content": "$$ f(x) = sum_{n=0}^ infty cfrac{f^{((0)}(0)}{n!}(x-a)^a $$",
+            "content": "$$ f(x) = sum_{n=0}^ infty cfrac{f^{(n)}(a)}{n!}(x-a)^a $$",
             "url": "https://stahangryum.github.io/stahangryum/%EB%AF%B8%EB%B6%84%EC%A0%81%EB%B6%84%ED%95%99/2021/09/30/Untitled.html",
             "relUrl": "/%EB%AF%B8%EB%B6%84%EC%A0%81%EB%B6%84%ED%95%99/2021/09/30/Untitled.html",
             "date": " • Sep 30, 2021"
