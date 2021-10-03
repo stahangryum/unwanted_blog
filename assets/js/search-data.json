@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "Monte Carlo Integration in Python",
-            "content": "import numpy import matplotlib.pyplot as plt .",
+            "content": "&#47788;&#53580; &#52852;&#47484;&#47196; &#51201;&#48516;(Monte Carlo integration) . import numpy import matplotlib.pyplot as plt .",
             "url": "https://stahangryum.github.io/stahangryum/python/2021/10/03/.html",
             "relUrl": "/python/2021/10/03/.html",
             "date": " • Oct 3, 2021"
