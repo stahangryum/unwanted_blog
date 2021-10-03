@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>R : 소개 | stahangryum</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="R : 소개" />
+<meta name="author" content="Kim Jeewoo" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="전북대학교 R입문 1주차 필기" />
+<meta property="og:description" content="전북대학교 R입문 1주차 필기" />
+<link rel="canonical" href="https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/07/R%EC%9E%85%EB%AC%B8-1%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html" />
+<meta property="og:url" content="https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/07/R%EC%9E%85%EB%AC%B8-1%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html" />
+<meta property="og:site_name" content="stahangryum" />
+<meta property="og:image" content="https://stahangryum.github.io/stahangryum/images/r_logo.PNG" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-07T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-09-07T00:00:00-05:00","url":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/07/R%EC%9E%85%EB%AC%B8-1%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html","@type":"BlogPosting","image":"https://stahangryum.github.io/stahangryum/images/r_logo.PNG","headline":"R : 소개","dateModified":"2021-09-07T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/09/07/R%EC%9E%85%EB%AC%B8-1%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html"},"author":{"@type":"Person","name":"Kim Jeewoo"},"description":"전북대학교 R입문 1주차 필기","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/stahangryum/">stahangryum</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/stahangryum/about/">About Me</a><a class="page-link" href="/stahangryum/search/">Search</a><a class="page-link" href="/stahangryum/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">R : 소개</h1><p class="page-description">전북대학교 R입문 1주차 필기</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-07T00:00:00-05:00" itemprop="datePublished">
+        Sep 7, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Kim Jeewoo</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/stahangryum/categories/#Introduction to R">Introduction to R</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/stahangryum/stahangryum/tree/master/_notebooks/2021-09-07-R입문 1주차 필기.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/stahangryum/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/stahangryum/stahangryum/master?filepath=_notebooks%2F2021-09-07-R%EC%9E%85%EB%AC%B8+1%EC%A3%BC%EC%B0%A8+%ED%95%84%EA%B8%B0.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/stahangryum/stahangryum/blob/master/_notebooks/2021-09-07-R입문 1주차 필기.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#What-is-R?">What is R? </a></li>
+<li class="toc-entry toc-h1"><a href="#Problem-<sup id='fnref--1' class='footnote-ref'><a href='#fn--1'>-1</a></sup>">Problem 1 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Solution-I">Solution I </a></li>
+<li class="toc-entry toc-h2"><a href="#Solution-II">Solution II </a></li>
+<li class="toc-entry toc-h2"><a href="#Solution-III">Solution III </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-09-07-R입문 1주차 필기.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="What-is-R?">
+<a class="anchor" href="#What-is-R?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is R?<a class="anchor-link" href="#What-is-R?"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>R is a language and environment for statistical computing and graphics.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>R은 좋은 계산기이다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-&lt;sup id='fnref--1' class='footnote-ref'&gt;&lt;a href='#fn--1'&gt;-1&lt;/a&gt;&lt;/sup&gt;">
+<a class="anchor" href="#Problem-&lt;sup%20id='fnref--1'%20class='footnote-ref'&gt;&lt;a%20href='#fn--1'&gt;-1&lt;/a&gt;&lt;/sup&gt;" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem <sup id="fnref-1" class="footnote-ref"><a href="#fn-1">1</a></sup><a class="anchor-link" href="#Problem-&lt;sup%20id='fnref--1'%20class='footnote-ref'&gt;&lt;a%20href='#fn--1'&gt;-1&lt;/a&gt;&lt;/sup&gt;"> </a>
+</h1>
+<p><img src="/stahangryum/images/copied_from_nb/image/200512math26.PNG" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-I">
+<a class="anchor" href="#Solution-I" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution I<a class="anchor-link" href="#Solution-I"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$I_d = I_0 2^{-0.25d}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\cfrac{I_d}{I_0} = 0.25 = 2^{-2} = 2^{-0.25d}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$-2 = -0.25d$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$d = 8m$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<p>갑 : 음.. 근데 8m 말고 11m일 때랑 7m일 때의 비율도 계산해줘</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>갑 : 아 아니다 그냥 1m부터 40m까지 다 구해줘!!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>을 : ?? (일일이 대입하면 너무 힘든데... 어쩌지?)</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-II">
+<a class="anchor" href="#Solution-II" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution II<a class="anchor-link" href="#Solution-II"> </a>
+</h2>
+<blockquote>
+<p>$d$를 입력하면 $\cfrac{I_d}{I_0}$가 계산되는 아래와 같은 함수를 만들고 싶다.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\cfrac{I_d}{I_0}=y=f(d)=2^{-0.25d}$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">d</span><span class="p">){</span>
+    <span class="n">y</span><span class="o">=</span><span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="m">-0.25</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">y</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="m">8</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 0.25
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="m">11</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 0.1486509
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="m">7</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 0.2973018
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">d</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">40</span><span class="p">){</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 0.8408964
+[1] 0.7071068
+[1] 0.5946036
+[1] 0.5
+[1] 0.4204482
+[1] 0.3535534
+[1] 0.2973018
+[1] 0.25
+[1] 0.2102241
+[1] 0.1767767
+[1] 0.1486509
+[1] 0.125
+[1] 0.1051121
+[1] 0.08838835
+[1] 0.07432544
+[1] 0.0625
+[1] 0.05255603
+[1] 0.04419417
+[1] 0.03716272
+[1] 0.03125
+[1] 0.02627801
+[1] 0.02209709
+[1] 0.01858136
+[1] 0.015625
+[1] 0.01313901
+[1] 0.01104854
+[1] 0.009290681
+[1] 0.0078125
+[1] 0.006569503
+[1] 0.005524272
+[1] 0.00464534
+[1] 0.00390625
+[1] 0.003284752
+[1] 0.002762136
+[1] 0.00232267
+[1] 0.001953125
+[1] 0.001642376
+[1] 0.001381068
+[1] 0.001161335
+[1] 0.0009765625
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>엄청 편하다..</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-III">
+<a class="anchor" href="#Solution-III" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution III<a class="anchor-link" href="#Solution-III"> </a>
+</h2>
+<blockquote>
+<p>$y=f(d)$의 그래프를 구하고 싶다.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">d</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="m">-0.25</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">"l"</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">h</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+<span class="c1">#col = 색, lwd = 굵기, lty = 점선</span>
+<span class="c1">#h = 수평선, v = 수직선</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAAM1BMVEUAAABNTU1oaGh8fHyM%0AjIyampqnp6eysrK9vb3Hx8fQ0NDZ2dnfU2vh4eHp6enw8PD///9O34MyAAAACXBIWXMAABJ0%0AAAASdAHeZh94AAAV80lEQVR4nO3daVviWhaA0QQQpwb8/7+2AbUuTgxh54xrffBST3e5FfJ6%0AMmENb8DdhtxfALRASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBA%0ASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBA%0ASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBA%0ASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBA%0ASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBASBBA%0ASBBASBBASBBASBBASBBASBBASBBASBBASBBASBAgQUgDVGbCVh4fToYREElIEEBIEEBIEEBI%0AEEBIEEBIEEBIEEBIECBpSK+Pq+NF4NX6da4RkEXCkHaLkxsqlrOMgEwShrQexufN8dH2ZRzW%0Ac4yATBKGNA6bf483wzjHCMgkYUhfbpA9f7eskKiMFQkCpD1GetkeHzlGojUpT38vT87aLXaz%0AjIA80l5HWh+vI42rR9eRaIs7GyCAkCBAXSFN+h0TML9cIU26jjTxt7XA7MoJ6YrfbTT19x7B%0A3KratZv8G8RgZkKCAFWFpCRKVVdIjpIoVJUhKYnSVBaSJYkyJX0/0tW/vf9SSEqiMAlDeooI%0ASUkUKeWu3WY8/ytPrhohJEqU9Bhpc/7tfNeNEBIFSnuy4enk3eaTRyiJ8tR21u7Nzh0lEhIE%0AqDAkJVGeGkNylERxhAQBqgxJSZSm5pCURDGEBAHqDElJFKbSkJREWYQEAWoNyYk7ilJtSEqi%0AJLWHpCSKICQIUG9ISqIgFYfkKIly1B+SkihAzSFZkihGAyEpifyqDsmSRClaCElJZFd3SEqi%0AEEKCAJWHpCTKUHtISqIIQoIA1YfkFDglqD8kJVGAZkJSEjkJCQI0EJKSyK+FkBwlkV1DISmJ%0A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%0Aw8+Urt8QM7yx7+cfwkbAfSanZEWCL6atS2mPkV62x0eOkSjahJRSnv5ennxhi925/6eQyOzW%0AltJeR1ofryONq0fXkSjdbbt47myAv9yQkpDgjGtLEhKcd1VJQoKLhAQxhAQxHCPBzIQEAYQE%0AAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAYQEAQoN%0ACSozYSuPD6eK2eabHzpfSOabX9onq2i2+eYLyXzzS5svJPPNL+2TVTTbfPOFZL75pc0Xkvnm%0Al/bJKpptvvlCMt/80uYLyXzzS/tkFc023/xmQoJmCAkCCAkCCAkCCAkCCAkCCAkCCAkCCAkC%0ACAkCCAkCCAkCCAkCCAkCCAkCCAkCZAtpPQ7jepdr+tvb0yLv/L3XnD/FNg/D8LDNNn6X9fV/%0A+nzm476KXK/l8vhL/xeZpu+fweP8MWdJuzFjSC95v//t+D4/T8mbz39uInArzPRavg7j5m0z%0ADq95xu+fyofd4QfTQ6b5B6sp/3pIlHH//O9WwzrT+Ifj5HWe53+/3b0/85FbYabXcj287D8+%0AD495xu834uN/cm7Kz5P+GZ6w4YcNeTeMmeYPGZ//p2H5MTdyK8z0Wq6Gw6K+GVZ5xn/KuClv%0A/72cOTwMm2yzDz72arOEvP8Z8vHMR26FmV7LnD+R/rMbltlmL4dtxu9+Mbw9jsfd2zweP3bt%0AcuyRbL5vfiGvQ9chPR2X9iweh+ec3/0wrI4H+9m+gKfD2YbxKdN0IYXajtn2LI+7E1lDOpxs%0AeMh2jLr/QXKQa7yQIu3GfDt2i8OJ56whHY6RttmuPzwddu32IWdaktoJaSwgpGW+q1gPx33K%0ArCGd/ie9xXA4PNvlCvnj+47cCrOetdtmPGu3XSzzXde/59+hD5H79H/mkL+ctYvZCjN9J4/H%0AH8kv2S4I7kfn268rIKT353+b7Ul4XwuyXcf6eN4jt8JO72zItwmdyHoVa7E7HKM8Z5q/Hg53%0AuK1z/SBt586G/U7yQbat+SHzinCUc/pj3uf/4y63XPM/n/nArTDXa/l+92+m4Sf7Vtm+grfM%0Ap1peljmf/4/7rnMN/3zmA7dC70eCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKC%0AAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKCAEKC%0AAEKCAEKCAEKCAEKqWd5/cZATXomaCakYXomaCakYXomaCakYXolKrcdhLaRyeCXqtBz2VkIq%0AhleiSs/DuHnbjEIqhleiSqvhdf/xRUjF8EpU6aMgIRXDK1ElIZXGK1ElIZXGK1Gl1fCy//gq%0ApGJ4Jar04qxdYbwSdVodriM9CKkYXolKPbqzoSheCQggJAggJAggJAggJAggJAggJAggJAgg%0AJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAggJAgg%0AJAggJAggJAggJAggJAjwf6il2KcUnm/0AAAAAElFTkSuQmCC" width="420" height="420">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="footnotes"><p id="fn-1">1. 2005 예비평가(나) 12월/평가원26(고3)<a href="#fnref-1" class="footnote footnotes">↩</a></p></div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="stahangryum/stahangryum"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/stahangryum/introduction%20to%20r/2021/09/07/R%EC%9E%85%EB%AC%B8-1%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/stahangryum/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/stahangryum/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/stahangryum/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/stahangryum" title="stahangryum"><svg class="svg-icon grey"><use xlink:href="/stahangryum/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
