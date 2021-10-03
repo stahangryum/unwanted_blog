@@ -13,10 +13,10 @@
   
     
         ,"post1": {
-            "title": "Title",
-            "content": "",
-            "url": "https://stahangryum.github.io/stahangryum/2021/10/03/.html",
-            "relUrl": "/2021/10/03/.html",
+            "title": "Monte Carlo Integration in Python",
+            "content": "import numpy import matplotlib.pyplot as plt .",
+            "url": "https://stahangryum.github.io/stahangryum/python/2021/10/03/.html",
+            "relUrl": "/python/2021/10/03/.html",
             "date": " • Oct 3, 2021"
         }
         
