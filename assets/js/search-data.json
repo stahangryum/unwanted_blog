@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "통",
-            "content": "",
-            "url": "https://stahangryum.github.io/stahangryum/2021/10/05/%ED%86%B5%EA%B3%84%ED%95%99-%EC%9E%85%EB%AC%B8-%ED%95%84%EA%B8%B0.html",
-            "relUrl": "/2021/10/05/%ED%86%B5%EA%B3%84%ED%95%99-%EC%9E%85%EB%AC%B8-%ED%95%84%EA%B8%B0.html",
+            "title": "Taylor & Maclaurin Series",
+            "content": "from math import * import numpy as np import pandas as pd . &#54217;&#44512;&#44284; &#48708;&#50984;&#50640; &#45824;&#54620; &#52628;&#47200; . 표본 통계량의 분포가 정규분포일 때 신뢰구간은 다음과 같이 구한다. . 표본 통계량 $ pm z^* cdot SE$ . &#48708;&#50984;&#50640; &#45824;&#54620; &#52628;&#47200; . &#48708;&#50984;&#50640; &#45824;&#54620; &#49888;&#47280;&#44396;&#44036; . $ np geq 10, ,n(1-p) geq 10$이면 정규분포로 근사할 수 있다. . 표본 통계량 $ pm z^* cdot SE$ . $ hat{p} pm z^* cdot SE$ . $ hat{p} pm z^* sqrt{ dfrac{ hat{p}(1- hat{p})}{n}}$ . def ci_single_p(p, z, n): SE = sqrt(p*(1-p)/n) print(&quot;({0}, {1})&quot;.format(p-z*SE, p+z*SE)) return . ci_single_p(0.52, 1.96, 100) . (0.42207843138511314, 0.6179215686148869) . def .",
+            "url": "https://stahangryum.github.io/stahangryum/introduction%20to%20statistics/2021/10/05/%ED%86%B5%EA%B3%84%ED%95%99-%EC%9E%85%EB%AC%B8-%ED%8F%89%EA%B7%A0%EA%B3%BC-%EB%B9%84%EC%9C%A8%EC%97%90-%EB%8C%80%ED%95%9C-%EC%B6%94%EB%A1%A0.html",
+            "relUrl": "/introduction%20to%20statistics/2021/10/05/%ED%86%B5%EA%B3%84%ED%95%99-%EC%9E%85%EB%AC%B8-%ED%8F%89%EA%B7%A0%EA%B3%BC-%EB%B9%84%EC%9C%A8%EC%97%90-%EB%8C%80%ED%95%9C-%EC%B6%94%EB%A1%A0.html",
             "date": " • Oct 5, 2021"
         }
         
