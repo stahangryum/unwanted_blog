@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -140,8 +140,11 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#2.1-비율에-대한-추론">2.1 비율에 대한 추론 </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#2.1-CI-비율에-대한-신뢰구간">2.1-CI 비율에 대한 신뢰구간 </a></li>
-<li class="toc-entry toc-h3"><a href="#표본-크기-결정하기">표본 크기 결정하기 </a></li>
+<li class="toc-entry toc-h3"><a href="#2.1-CI-비율에-대한-신뢰구간">2.1-CI 비율에 대한 신뢰구간 </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#표본-크기-결정하기">표본 크기 결정하기 </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h3"><a href="#2.1-HT-비율에-대한-가설검증">2.1-HT 비율에 대한 가설검증 </a>
 <ul>
 <li class="toc-entry toc-h4"><a href="#$SE$는-어떻게-추정할-것인가?">$SE$는 어떻게 추정할 것인가? </a></li>
@@ -149,10 +152,21 @@ window.onload = wrap_img;
 </li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#2.2-평균에-대한-추론">2.2 평균에 대한 추론 </a></li>
+<li class="toc-entry toc-h2"><a href="#2.2-평균에-대한-추론">2.2 평균에 대한 추론 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#2.2-CI-평균에-대한-신뢰구간">2.2-CI 평균에 대한 신뢰구간 </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#표본-크기-결정하기">표본 크기 결정하기 </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#2.2-HT-평균에-대한-가설검증">2.2-HT 평균에 대한 가설검증 </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#2.3-비율-차이에-대한-추론">2.3 비율 차이에 대한 추론 </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#2.3-D.-두-개의-비율-차이의-분포">2.3-D. 두 개의 비율 차이의 분포 </a></li>
+<li class="toc-entry toc-h3"><a href="#2.4-CI.-두-개의-비율-차이에-대한-신뢰구간">2.4-CI. 두 개의 비율 차이에 대한 신뢰구간 </a></li>
+<li class="toc-entry toc-h3"><a href="#2.3-HT-비율-차이에-대한-가설검증">2.3-HT 비율 차이에 대한 가설검증 </a></li>
 </ul>
 </li>
 </ul>
@@ -307,9 +321,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="표본-크기-결정하기">
+<h4 id="표본-크기-결정하기">
 <a class="anchor" href="#%ED%91%9C%EB%B3%B8-%ED%81%AC%EA%B8%B0-%EA%B2%B0%EC%A0%95%ED%95%98%EA%B8%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>표본 크기 결정하기<a class="anchor-link" href="#%ED%91%9C%EB%B3%B8-%ED%81%AC%EA%B8%B0-%EA%B2%B0%EC%A0%95%ED%95%98%EA%B8%B0"> </a>
-</h3>
+</h4>
 </div>
 </div>
 </div>
@@ -572,7 +586,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$n \geq 30$</p>
+<p>$\dfrac{\sigma}{\sqrt{n}}$대신$\dfrac{s}{\sqrt{n}}$을 이용하여 표준화한 통계량의 분포는 표준정규분포가 아닌 <strong>t-분포</strong>이다.</p>
 
 </div>
 </div>
@@ -580,11 +594,222 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>후술</p>
+<p>$SE = \dfrac{s}{\sqrt{n}}$</p>
 
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">se_single_mean</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'SE :'</span><span class="p">,</span> <span class="n">s</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="k">return</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.2-CI-평균에-대한-신뢰구간">
+<a class="anchor" href="#2.2-CI-%ED%8F%89%EA%B7%A0%EC%97%90-%EB%8C%80%ED%95%9C-%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.2-CI 평균에 대한 신뢰구간<a class="anchor-link" href="#2.2-CI-%ED%8F%89%EA%B7%A0%EC%97%90-%EB%8C%80%ED%95%9C-%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>표준정규분포 대신에 t-분포를 사용하기 때문에 $z^*$대신에 $t^*$를 사용한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>표본 통계량 $\pm\,z^*\cdot\dfrac{\sigma}{\sqrt{n}}\approx $ 표본 통계량 $\pm\,t^*\cdot\dfrac{s}{\sqrt{n}} $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\bar{x} \pm t^* \cdot \dfrac{s}{\sqrt{n}}$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ci_single_mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"신뢰구간 : (</span><span class="si">{0}</span><span class="s2">, </span><span class="si">{1}</span><span class="s2">)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">x</span><span class="o">+</span><span class="n">t</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+    <span class="k">return</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ci_single_mean</span><span class="p">(</span><span class="mf">369.52</span><span class="p">,</span> <span class="mf">2.042</span><span class="p">,</span> <span class="mf">16.16</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>신뢰구간 : (363.593254927903, 375.446745072097)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="표본-크기-결정하기">
+<a class="anchor" href="#%ED%91%9C%EB%B3%B8-%ED%81%AC%EA%B8%B0-%EA%B2%B0%EC%A0%95%ED%95%98%EA%B8%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>표본 크기 결정하기<a class="anchor-link" href="#%ED%91%9C%EB%B3%B8-%ED%81%AC%EA%B8%B0-%EA%B2%B0%EC%A0%95%ED%95%98%EA%B8%B0"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$ME = t^*\dfrac{s}{\sqrt{n}}$</p>
+<p>아직 표본이 없기 때문에 표준편차를 모른다. 따라서 $s$ 대신 $\tilde{\sigma}$로 추정한다.</p>
+<p>$\tilde{\sigma}$를 합리적으로 추정하는 4가지 방법</p>
+<ul>
+<li>선형 연구의 표준편차를 사용하거나 유사 모집단의 표본으로부터 $\tilde{\sigma}$를 추정한다.</li>
+<li>사전 조사로 작은 표본을 얻어 $\tilde{\sigma}$를 추정한다.</li>
+<li>모집단에서 범위(최댓값-최솟값)를 추정한다. 범위를 4로 나눈 값을 $\tilde{\sigma}$로 사용한다. 즉 $\tilde{\sigma} \approx \text{범위} / 4$이다. 이는 대부분의값들이 평균에서 두 배의 표준편차 안에 있을 것이라고 가정하는 것이다.</li>
+<li>$\tilde{\sigma}$를 합리적으로 추측한다.</li>
+</ul>
+<p>$n = \left(\dfrac{t^*\cdot s}{ME}\right)^2 \approx \left(\dfrac{t^*\cdot \tilde{\sigma}}{ME}\right)^2$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.2-HT-평균에-대한-가설검증">
+<a class="anchor" href="#2.2-HT-%ED%8F%89%EA%B7%A0%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.2-HT 평균에 대한 가설검증<a class="anchor-link" href="#2.2-HT-%ED%8F%89%EA%B7%A0%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$z = \cfrac{\text{표본 통계량 - 영가설의 모수값}}{\text{표준오차}}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$ z = \cfrac{\bar{x} - \mu_0}{SE}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$ z = \dfrac{\bar{x} - \mu_0}{\dfrac{s}{\sqrt{n}}}$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_single_mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu_0</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"t :"</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">mu_0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+    <span class="k">return</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_single_mean</span><span class="p">(</span><span class="mf">37.5</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mf">38.2</span><span class="p">,</span> <span class="mi">53</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>t : 0.47644698228275634
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -603,6 +828,268 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$SE = \sqrt{\dfrac{p_1(1-p_1)}{n_1} + \dfrac{p_2(1-p_2)}{n_2}}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$n_1p_1 \geq 10,\, n_1(1-p_1) \geq 10,\, n_2p_2 \geq 10,\, n_2(1-p_2) \geq 10$이면 정규분포로 근사할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.4-CI.-두-개의-비율-차이에-대한-신뢰구간">
+<a class="anchor" href="#2.4-CI.-%EB%91%90-%EA%B0%9C%EC%9D%98-%EB%B9%84%EC%9C%A8-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%9C-%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.4-CI. 두 개의 비율 차이에 대한 신뢰구간<a class="anchor-link" href="#2.4-CI.-%EB%91%90-%EA%B0%9C%EC%9D%98-%EB%B9%84%EC%9C%A8-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%9C-%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$n_1p_1 \geq 10,\, n_1(1-p_1) \geq 10,\, n_2p_2 \geq 10,\, n_2(1-p_2) \geq 10$이면 정규분포로 근사할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>표본 통계량 $\pm z^* \cdot SE$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$(\hat{p}_1 - \hat{p}_2) \pm z^*\sqrt{\dfrac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \dfrac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">se_dif_p</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"SE :"</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">p1</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p1</span><span class="p">)</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="n">p2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p2</span><span class="p">)</span><span class="o">/</span><span class="n">n2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ci_dif_p</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="n">SE</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">p1</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p1</span><span class="p">)</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="n">p2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p2</span><span class="p">)</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span>
+    <span class="n">ME</span> <span class="o">=</span> <span class="n">z</span><span class="o">*</span><span class="n">SE</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"SE :"</span><span class="p">,</span> <span class="n">SE</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"ME :"</span><span class="p">,</span> <span class="n">ME</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"신뢰구간 : (</span><span class="si">{0}</span><span class="s2">, </span><span class="si">{1}</span><span class="s2">)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p1</span><span class="o">-</span><span class="n">p2</span><span class="o">-</span><span class="n">z</span><span class="o">*</span><span class="n">SE</span><span class="p">,</span> <span class="n">p1</span><span class="o">-</span><span class="n">p2</span><span class="o">+</span><span class="n">z</span><span class="o">*</span><span class="n">SE</span><span class="p">))</span>
+    <span class="k">return</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">se_dif_p</span><span class="p">(</span><span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.68</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>SE : 0.03359365019365019
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ci_dif_p</span><span class="p">(</span><span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.68</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mf">1.96</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>SE : 0.03359365019365019
+ME : 0.06584355437955437
+신뢰구간 : (-0.025843554379554448, 0.1058435543795543)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.3-HT-비율-차이에-대한-가설검증">
+<a class="anchor" href="#2.3-HT-%EB%B9%84%EC%9C%A8-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.3-HT 비율 차이에 대한 가설검증<a class="anchor-link" href="#2.3-HT-%EB%B9%84%EC%9C%A8-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>합동 비율</strong> $\hat{p} = \cfrac{X_1 + X_2}{n_1 + n_2}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$SE = \sqrt{\cfrac{\hat{p}(1-\hat{p})}{n_1} + \cfrac{\hat{p}(1-\hat{p})}{n_2}}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>영가설은 보통 $H_0 : p_1 = p_2$ 또는 $H_0 : p_1 - p_2 = 0$이다.
+이 경수 영가설의 모수값은 0이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$z = \cfrac{\text{표본 통계량 - 영가설의 모수값}}{\text{표준오차}}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$z = \cfrac{(\hat{p}_1 - \hat{p}_2)}{SE}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$z = \cfrac{(\hat{p}_1 - \hat{p}_2)}{\sqrt{\cfrac{\hat{p}(1-\hat{p})}{n_1} + \cfrac{\hat{p}(1-\hat{p})}{n_2}}}$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_dif_p</span><span class="p">(</span><span class="n">p_1</span><span class="p">,</span> <span class="n">p_2</span><span class="p">,</span> <span class="n">p_합</span><span class="p">,</span> <span class="n">n_1</span><span class="p">,</span> <span class="n">n_2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"z :"</span><span class="p">,(</span><span class="n">p_1</span> <span class="o">-</span> <span class="n">p_2</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">p_합</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p_합</span><span class="p">)</span><span class="o">/</span><span class="n">n_1</span> <span class="o">+</span> <span class="n">p_합</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p_합</span><span class="p">)</span><span class="o">/</span><span class="n">n_2</span><span class="p">))</span>
+    <span class="k">return</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_dif_p</span><span class="p">(</span><span class="mf">0.768</span><span class="p">,</span> <span class="mf">0.463</span><span class="p">,</span> <span class="mf">0.631</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">67</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>z : 3.838160838927777
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
