@@ -169,6 +169,11 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#2.3-HT-비율-차이에-대한-가설검증">2.3-HT 비율 차이에 대한 가설검증 </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#2.4-평균-차이에-대한-추론">2.4 평균 차이에 대한 추론 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#2.4-D-평균-차이의-분포">2.4-D 평균 차이의 분포 </a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><!--
@@ -1080,6 +1085,82 @@ ME : 0.06584355437955437
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>z : 3.838160838927777
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.4-평균-차이에-대한-추론">
+<a class="anchor" href="#2.4-%ED%8F%89%EA%B7%A0-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%9C-%EC%B6%94%EB%A1%A0" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.4 평균 차이에 대한 추론<a class="anchor-link" href="#2.4-%ED%8F%89%EA%B7%A0-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%9C-%EC%B6%94%EB%A1%A0"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.4-D-평균-차이의-분포">
+<a class="anchor" href="#2.4-D-%ED%8F%89%EA%B7%A0-%EC%B0%A8%EC%9D%B4%EC%9D%98-%EB%B6%84%ED%8F%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.4-D 평균 차이의 분포<a class="anchor-link" href="#2.4-D-%ED%8F%89%EA%B7%A0-%EC%B0%A8%EC%9D%B4%EC%9D%98-%EB%B6%84%ED%8F%AC"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$SE = \sqrt{\dfrac{\sigma_1^2}{n_1} + \dfrac{\sigma_2^2}{n_2}}$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">se_dif_mean</span><span class="p">(</span><span class="n">sigma1</span><span class="p">,</span> <span class="n">sigma2</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"SE :"</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">sigma1</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="n">sigma2</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">n2</span><span class="p">))</span>
+    <span class="k">return</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">se_dif_mean</span><span class="p">(</span><span class="mf">8.8</span><span class="p">,</span> <span class="mf">7.41</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>SE : 2.387942629126588
 </pre>
 </div>
 </div>
