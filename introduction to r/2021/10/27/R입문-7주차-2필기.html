@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -156,6 +156,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#과제">과제 </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Solution-VIII">Solution VIII </a></li>
+<li class="toc-entry toc-h2"><a href="#Solution-IX">Solution IX </a></li>
+<li class="toc-entry toc-h2"><a href="#지금까지-풀이-정리">지금까지 풀이 정리 </a></li>
 </ul>
 </li>
 </ul><!--
@@ -998,7 +1000,12 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>%*% 연산자 : 행렬의 곱셈</li>
+<li>
+<p>%*% 연산자 : 행렬의 곱셈</p>
+</li>
+<li>
+<p>a %in% c(4, 9) : a의 모든 원소를 조사하고 그 원소가 4 또는 9 이면 TRUE, 그렇지 않으면 FALSE</p>
+</li>
 </ul>
 
 </div>
@@ -1014,41 +1021,11 @@ window.onload = wrap_img;
 <div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
 
 <span class="n">a1</span> <span class="o">&lt;-</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a2</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">dim</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="c1">#A</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="c1">#A</span>
 <span class="nf">dim</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">5</span><span class="p">)</span> <span class="c1">#A^T</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">a1</span> <span class="o">%*%</span> <span class="n">a2</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">a1</span> <span class="o">%*%</span> <span class="n">a2</span>
 <span class="n">A</span> <span class="c1">#대칭행렬이다.</span>
 </pre></div>
 
@@ -1084,6 +1061,195 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/stahangryum/images/copied_from_nb/image/20111103matrix.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>upper.tri()</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">upper.tri</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1]  [,2]  [,3]  [,4]  [,5] 
+[1,] FALSE  TRUE  TRUE  TRUE  TRUE
+[2,] FALSE FALSE  TRUE  TRUE  TRUE
+[3,] FALSE FALSE FALSE  TRUE  TRUE
+[4,] FALSE FALSE FALSE FALSE  TRUE
+[5,] FALSE FALSE FALSE FALSE FALSE</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="o">!</span><span class="n">A</span><span class="p">[</span><span class="nf">upper.tri</span><span class="p">(</span><span class="n">A</span><span class="p">)]</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">9</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-IX">
+<a class="anchor" href="#Solution-IX" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution IX<a class="anchor-link" href="#Solution-IX"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="nf">outer</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">A</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1] [,2] [,3] [,4] [,5]
+[1,] 1    3    2    3    2   
+[2,] 3    9    6    9    6   
+[3,] 2    6    4    6    4   
+[4,] 3    9    6    9    6   
+[5,] 2    6    4    6    4   </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="o">!</span><span class="n">A</span><span class="p">[</span><span class="nf">upper.tri</span><span class="p">(</span><span class="n">A</span><span class="p">)]</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">9</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="지금까지-풀이-정리">
+<a class="anchor" href="#%EC%A7%80%EA%B8%88%EA%B9%8C%EC%A7%80-%ED%92%80%EC%9D%B4-%EC%A0%95%EB%A6%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>지금까지 풀이 정리<a class="anchor-link" href="#%EC%A7%80%EA%B8%88%EA%B9%8C%EC%A7%80-%ED%92%80%EC%9D%B4-%EC%A0%95%EB%A6%AC"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>풀이 7 : 데이터프레임 활용 $\to$ 사용하기 쉽고 확장성이 좋다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>풀이 8, 9 : 코드가 간결함 / 오류가 발생할 수 있음</p>
 
 </div>
 </div>
