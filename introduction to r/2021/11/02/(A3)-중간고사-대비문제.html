@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -1040,6 +1040,47 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">salary</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">19</span><span class="p">){</span>
+    <span class="n">salary</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="n">salary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="m">1.08</span>
+<span class="p">}</span>
+<span class="n">salary</span><span class="p">[</span><span class="m">20</span><span class="o">:</span><span class="m">28</span><span class="p">]</span> <span class="o">=</span> <span class="n">salary</span><span class="p">[</span><span class="m">19</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="m">2</span><span class="o">/</span><span class="m">3</span><span class="p">)</span>
+
+<span class="nf">sum</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+
+<span class="c1"># 총합은 65.4223802341062a이다.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+65.4223802341062
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1060,6 +1101,44 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>_<span class="n">a</span><span class="o">=</span> <span class="m">3</span>
+_<span class="n">a</span>
+
+<span class="c1"># _a는 변수 이름으로 가능하지 않다.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+Error in parse(text = x, srcfile = src): &lt;text&gt;:1:1: 예상하지 못한 입력입니다.
+1: _
+    ^
+Traceback:
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1094,6 +1173,46 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1.1</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2.1</span><span class="p">)</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="o">-</span><span class="n">x1</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="o">-</span><span class="n">y1</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">'RED'</span><span class="p">,</span> <span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-2</span><span class="p">,</span><span class="m">2</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-3</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+<span class="nf">points</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">'BLUE'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0AEgT+By0EIkJ3J6n1AAAAAElFTkSuQmCC" width="420" height="420">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1136,6 +1255,228 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>-- <span class="ansi-bold">Attaching packages</span> ------------------------------------------------------------------------------- tidyverse 1.3.1 --
+
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">ggplot2</span> 3.3.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">purrr  </span> 0.3.4
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tibble </span> 3.1.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">dplyr  </span> 1.0.7
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tidyr  </span> 1.1.4     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">stringr</span> 1.4.0
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">readr  </span> 2.0.2     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">forcats</span> 0.5.1
+
+-- <span class="ansi-bold">Conflicts</span> ---------------------------------------------------------------------------------- tidyverse_conflicts() --
+<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">filter()</span> masks <span class="ansi-blue-fg">stats</span>::filter()
+<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">lag()</span>    masks <span class="ansi-blue-fg">stats</span>::lag()
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">M</span> <span class="o">=</span> <span class="m">3</span>
+
+
+<span class="n">A</span> <span class="o">=</span> <span class="nf">expand.grid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">Var1</span> <span class="o">&lt;</span> <span class="n">Var2</span><span class="p">)</span>
+<span class="n">A</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A data.frame: 25 × 3</caption>
+<thead>
+	<tr>
+<th scope="col">Var1</th>
+<th scope="col">Var2</th>
+<th scope="col">C</th>
+</tr>
+	<tr>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;lgl&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<td>1</td>
+<td>1</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>1</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>1</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>1</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>1</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>1</td>
+<td>3</td>
+<td> TRUE</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>3</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>3</td>
+<td> TRUE</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>3</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>3</td>
+<td> TRUE</td>
+</tr>
+	<tr>
+<td>1</td>
+<td>2</td>
+<td> TRUE</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>2</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>2</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>2</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>2</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>1</td>
+<td>3</td>
+<td> TRUE</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>3</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>3</td>
+<td> TRUE</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>3</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>3</td>
+<td> TRUE</td>
+</tr>
+	<tr>
+<td>1</td>
+<td>2</td>
+<td> TRUE</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>2</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>2</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>2</td>
+<td>FALSE</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>2</td>
+<td>FALSE</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
