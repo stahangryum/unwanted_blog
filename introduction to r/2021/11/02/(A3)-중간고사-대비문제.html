@@ -1310,7 +1310,8 @@ Traceback:
 
 <span class="n">A</span> <span class="o">=</span> <span class="nf">expand.grid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 <span class="n">A</span> <span class="o">=</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">Var1</span> <span class="o">&lt;</span> <span class="n">Var2</span><span class="p">)</span>
-<span class="n">A</span>
+<span class="n">A</span> <span class="o">=</span> <span class="nf">filter</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="o">==</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">A</span><span class="p">[,</span><span class="m">3</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -1324,149 +1325,7 @@ Traceback:
 
 
 <div class="output_html rendered_html output_subarea ">
-<table class="dataframe">
-<caption>A data.frame: 25 × 3</caption>
-<thead>
-	<tr>
-<th scope="col">Var1</th>
-<th scope="col">Var2</th>
-<th scope="col">C</th>
-</tr>
-	<tr>
-<th scope="col">&lt;dbl&gt;</th>
-<th scope="col">&lt;dbl&gt;</th>
-<th scope="col">&lt;lgl&gt;</th>
-</tr>
-</thead>
-<tbody>
-	<tr>
-<td>1</td>
-<td>1</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>3</td>
-<td>1</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>2</td>
-<td>1</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>3</td>
-<td>1</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>2</td>
-<td>1</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>1</td>
-<td>3</td>
-<td> TRUE</td>
-</tr>
-	<tr>
-<td>3</td>
-<td>3</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>2</td>
-<td>3</td>
-<td> TRUE</td>
-</tr>
-	<tr>
-<td>3</td>
-<td>3</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>2</td>
-<td>3</td>
-<td> TRUE</td>
-</tr>
-	<tr>
-<td>1</td>
-<td>2</td>
-<td> TRUE</td>
-</tr>
-	<tr>
-<td>3</td>
-<td>2</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>2</td>
-<td>2</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>3</td>
-<td>2</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>2</td>
-<td>2</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>1</td>
-<td>3</td>
-<td> TRUE</td>
-</tr>
-	<tr>
-<td>3</td>
-<td>3</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>2</td>
-<td>3</td>
-<td> TRUE</td>
-</tr>
-	<tr>
-<td>3</td>
-<td>3</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>2</td>
-<td>3</td>
-<td> TRUE</td>
-</tr>
-	<tr>
-<td>1</td>
-<td>2</td>
-<td> TRUE</td>
-</tr>
-	<tr>
-<td>3</td>
-<td>2</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>2</td>
-<td>2</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>3</td>
-<td>2</td>
-<td>FALSE</td>
-</tr>
-	<tr>
-<td>2</td>
-<td>2</td>
-<td>FALSE</td>
-</tr>
-</tbody>
-</table>
-
+8
 </div>
 
 </div>
