@@ -1,0 +1,2131 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>R입문 중간고사 | stahangryum</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="R입문 중간고사" />
+<meta name="author" content="최규빈" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://stahangryum.github.io/stahangryum/2021/11/03/_01_01_R%EC%9E%85%EB%AC%B8%EC%A4%91%EA%B0%84%EA%B3%A0%EC%82%AC-%EA%B9%80%EC%A7%80%EC%9A%B0.html" />
+<meta property="og:url" content="https://stahangryum.github.io/stahangryum/2021/11/03/_01_01_R%EC%9E%85%EB%AC%B8%EC%A4%91%EA%B0%84%EA%B3%A0%EC%82%AC-%EA%B9%80%EC%A7%80%EC%9A%B0.html" />
+<meta property="og:site_name" content="stahangryum" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-03T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-11-03T00:00:00-05:00","url":"https://stahangryum.github.io/stahangryum/2021/11/03/_01_01_R%EC%9E%85%EB%AC%B8%EC%A4%91%EA%B0%84%EA%B3%A0%EC%82%AC-%EA%B9%80%EC%A7%80%EC%9A%B0.html","@type":"BlogPosting","headline":"R입문 중간고사","dateModified":"2021-11-03T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/2021/11/03/_01_01_R%EC%9E%85%EB%AC%B8%EC%A4%91%EA%B0%84%EA%B3%A0%EC%82%AC-%EA%B9%80%EC%A7%80%EC%9A%B0.html"},"author":{"@type":"Person","name":"최규빈"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/stahangryum/">stahangryum</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/stahangryum/about/">About Me</a><a class="page-link" href="/stahangryum/search/">Search</a><a class="page-link" href="/stahangryum/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">R입문 중간고사</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-11-03T00:00:00-05:00" itemprop="datePublished">
+        Nov 3, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">최규빈</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/stahangryum/stahangryum/tree/master/_notebooks/2024_01_01_R입문중간고사 김지우.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/stahangryum/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/stahangryum/stahangryum/master?filepath=_notebooks%2F2024_01_01_R%EC%9E%85%EB%AC%B8%EC%A4%91%EA%B0%84%EA%B3%A0%EC%82%AC+%EA%B9%80%EC%A7%80%EC%9A%B0.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/stahangryum/stahangryum/blob/master/_notebooks/2024_01_01_R입문중간고사 김지우.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#전북대학교-통계학과-202115789-김지우">전북대학교 통계학과 202115789 김지우 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#1.-R을-이용하여-다음을-계산하여라.-(3점)">1. R을 이용하여 다음을 계산하여라. (3점) </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#(a)-$2^{-5}+2^{3}$">(a) $2^{-5}+2^{3}$ </a></li>
+<li class="toc-entry toc-h4"><a href="#(b)-$\sqrt{33}$">(b) $\sqrt{33}$ </a></li>
+<li class="toc-entry toc-h4"><a href="#(c)-$\sum_{k=1}^{100}-\frac{1}{k^2+2k+1}$">(c) $\sum_{k=1}^{100} \frac{1}{k^2+2k+1}$ </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#2.-다음을-잘-읽고-물음에-답하라.-(2점)">2. 다음을 잘 읽고 물음에 답하라. (2점) </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#(a)-아래와-같은-수열을-생성하라.">(a) 아래와 같은 수열을 생성하라. </a></li>
+<li class="toc-entry toc-h4"><a href="#(b)-생성된-수열에-대하여-아래를-만족하는-$y$를-계산하라.">(b) 생성된 수열에 대하여 아래를 만족하는 $y$를 계산하라. </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#3.-$x=(-10,-9,-8,\dots,8,9,10)$에-대하여-$h(g(f(x)))$의-계산결과를-구하는-코드를-작성하라.-(10점)">3. $x=(-10,-9,-8,\dots,8,9,10)$에 대하여 $h(g(f(x)))$의 계산결과를 구하는 코드를 작성하라. (10점) </a></li>
+<li class="toc-entry toc-h3"><a href="#4.-아래중-옳은것은?-(O-/-X-로-답안지를-쓰고-답의-근거가-되는-코드를-작성할것)-(10점)">4. 아래중 옳은것은? (O / X 로 답안지를 쓰고 답의 근거가 되는 코드를 작성할것) (10점) </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#(a)-$1=-\frac{1}{2}+\frac{1}{4}-+\frac{1}{8}-\dots-$">(a) $1= \frac{1}{2}+\frac{1}{4} +\frac{1}{8} \dots $ </a></li>
+<li class="toc-entry toc-h4"><a href="#(b)-$e^x=-1+x+x^2+x^3+\dots-$">(b) $e^x= 1+x+x^2+x^3+\dots $ </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#5.-다음을-읽고-물음에-답하라.-(10점)">5. 다음을 읽고 물음에 답하라. (10점) </a></li>
+<li class="toc-entry toc-h3"><a href="#6.-다음-문장을-읽고-참거짓을-판단하시오.-(10점)">6. 다음 문장을 읽고 참거짓을 판단하시오. (10점) </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#(a)-_a는-변수이름으로-가능하다.">(a) _a는 변수이름으로 가능하다. </a></li>
+<li class="toc-entry toc-h4"><a href="#(b)-벡터의-원소는-수치형(numeric)만-가능하다.">(b) 벡터의 원소는 수치형(numeric)만 가능하다. </a></li>
+<li class="toc-entry toc-h4"><a href="#(c)-논리형(logical)변수는-수치형-변수로-변환할-수-없다.">(c) 논리형(logical)변수는 수치형 변수로 변환할 수 없다. </a></li>
+<li class="toc-entry toc-h4"><a href="#(d)-R에서-{}는-()로-바꿀-수-있다.">(d) R에서 {}는 ()로 바꿀 수 있다. </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#7.-100개의-라커-(15점)">7. 100개의 라커 (15점) </a></li>
+<li class="toc-entry toc-h3"><a href="#8.-무궁화-꽃이-피었습니다.-(25점)">8. 무궁화 꽃이 피었습니다. (25점) </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#(a)-1번,-67번,-218번,-456번-참가자의-생존여부를-확인하는-함수를-작성하라.">(a) 1번, 67번, 218번, 456번 참가자의 생존여부를 확인하는 함수를 작성하라. </a></li>
+<li class="toc-entry toc-h4"><a href="#(b)-전체-생존자중-몇명이-살아남는지-계산하라.">(b) 전체 생존자중 몇명이 살아남는지 계산하라. </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#9.-다음을-잘-읽고-시각화-하라.-(15점)">9. 다음을 잘 읽고 시각화 하라. (15점) </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#(a)-mat의-첫번째-열을-$x$,-두번째열을-$y$로-생각하고-plot함수를-통하여-아래와-같은-산점도를-그려라.">(a) mat의 첫번째 열을 $x$, 두번째열을 $y$로 생각하고 plot함수를 통하여 아래와 같은 산점도를 그려라. </a></li>
+<li class="toc-entry toc-h4"><a href="#(b)-매트릭스의-첫번째-행(first-row)를-출력하는-코드를-작성하라.">(b) 매트릭스의 첫번째 행(first row)를 출력하는 코드를 작성하라. </a></li>
+<li class="toc-entry toc-h4"><a href="#(c)-(b)의-결과에-아래의-연산을-수행하는-코드를-작성하라.">(c) (b)의 결과에 아래의 연산을 수행하는 코드를 작성하라. </a></li>
+<li class="toc-entry toc-h4"><a href="#(d)-(b)-(c)-과정을-mat의-모등행에-반복하여-새로운-매트릭스를-만들어라.">(d) (b)-(c) 과정을 mat의 모등행에 반복하여 새로운 매트릭스를 만들어라. </a></li>
+<li class="toc-entry toc-h4"><a href="#(e)-(d)의-결과로-생성되-매트릭스의-첫번째-열을-x,-두번째-열을-y로-하고-산점도를-그려라.-(점의-색은-붉은색으로-하라)">(e) (d)의 결과로 생성되 매트릭스의 첫번째 열을 x, 두번째 열을 y로 하고 산점도를 그려라. (점의 색은 붉은색으로 하라) </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2024_01_01_R입문중간고사 김지우.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="전북대학교-통계학과-202115789-김지우">
+<a class="anchor" href="#%EC%A0%84%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90-%ED%86%B5%EA%B3%84%ED%95%99%EA%B3%BC-202115789-%EA%B9%80%EC%A7%80%EC%9A%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>전북대학교 통계학과 202115789 김지우<a class="anchor-link" href="#%EC%A0%84%EB%B6%81%EB%8C%80%ED%95%99%EA%B5%90-%ED%86%B5%EA%B3%84%ED%95%99%EA%B3%BC-202115789-%EA%B9%80%EC%A7%80%EC%9A%B0"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.-R을-이용하여-다음을-계산하여라.-(3점)">
+<a class="anchor" href="#1.-R%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EB%8B%A4%EC%9D%8C%EC%9D%84-%EA%B3%84%EC%82%B0%ED%95%98%EC%97%AC%EB%9D%BC.-(3%EC%A0%90)" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>1</code>. R을 이용하여 다음을 계산하여라. (3점)<a class="anchor-link" href="#1.-R%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EB%8B%A4%EC%9D%8C%EC%9D%84-%EA%B3%84%EC%82%B0%ED%95%98%EC%97%AC%EB%9D%BC.-(3%EC%A0%90)"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(a)-$2^{-5}+2^{3}$">
+<a class="anchor" href="#(a)-%242%5E%7B-5%7D+2%5E%7B3%7D%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>(a) $2^{-5}+2^{3}$<a class="anchor-link" href="#(a)-%242%5E%7B-5%7D+2%5E%7B3%7D%24"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="m">-5</span><span class="p">)</span> <span class="o">+</span> <span class="m">2</span><span class="o">^</span><span class="m">3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+8.03125
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(b)-$\sqrt{33}$">
+<a class="anchor" href="#(b)-%24%5Csqrt%7B33%7D%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>(b) $\sqrt{33}$<a class="anchor-link" href="#(b)-%24%5Csqrt%7B33%7D%24"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sqrt</span><span class="p">(</span><span class="m">33</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+5.74456264653803
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(c)-$\sum_{k=1}^{100}-\frac{1}{k^2+2k+1}$">
+<a class="anchor" href="#(c)-%24%5Csum_%7Bk=1%7D%5E%7B100%7D-%5Cfrac%7B1%7D%7Bk%5E2+2k+1%7D%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>(c) $\sum_{k=1}^{100} \frac{1}{k^2+2k+1}$<a class="anchor-link" href="#(c)-%24%5Csum_%7Bk=1%7D%5E%7B100%7D-%5Cfrac%7B1%7D%7Bk%5E2+2k+1%7D%24"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">summ</span> <span class="o">=</span> <span class="m">0</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">k</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">){</span>
+    <span class="n">summ</span> <span class="o">=</span> <span class="n">summ</span> <span class="o">+</span> <span class="m">1</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">^</span><span class="m">2</span> <span class="m">+2</span><span class="o">*</span><span class="n">k</span> <span class="m">+1</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">summ</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.635081929789834
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.-다음을-잘-읽고-물음에-답하라.-(2점)">
+<a class="anchor" href="#2.-%EB%8B%A4%EC%9D%8C%EC%9D%84-%EC%9E%98-%EC%9D%BD%EA%B3%A0-%EB%AC%BC%EC%9D%8C%EC%97%90-%EB%8B%B5%ED%95%98%EB%9D%BC.-(2%EC%A0%90)" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>2</code>. 다음을 잘 읽고 물음에 답하라. (2점)<a class="anchor-link" href="#2.-%EB%8B%A4%EC%9D%8C%EC%9D%84-%EC%9E%98-%EC%9D%BD%EA%B3%A0-%EB%AC%BC%EC%9D%8C%EC%97%90-%EB%8B%B5%ED%95%98%EB%9D%BC.-(2%EC%A0%90)"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(a)-아래와-같은-수열을-생성하라.">
+<a class="anchor" href="#(a)-%EC%95%84%EB%9E%98%EC%99%80-%EA%B0%99%EC%9D%80-%EC%88%98%EC%97%B4%EC%9D%84-%EC%83%9D%EC%84%B1%ED%95%98%EB%9D%BC." aria-hidden="true"><span class="octicon octicon-link"></span></a>(a) 아래와 같은 수열을 생성하라.<a class="anchor-link" href="#(a)-%EC%95%84%EB%9E%98%EC%99%80-%EA%B0%99%EC%9D%80-%EC%88%98%EC%97%B4%EC%9D%84-%EC%83%9D%EC%84%B1%ED%95%98%EB%9D%BC."> </a>
+</h4>
+<p>
+$$x=(-10,-9.5,-9.0,...,9.0,9.5,10)$$
+</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span><span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">-10</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+&lt;ol class=list-inline&gt;<li>-10</li>
+<li>-9.5</li>
+<li>-9</li>
+<li>-8.5</li>
+<li>-8</li>
+<li>-7.5</li>
+<li>-7</li>
+<li>-6.5</li>
+<li>-6</li>
+<li>-5.5</li>
+<li>-5</li>
+<li>-4.5</li>
+<li>-4</li>
+<li>-3.5</li>
+<li>-3</li>
+<li>-2.5</li>
+<li>-2</li>
+<li>-1.5</li>
+<li>-1</li>
+<li>-0.5</li>
+<li>0</li>
+<li>0.5</li>
+<li>1</li>
+<li>1.5</li>
+<li>2</li>
+<li>2.5</li>
+<li>3</li>
+<li>3.5</li>
+<li>4</li>
+<li>4.5</li>
+<li>5</li>
+<li>5.5</li>
+<li>6</li>
+<li>6.5</li>
+<li>7</li>
+<li>7.5</li>
+<li>8</li>
+<li>8.5</li>
+<li>9</li>
+<li>9.5</li>
+<li>10</li>&lt;/ol&gt;
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(b)-생성된-수열에-대하여-아래를-만족하는-$y$를-계산하라.">
+<a class="anchor" href="#(b)-%EC%83%9D%EC%84%B1%EB%90%9C-%EC%88%98%EC%97%B4%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EC%95%84%EB%9E%98%EB%A5%BC-%EB%A7%8C%EC%A1%B1%ED%95%98%EB%8A%94-%24y%24%EB%A5%BC-%EA%B3%84%EC%82%B0%ED%95%98%EB%9D%BC." aria-hidden="true"><span class="octicon octicon-link"></span></a>(b) 생성된 수열에 대하여 아래를 만족하는 $y$를 계산하라.<a class="anchor-link" href="#(b)-%EC%83%9D%EC%84%B1%EB%90%9C-%EC%88%98%EC%97%B4%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EC%95%84%EB%9E%98%EB%A5%BC-%EB%A7%8C%EC%A1%B1%ED%95%98%EB%8A%94-%24y%24%EB%A5%BC-%EA%B3%84%EC%82%B0%ED%95%98%EB%9D%BC."> </a>
+</h4>$$y=\begin{cases} 
+x &amp; |x|&gt;5 \\ 
+0 &amp; |x| \leq 2  \\
+5 &amp; o.w.
+\end{cases}$$
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">ifelse</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="m">5</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&lt;=</span><span class="m">2</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+&lt;ol class=list-inline&gt;<li>-10</li>
+<li>-9.5</li>
+<li>-9</li>
+<li>-8.5</li>
+<li>-8</li>
+<li>-7.5</li>
+<li>-7</li>
+<li>-6.5</li>
+<li>-6</li>
+<li>-5.5</li>
+<li>5</li>
+<li>5</li>
+<li>5</li>
+<li>5</li>
+<li>5</li>
+<li>5</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>5</li>
+<li>5</li>
+<li>5</li>
+<li>5</li>
+<li>5</li>
+<li>5</li>
+<li>5.5</li>
+<li>6</li>
+<li>6.5</li>
+<li>7</li>
+<li>7.5</li>
+<li>8</li>
+<li>8.5</li>
+<li>9</li>
+<li>9.5</li>
+<li>10</li>&lt;/ol&gt;
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.-$x=(-10,-9,-8,\dots,8,9,10)$에-대하여-$h(g(f(x)))$의-계산결과를-구하는-코드를-작성하라.-(10점)">
+<a class="anchor" href="#3.-%24x=(-10,-9,-8,%5Cdots,8,9,10)%24%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%24h(g(f(x)))%24%EC%9D%98-%EA%B3%84%EC%82%B0%EA%B2%B0%EA%B3%BC%EB%A5%BC-%EA%B5%AC%ED%95%98%EB%8A%94-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%98%EB%9D%BC.-(10%EC%A0%90)" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>3</code>. $x=(-10,-9,-8,\dots,8,9,10)$에 대하여 $h(g(f(x)))$의 계산결과를 구하는 코드를 작성하라. (10점)<a class="anchor-link" href="#3.-%24x=(-10,-9,-8,%5Cdots,8,9,10)%24%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%24h(g(f(x)))%24%EC%9D%98-%EA%B3%84%EC%82%B0%EA%B2%B0%EA%B3%BC%EB%A5%BC-%EA%B5%AC%ED%95%98%EB%8A%94-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%98%EB%9D%BC.-(10%EC%A0%90)"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>단, $f(x)$,$g(x)$, $h(x)$의 정의는 각각 아래와 같다.</p>
+<ul>
+<li>$f(x)=2x+3 $</li>
+<li>$g(x)=\frac{e^x}{1+e^x}$</li>
+<li>$h(x)=max(x,0)$</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>-- <span class="ansi-bold">Attaching packages</span> ------------------------------------------------------------------------------- tidyverse 1.3.1 --
+
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">ggplot2</span> 3.3.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">purrr  </span> 0.3.4
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tibble </span> 3.1.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">dplyr  </span> 1.0.7
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tidyr  </span> 1.1.4     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">stringr</span> 1.4.0
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">readr  </span> 2.0.2     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">forcats</span> 0.5.1
+
+-- <span class="ansi-bold">Conflicts</span> ---------------------------------------------------------------------------------- tidyverse_conflicts() --
+<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">filter()</span> masks <span class="ansi-blue-fg">stats</span>::filter()
+<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">lag()</span>    masks <span class="ansi-blue-fg">stats</span>::lag()
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="m">-10</span><span class="o">:</span><span class="m">10</span>
+
+<span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+    <span class="m">2</span><span class="o">*</span><span class="n">x</span><span class="m">+3</span>
+<span class="p">}</span>
+
+<span class="n">g</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+    <span class="p">(</span><span class="nf">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="m">1</span><span class="o">+</span><span class="nf">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="n">h</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+    <span class="nf">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">x</span> <span class="o">%&gt;%</span> <span class="n">f</span> <span class="o">%&gt;%</span> <span class="n">g</span> <span class="o">%&gt;%</span> <span class="n">h</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.999999999897381
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="4.-아래중-옳은것은?-(O-/-X-로-답안지를-쓰고-답의-근거가-되는-코드를-작성할것)-(10점)">
+<a class="anchor" href="#4.-%EC%95%84%EB%9E%98%EC%A4%91-%EC%98%B3%EC%9D%80%EA%B2%83%EC%9D%80?-(O-/-X-%EB%A1%9C-%EB%8B%B5%EC%95%88%EC%A7%80%EB%A5%BC-%EC%93%B0%EA%B3%A0-%EB%8B%B5%EC%9D%98-%EA%B7%BC%EA%B1%B0%EA%B0%80-%EB%90%98%EB%8A%94-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%A0%EA%B2%83)-(10%EC%A0%90)" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>4</code>. 아래중 옳은것은? (O / X 로 답안지를 쓰고 답의 근거가 되는 코드를 작성할것) (10점)<a class="anchor-link" href="#4.-%EC%95%84%EB%9E%98%EC%A4%91-%EC%98%B3%EC%9D%80%EA%B2%83%EC%9D%80?-(O-/-X-%EB%A1%9C-%EB%8B%B5%EC%95%88%EC%A7%80%EB%A5%BC-%EC%93%B0%EA%B3%A0-%EB%8B%B5%EC%9D%98-%EA%B7%BC%EA%B1%B0%EA%B0%80-%EB%90%98%EB%8A%94-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%A0%EA%B2%83)-(10%EC%A0%90)"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(a)-$1=-\frac{1}{2}+\frac{1}{4}-+\frac{1}{8}-\dots-$">
+<a class="anchor" href="#(a)-%241=-%5Cfrac%7B1%7D%7B2%7D+%5Cfrac%7B1%7D%7B4%7D-+%5Cfrac%7B1%7D%7B8%7D-%5Cdots-%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>(a) $1= \frac{1}{2}+\frac{1}{4} +\frac{1}{8} \dots $<a class="anchor-link" href="#(a)-%241=-%5Cfrac%7B1%7D%7B2%7D+%5Cfrac%7B1%7D%7B4%7D-+%5Cfrac%7B1%7D%7B8%7D-%5Cdots-%24"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">summ</span> <span class="o">=</span> <span class="m">0</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">50000</span><span class="p">){</span>
+    <span class="n">summ</span> <span class="o">=</span> <span class="n">summ</span> <span class="o">+</span> <span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">^</span><span class="n">i</span>
+    <span class="p">}</span>
+<span class="n">summ</span>
+
+<span class="c1">#항이 많을수록 근사 정도가 좋다.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+1
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$1 = \dfrac{\dfrac{1}{2}}{1-\dfrac{1}{2}}$</p>
+<p>즉 (a)는 참(O)이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(b)-$e^x=-1+x+x^2+x^3+\dots-$">
+<a class="anchor" href="#(b)-%24e%5Ex=-1+x+x%5E2+x%5E3+%5Cdots-%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>(b) $e^x= 1+x+x^2+x^3+\dots $<a class="anchor-link" href="#(b)-%24e%5Ex=-1+x+x%5E2+x%5E3+%5Cdots-%24"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">){</span>
+    <span class="n">summ</span> <span class="o">=</span> <span class="m">0</span>
+    
+    <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">0</span><span class="o">:</span><span class="n">k</span><span class="p">){</span>
+        <span class="n">summ</span> <span class="o">=</span> <span class="n">summ</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="n">i</span>
+        <span class="p">}</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">summ</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">f</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">100</span><span class="p">)</span> <span class="o">-</span> <span class="nf">exp</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+<span class="c1">#f_b와 f_o의 함숫값이 현저하게 다르므로 같다고 보기 어렵다.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+2.53530120045646e+30
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$e^x$의 테일러 급수는 $\sum_{n=0}^{\infty} \frac{x^n}{n!}$이다.</p>
+<p>즉 (b)는 거짓(X)이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="5.-다음을-읽고-물음에-답하라.-(10점)">
+<a class="anchor" href="#5.-%EB%8B%A4%EC%9D%8C%EC%9D%84-%EC%9D%BD%EA%B3%A0-%EB%AC%BC%EC%9D%8C%EC%97%90-%EB%8B%B5%ED%95%98%EB%9D%BC.-(10%EC%A0%90)" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>5</code>. 다음을 읽고 물음에 답하라. (10점)<a class="anchor-link" href="#5.-%EB%8B%A4%EC%9D%8C%EC%9D%84-%EC%9D%BD%EA%B3%A0-%EB%AC%BC%EC%9D%8C%EC%97%90-%EB%8B%B5%ED%95%98%EB%9D%BC.-(10%EC%A0%90)"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다음은 어느 회사의 연봉에 대한 규정이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(가) 입사 첫째 해 연봉은 $a$원이고, 입사 19년째 해까지의 연봉은 해마다 직전 연봉에서 8%씩 인상된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(나) 입사 20년째 해부터의 연봉은 입사 19년째 해 연봉의 75%로 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이 회사에 입사한 사람이 28년동안 근무하여 받는 연봉의 총합은?</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">salary</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">2</span><span class="o">:</span><span class="m">19</span><span class="p">){</span>
+    <span class="n">salary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">salary</span><span class="p">[</span><span class="n">i</span><span class="m">-1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="m">1.08</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="n">salary</span><span class="p">[</span><span class="m">20</span><span class="o">:</span><span class="m">28</span><span class="p">]</span> <span class="o">=</span> <span class="n">salary</span><span class="p">[</span><span class="m">19</span><span class="p">]</span> <span class="o">*</span><span class="p">(</span><span class="m">0.75</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+68.4193948584949
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="6.-다음-문장을-읽고-참거짓을-판단하시오.-(10점)">
+<a class="anchor" href="#6.-%EB%8B%A4%EC%9D%8C-%EB%AC%B8%EC%9E%A5%EC%9D%84-%EC%9D%BD%EA%B3%A0-%EC%B0%B8%EA%B1%B0%EC%A7%93%EC%9D%84-%ED%8C%90%EB%8B%A8%ED%95%98%EC%8B%9C%EC%98%A4.-(10%EC%A0%90)" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>6</code>. 다음 문장을 읽고 참거짓을 판단하시오. (10점)<a class="anchor-link" href="#6.-%EB%8B%A4%EC%9D%8C-%EB%AC%B8%EC%9E%A5%EC%9D%84-%EC%9D%BD%EA%B3%A0-%EC%B0%B8%EA%B1%B0%EC%A7%93%EC%9D%84-%ED%8C%90%EB%8B%A8%ED%95%98%EC%8B%9C%EC%98%A4.-(10%EC%A0%90)"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(a)-_a는-변수이름으로-가능하다.">
+<a class="anchor" href="#(a)-_a%EB%8A%94-%EB%B3%80%EC%88%98%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EA%B0%80%EB%8A%A5%ED%95%98%EB%8B%A4." aria-hidden="true"><span class="octicon octicon-link"></span></a>(a) <code>_a</code>는 변수이름으로 가능하다.<a class="anchor-link" href="#(a)-_a%EB%8A%94-%EB%B3%80%EC%88%98%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EA%B0%80%EB%8A%A5%ED%95%98%EB%8B%A4."> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>_<span class="n">a</span> <span class="o">=</span> <span class="m">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+Error in parse(text = x, srcfile = src): &lt;text&gt;:1:1: 예상하지 못한 입력입니다.
+1: _
+    ^
+Traceback:
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>거짓(X)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(b)-벡터의-원소는-수치형(numeric)만-가능하다.">
+<a class="anchor" href="#(b)-%EB%B2%A1%ED%84%B0%EC%9D%98-%EC%9B%90%EC%86%8C%EB%8A%94-%EC%88%98%EC%B9%98%ED%98%95(numeric)%EB%A7%8C-%EA%B0%80%EB%8A%A5%ED%95%98%EB%8B%A4." aria-hidden="true"><span class="octicon octicon-link"></span></a>(b) 벡터의 원소는 수치형(numeric)만 가능하다.<a class="anchor-link" href="#(b)-%EB%B2%A1%ED%84%B0%EC%9D%98-%EC%9B%90%EC%86%8C%EB%8A%94-%EC%88%98%EC%B9%98%ED%98%95(numeric)%EB%A7%8C-%EA%B0%80%EB%8A%A5%ED%95%98%EB%8B%A4."> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'1'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'k'</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+&lt;ol class=list-inline&gt;<li>'1'</li>
+<li>'d'</li>
+<li>'k'</li>&lt;/ol&gt;
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>거짓(X)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(c)-논리형(logical)변수는-수치형-변수로-변환할-수-없다.">
+<a class="anchor" href="#(c)-%EB%85%BC%EB%A6%AC%ED%98%95(logical)%EB%B3%80%EC%88%98%EB%8A%94-%EC%88%98%EC%B9%98%ED%98%95-%EB%B3%80%EC%88%98%EB%A1%9C-%EB%B3%80%ED%99%98%ED%95%A0-%EC%88%98-%EC%97%86%EB%8B%A4." aria-hidden="true"><span class="octicon octicon-link"></span></a>(c) 논리형(logical)변수는 수치형 변수로 변환할 수 없다.<a class="anchor-link" href="#(c)-%EB%85%BC%EB%A6%AC%ED%98%95(logical)%EB%B3%80%EC%88%98%EB%8A%94-%EC%88%98%EC%B9%98%ED%98%95-%EB%B3%80%EC%88%98%EB%A1%9C-%EB%B3%80%ED%99%98%ED%95%A0-%EC%88%98-%EC%97%86%EB%8B%A4."> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">as.numeric</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+1
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>거짓(X)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(d)-R에서-{}는-()로-바꿀-수-있다.">
+<a class="anchor" href="#(d)-R%EC%97%90%EC%84%9C-%7B%7D%EB%8A%94-()%EB%A1%9C-%EB%B0%94%EA%BF%80-%EC%88%98-%EC%9E%88%EB%8B%A4." aria-hidden="true"><span class="octicon octicon-link"></span></a>(d) R에서 {}는 ()로 바꿀 수 있다.<a class="anchor-link" href="#(d)-R%EC%97%90%EC%84%9C-%7B%7D%EB%8A%94-()%EB%A1%9C-%EB%B0%94%EA%BF%80-%EC%88%98-%EC%9E%88%EB%8B%A4."> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)(</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nf">if </span><span class="p">(</span><span class="m">2</span><span class="o">!=</span><span class="m">1</span><span class="p">)(</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+Error in parse(text = x, srcfile = src): &lt;text&gt;:3:5: 예기치 않은 'if'입니다
+2:     print(i)
+3:     if
+       ^
+Traceback:
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">){</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nf">if </span><span class="p">(</span><span class="m">2</span><span class="o">!=</span><span class="m">1</span><span class="p">){</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1
+[1] "hello"
+[1] 2
+[1] "hello"
+[1] 3
+[1] "hello"
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>거짓(X)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="7.-100개의-라커-(15점)">
+<a class="anchor" href="#7.-100%EA%B0%9C%EC%9D%98-%EB%9D%BC%EC%BB%A4-(15%EC%A0%90)" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>7.</code> 100개의 라커 (15점)<a class="anchor-link" href="#7.-100%EA%B0%9C%EC%9D%98-%EB%9D%BC%EC%BB%A4-(15%EC%A0%90)"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>복도에 100개의 라커가 있다. 복도를 어떤 남자가 100개의 라커 문을 전부 연다. 그리고 나서 짝수 번호의 라커를 전부 닫는다. 그 다음에는 번호가 3의 배수인 라커를 순서대로 찾아다니며 열려 있으면 닫고, 닫혀 있으면 연다. 그 다음에는 번호가 4의 배수인 라커를 순서대로 찾아다니며 열려있으면 닫고, 닫혀있으면 연다. 이후에 5의 배수, 6의 배수 .. 인 라커를 순서대로 찾아다니며 행동을 반복한다. 이런식으로 복도를 100번 지나가면 열린 라커의 문은 몇개가 되겠는가?</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#FALSE = CLOSED</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="m">100</span><span class="p">))</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">2</span><span class="o">:</span><span class="m">100</span><span class="p">){</span> <span class="c1">#배수</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">k</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">){</span> <span class="c1">#몇번방</span>
+        <span class="nf">if </span><span class="p">(</span><span class="n">k</span><span class="o">%%</span><span class="n">i</span> <span class="o">==</span> <span class="m">0</span><span class="p">){</span>
+            <span class="nf">if </span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="kc">TRUE</span><span class="p">){</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="kc">FALSE</span>
+                
+            <span class="p">}</span>
+            <span class="n">else</span> <span class="p">{</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="kc">TRUE</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+10
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="8.-무궁화-꽃이-피었습니다.-(25점)">
+<a class="anchor" href="#8.-%EB%AC%B4%EA%B6%81%ED%99%94-%EA%BD%83%EC%9D%B4-%ED%94%BC%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4.-(25%EC%A0%90)" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>8.</code> 무궁화 꽃이 피었습니다. (25점)<a class="anchor-link" href="#8.-%EB%AC%B4%EA%B6%81%ED%99%94-%EA%BD%83%EC%9D%B4-%ED%94%BC%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4.-(25%EC%A0%90)"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>총 456명의 참가자가 '무궁화 꽃이 피었습니다' 게임에 참가한다. 기본적인 게임의 규칙은 아래와 같다.</p>
+<ul>
+<li>
+<p>술래는 총 10회간 벽을 보고 '무궁화 꽃이 피었습니다' 를 외친다.</p>
+</li>
+<li>
+<p>참가자는 술래가 있는 곳 까지 이동해야 살 수 있다.</p>
+</li>
+<li>
+<p>술래는 벽을 보고 '무궁화 꽃이 피었습니다'를 외치다가 구호가 끝남과 동시에 뒤를 돌아본다. 이때 움직이는 사람은 <strong>죽는다</strong></p>
+</li>
+</ul>
+<p>따라서 참가자는 술래가 벽을 보고 '무궁화 꽃이 피었습니다'를 외치는 동안만 이동할 수 있다. 욕심을 부려 더 이동하고자 하면 죽을 수 있다. 반대로 죽는 것을 지나치게 두려워한 나머지 매턴마다 조금씩만 이동한다면 10회의 제한횟수 내에 술래에게 도달하지 못하여 죽는다.</p>
+<p>게임환경과 관련된 세부적인 설정은 아래와 같다.</p>
+<ul>
+<li>
+<p>술래와 참가자의 거리는 35이다.</p>
+</li>
+<li>
+<p>술래는 처음 벽을 보고 $x$초간 무궁화 꽃이 피었습니다를 외친다.</p>
+</li>
+<li>
+<p>모든 참가자는 1초에 거리1이상 움직일 수 없다고 가정한다. (예를들어 2.4초 동안은 최대 2.4의 거리를 이동할 수 있다. 반면 이동을 원치않으면 0의 거리만큼 움직이므로 0~2.4사이의 거리를 움직일 수 있다)</p>
+</li>
+</ul>
+<p>술래와 참가자에 대한 설정값은 아래와 같다.</p>
+<p><strong><em>술래에 대한 설정값</em></strong></p>
+<ul>
+<li>
+<p>처음에는 술래가 10초간 무궁화 꽃이 피었습니다를 외친다.</p>
+</li>
+<li>
+<p>그 다음에는 술래가 9.5초간 무궁화 꽃이 피었습니다를 외친다.</p>
+</li>
+<li>
+<p>그 다음에도 0.5초씩 구호를 외치는 시간을 줄인다. 이것을 10회 반복한다.</p>
+</li>
+</ul>
+<p><strong><em>참가자에 대한 설정값</em></strong></p>
+<ul>
+<li>
+<p>처음에는 참가자가 "본인의번호/100"을 계산하여 나온 숫자만큼 움직인다. 즉 10번 참가자는 0.1의 거리를 움직이고 456번 참가자는 4.56의 거리를 움직인다.</p>
+</li>
+<li>
+<p>그 다음은 처음에 본인이 이동했던 거리에 1씩 더하여 움직인다. 즉 10번 참가자는 1.1의 거리를 움직이고 456번 참가자는 5.56의 거리를 움직인다.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예시2</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>300번 참가자의 경우 아래와 같이 이동하므로</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">1회</th>
+<th style="text-align:center">2회</th>
+<th style="text-align:center">3회</th>
+<th style="text-align:center">4회</th>
+<th style="text-align:center">5회</th>
+<th style="text-align:center">6회</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>술래의 외침시간  | 10  | 9.5 | 9.0 | 8.5 | 8.0 | 7.5 |
+참가자의 이동폭  | 3 | 4 | 5 | 6 | 7 | 7.5 |
+참가자의 총 이동거리 | 3 | 7 | 12 | 18 | 25 | 32.5 (32.5까지 이동후 사망) |</p>
+<p>생존할 수 없다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예시2</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>350번 참가자의 경우 아래와 같이 이동하므로</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">1회</th>
+<th style="text-align:center">2회</th>
+<th style="text-align:center">3회</th>
+<th style="text-align:center">4회</th>
+<th style="text-align:center">5회</th>
+<th style="text-align:center">6회</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>술래의 외침시간  | 10  | 9.5 | 9.0 | 8.5 | 8.0 | 7.5 |
+참가자의 이동폭  | 3.5 | 4.5 | 5.5 | 6.5 | 7.5 | 8.5 |
+참가자의 총 이동거리 | 3.5 | 8 | 13.5 | 20 | 27.5 | 35 (정확하게 7.5초간 이동하고 살아남는다) |</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>생존 할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예시3</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>400번 참가자의 경우 아래와 같이 이동하므로</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">1회</th>
+<th style="text-align:center">2회</th>
+<th style="text-align:center">3회</th>
+<th style="text-align:center">4회</th>
+<th style="text-align:center">5회</th>
+<th style="text-align:center">6회</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>술래의 외침시간  | 10  | 9.5 | 9.0 | 8.5 | 8.0 | 7.5 |
+참가자의 이동폭  | 4 | 5 | 6 | 7 | 8 | 5 |
+참가자의 총 이동거리 | 4 | 9 | 15 | 22 | 30 | 35 (5초간만 이동하면 35만큼 이동하므로 살아남는다)|</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>생존 할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(a)-1번,-67번,-218번,-456번-참가자의-생존여부를-확인하는-함수를-작성하라.">
+<a class="anchor" href="#(a)-1%EB%B2%88,-67%EB%B2%88,-218%EB%B2%88,-456%EB%B2%88-%EC%B0%B8%EA%B0%80%EC%9E%90%EC%9D%98-%EC%83%9D%EC%A1%B4%EC%97%AC%EB%B6%80%EB%A5%BC-%ED%99%95%EC%9D%B8%ED%95%98%EB%8A%94-%ED%95%A8%EC%88%98%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%98%EB%9D%BC." aria-hidden="true"><span class="octicon octicon-link"></span></a>(a) 1번, 67번, 218번, 456번 참가자의 생존여부를 확인하는 함수를 작성하라.<a class="anchor-link" href="#(a)-1%EB%B2%88,-67%EB%B2%88,-218%EB%B2%88,-456%EB%B2%88-%EC%B0%B8%EA%B0%80%EC%9E%90%EC%9D%98-%EC%83%9D%EC%A1%B4%EC%97%AC%EB%B6%80%EB%A5%BC-%ED%99%95%EC%9D%B8%ED%95%98%EB%8A%94-%ED%95%A8%EC%88%98%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%98%EB%9D%BC."> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">say</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="o">:</span><span class="m">11</span><span class="o">/</span><span class="m">2</span><span class="p">)</span> <span class="c1">#술래의 외침시간</span>
+
+
+<span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">n</span><span class="p">){</span> <span class="c1">#n = 참가자의 번호</span>
+    <span class="n">move</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="m">100</span><span class="p">)</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">2</span><span class="o">:</span><span class="m">10</span><span class="p">){</span>
+        <span class="n">move</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">move</span><span class="p">[</span><span class="n">i</span><span class="m">-1</span><span class="p">]</span> <span class="o">+</span> <span class="m">1</span>
+        <span class="nf">if </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">move</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="m">35</span><span class="p">){</span>
+            <span class="nf">return</span><span class="p">(</span><span class="s">"생존"</span><span class="p">)</span>
+            <span class="n">break</span>
+        <span class="p">}</span>
+        <span class="nf">if </span><span class="p">(</span><span class="n">move</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">say</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+            <span class="nf">return</span><span class="p">(</span><span class="s">"사망"</span><span class="p">)</span>
+            
+            <span class="n">break</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+    
+<span class="nf">f</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">f</span><span class="p">(</span><span class="m">67</span><span class="p">)</span>
+<span class="nf">f</span><span class="p">(</span><span class="m">218</span><span class="p">)</span>
+<span class="nf">f</span><span class="p">(</span><span class="m">456</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+'사망'
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+'사망'
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+'생존'
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+'사망'
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1번 사망</p>
+<p>2번 사망</p>
+<p>3번 생존</p>
+<p>4번 사망</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(b)-전체-생존자중-몇명이-살아남는지-계산하라.">
+<a class="anchor" href="#(b)-%EC%A0%84%EC%B2%B4-%EC%83%9D%EC%A1%B4%EC%9E%90%EC%A4%91-%EB%AA%87%EB%AA%85%EC%9D%B4-%EC%82%B4%EC%95%84%EB%82%A8%EB%8A%94%EC%A7%80-%EA%B3%84%EC%82%B0%ED%95%98%EB%9D%BC." aria-hidden="true"><span class="octicon octicon-link"></span></a>(b) 전체 생존자중 몇명이 살아남는지 계산하라.<a class="anchor-link" href="#(b)-%EC%A0%84%EC%B2%B4-%EC%83%9D%EC%A1%B4%EC%9E%90%EC%A4%91-%EB%AA%87%EB%AA%85%EC%9D%B4-%EC%82%B4%EC%95%84%EB%82%A8%EB%8A%94%EC%A7%80-%EA%B3%84%EC%82%B0%ED%95%98%EB%9D%BC."> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">surv</span> <span class="o">=</span> <span class="m">0</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">456</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span> <span class="nf">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span> <span class="s">"생존"</span><span class="p">){</span>
+        <span class="n">surv</span> <span class="o">=</span> <span class="n">surv</span> <span class="o">+</span> <span class="m">1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">surv</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+131
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>생존자는 131명이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="9.-다음을-잘-읽고-시각화-하라.-(15점)">
+<a class="anchor" href="#9.-%EB%8B%A4%EC%9D%8C%EC%9D%84-%EC%9E%98-%EC%9D%BD%EA%B3%A0-%EC%8B%9C%EA%B0%81%ED%99%94-%ED%95%98%EB%9D%BC.-(15%EC%A0%90)" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>9.</code> 다음을 잘 읽고 시각화 하라. (15점)<a class="anchor-link" href="#9.-%EB%8B%A4%EC%9D%8C%EC%9D%84-%EC%9E%98-%EC%9D%BD%EA%B3%A0-%EC%8B%9C%EA%B0%81%ED%99%94-%ED%95%98%EB%9D%BC.-(15%EC%A0%90)"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다음은 인터넷에서 어떠한 자료를 다운받아 매트릭스로 저장하는 코드이다.</p>
+<div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="nf">read.csv</span><span class="p">(</span><span class="s">"https://raw.githubusercontent.com/miruetoto/yechan/master/_notebooks/round2.csv"</span><span class="p">)</span>
+<span class="n">mat</span><span class="o">=</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+<p>매트릭스는 <code>mat</code>이라는 변수에 저장되어 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(a)-mat의-첫번째-열을-$x$,-두번째열을-$y$로-생각하고-plot함수를-통하여-아래와-같은-산점도를-그려라.">
+<a class="anchor" href="#(a)-mat%EC%9D%98-%EC%B2%AB%EB%B2%88%EC%A7%B8-%EC%97%B4%EC%9D%84-%24x%24,-%EB%91%90%EB%B2%88%EC%A7%B8%EC%97%B4%EC%9D%84-%24y%24%EB%A1%9C-%EC%83%9D%EA%B0%81%ED%95%98%EA%B3%A0-plot%ED%95%A8%EC%88%98%EB%A5%BC-%ED%86%B5%ED%95%98%EC%97%AC-%EC%95%84%EB%9E%98%EC%99%80-%EA%B0%99%EC%9D%80-%EC%82%B0%EC%A0%90%EB%8F%84%EB%A5%BC-%EA%B7%B8%EB%A0%A4%EB%9D%BC." aria-hidden="true"><span class="octicon octicon-link"></span></a>(a) mat의 첫번째 열을 $x$, 두번째열을 $y$로 생각하고 plot함수를 통하여 아래와 같은 산점도를 그려라.<a class="anchor-link" href="#(a)-mat%EC%9D%98-%EC%B2%AB%EB%B2%88%EC%A7%B8-%EC%97%B4%EC%9D%84-%24x%24,-%EB%91%90%EB%B2%88%EC%A7%B8%EC%97%B4%EC%9D%84-%24y%24%EB%A1%9C-%EC%83%9D%EA%B0%81%ED%95%98%EA%B3%A0-plot%ED%95%A8%EC%88%98%EB%A5%BC-%ED%86%B5%ED%95%98%EC%97%AC-%EC%95%84%EB%9E%98%EC%99%80-%EA%B0%99%EC%9D%80-%EC%82%B0%EC%A0%90%EB%8F%84%EB%A5%BC-%EA%B7%B8%EB%A0%A4%EB%9D%BC."> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://github.com/miruetoto/yechan/blob/master/_notebooks/fig1.png?raw=true" alt=""></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="nf">read.csv</span><span class="p">(</span><span class="s">"https://raw.githubusercontent.com/miruetoto/yechan/master/_notebooks/round2.csv"</span><span class="p">)</span>
+<span class="n">mat</span><span class="o">=</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">mat</span><span class="p">[,</span><span class="m">1</span><span class="p">],</span> <span class="n">mat</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAAMFBMVEUAAABNTU1oaGh8fHyM%0AjIyampqnp6eysrK9vb3Hx8fQ0NDZ2dnh4eHp6enw8PD////QFLu4AAAACXBIWXMAABJ0AAAS%0AdAHeZh94AAAgAElEQVR4nO2diXqjOgxGnSZNO20S3v9tp2E1YMkL8sp/vnubTMCWbXQwW1rV%0AAQAOo3I3AIAWgEgACACRABAAIgEgAEQCQACIBIAAEAkAASASAAJAJAAEgEgACACRABAAIgEg%0AAEQCQACIBIAAEAkAASASAAJAJAAEgEgACACRABAAIgEgAEQCQACIBIAAEAkAASASAAJAJAAE%0AgEgACACRABAAIgEgAEQCQACIBIAAEAkAASASAAJAJAAEgEgACACRABAAIgEgAEQCQACIBIAA%0AEAkAASASAAJAJAAEgEgACACRABAAIgEgAEQCQACIBIAAEAkAASASAAJAJAAEgEgACACRABAA%0AIgEgAEQCQACIBIAAEAkAASASAAJAJAAEgEgACACRABAAIgEgAEQCQACIBIAAEAkAASASAAJA%0AJAAEgEgACACRABAAIgEgAEQCQACIBIAAEAkAASASAAJAJAAEgEgACACRABAAIgEgAEQCQACI%0ABIAAEAkAASASAAJAJAAEgEgACACRABAAIgEgAEQCQACIBIAAEAkAASASAAJAJAAEgEgACACR%0AABAAIgEgAEQCQACIBIAAEAkAASASAAJAJAAESCCSAqAyArJcXpwMIQCQBCIBIABEAkAAiASA%0AABAJAAEgEgACQCQABIBIAAgAkQAQACIBIABEAkAAiASAABAJAAEgEgACQCQABIBIAAgAkQAQ%0AACIBIABEAoDG+TvkEAkAit4iN5UgEgAUSvvptGpA7VGBSKAA1ObVZd2A6iMCkUABQCQABIBI%0AAEiAcyQABMBVOwBEwH0kAFICkQAQACIBIABEAkAAiASAABAJAAEgEgACQKRmCP4TjEAAiNQG%0Ax/6aKThMUpF+v279lr7df2OFOB1SfxkYHCOhSK8PbUtfo4Q4HZJ/ZBscIaFId3X59+jfPX8u%0A6h4jxMmgJYJJqUko0kU95vcPdYkR4jTQM9GoEialxCQUabVl+c2MHKCwGTRYNK6Yu7FnAjNS%0ATbhopOYv0UClhKQ9R/p59u9wjhSIm0azSBjHdKS8/H3VtvbHK0qItnHTaJiMun4UMZCpSHsf%0A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%0AQACIBIAA/wFCoe5k8h9KaAAAAABJRU5ErkJggg==" width="420" height="420">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(b)-매트릭스의-첫번째-행(first-row)를-출력하는-코드를-작성하라.">
+<a class="anchor" href="#(b)-%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4%EC%9D%98-%EC%B2%AB%EB%B2%88%EC%A7%B8-%ED%96%89(first-row)%EB%A5%BC-%EC%B6%9C%EB%A0%A5%ED%95%98%EB%8A%94-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%98%EB%9D%BC." aria-hidden="true"><span class="octicon octicon-link"></span></a>(b) 매트릭스의 첫번째 행(first row)를 출력하는 코드를 작성하라.<a class="anchor-link" href="#(b)-%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4%EC%9D%98-%EC%B2%AB%EB%B2%88%EC%A7%B8-%ED%96%89(first-row)%EB%A5%BC-%EC%B6%9C%EB%A0%A5%ED%95%98%EB%8A%94-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%98%EB%9D%BC."> </a>
+</h4>
+<p><code>-</code> 힌트: 출력결과는 (12,313)이 나와야 한다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mat</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style>&lt;dl class=dl-inline&gt;<dt>x</dt>
+<dd>12</dd>
+<dt>y</dt>
+<dd>313</dd>&lt;/dl&gt;
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(c)-(b)의-결과에-아래의-연산을-수행하는-코드를-작성하라.">
+<a class="anchor" href="#(c)-(b)%EC%9D%98-%EA%B2%B0%EA%B3%BC%EC%97%90-%EC%95%84%EB%9E%98%EC%9D%98-%EC%97%B0%EC%82%B0%EC%9D%84-%EC%88%98%ED%96%89%ED%95%98%EB%8A%94-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%98%EB%9D%BC." aria-hidden="true"><span class="octicon octicon-link"></span></a>(c) (b)의 결과에 아래의 연산을 수행하는 코드를 작성하라.<a class="anchor-link" href="#(c)-(b)%EC%9D%98-%EA%B2%B0%EA%B3%BC%EC%97%90-%EC%95%84%EB%9E%98%EC%9D%98-%EC%97%B0%EC%82%B0%EC%9D%84-%EC%88%98%ED%96%89%ED%95%98%EB%8A%94-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%ED%95%98%EB%9D%BC."> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+\begin{bmatrix}
+0 &amp; -1 \\
+-1 &amp; 0 
+\end{bmatrix} \begin{bmatrix}
+12 \\
+313
+\end{bmatrix} 
+$$
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-1</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">0</span><span class="p">))</span>
+<span class="n">B</span> <span class="o">=</span> <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">313</span><span class="p">))</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+
+<span class="n">A</span><span class="o">%*%</span><span class="n">B</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A matrix: 2 × 1 of type dbl</caption>
+<tbody>
+	<tr><td>-313</td></tr>
+	<tr><td> -12</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(d)-(b)-(c)-과정을-mat의-모등행에-반복하여-새로운-매트릭스를-만들어라.">
+<a class="anchor" href="#(d)-(b)-(c)-%EA%B3%BC%EC%A0%95%EC%9D%84-mat%EC%9D%98-%EB%AA%A8%EB%93%B1%ED%96%89%EC%97%90-%EB%B0%98%EB%B3%B5%ED%95%98%EC%97%AC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4%EB%A5%BC-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%9D%BC." aria-hidden="true"><span class="octicon octicon-link"></span></a>(d) (b)-(c) 과정을 mat의 모등행에 반복하여 새로운 매트릭스를 만들어라.<a class="anchor-link" href="#(d)-(b)-(c)-%EA%B3%BC%EC%A0%95%EC%9D%84-mat%EC%9D%98-%EB%AA%A8%EB%93%B1%ED%96%89%EC%97%90-%EB%B0%98%EB%B3%B5%ED%95%98%EC%97%AC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4%EB%A5%BC-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%9D%BC."> </a>
+</h4>
+<p><code>-</code> 힌트: 아래의 과정을 따른다.</p>
+<ul>
+<li>(i) mat와 동일한 dim을 가진 mat2를 만든다. </li>
+<li>(ii) mat의 첫번째 행에 (b)-(c)의 과정을 적용하여 길이가 2인 벡터를 얻는다. </li>
+<li>(iii) (ii)의 과정에서 얻은 벡터를 새로운 매트릭스의 첫번째 행에 넣는다. </li>
+<li>(iv) mat의 두번째 행에 대하여 (ii)-(iii)의 과정을 반복한다. 이후 세번째, 네번째 행에 대하여 (ii)-(iii)의 과정을 반복한다. </li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mat2</span><span class="o">=</span><span class="n">mat</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5513</span><span class="p">){</span>
+    <span class="n">mat2</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span> <span class="o">=</span> <span class="n">A</span><span class="o">%*%</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span>
+<span class="p">}</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">mat2</span><span class="p">)</span>
+<span class="n">mat2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+&lt;ol class=list-inline&gt;<li>5513</li>
+<li>2</li>&lt;/ol&gt;
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A matrix: 5513 × 2 of type dbl</caption>
+<thead>
+	<tr>
+<th scope="col">x</th>
+<th scope="col">y</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<td>-313</td>
+<td>-12</td>
+</tr>
+	<tr>
+<td>-314</td>
+<td>-12</td>
+</tr>
+	<tr>
+<td>-279</td>
+<td>-13</td>
+</tr>
+	<tr>
+<td>-311</td>
+<td>-13</td>
+</tr>
+	<tr>
+<td>-312</td>
+<td>-13</td>
+</tr>
+	<tr>
+<td>-313</td>
+<td>-13</td>
+</tr>
+	<tr>
+<td>-314</td>
+<td>-13</td>
+</tr>
+	<tr>
+<td>-315</td>
+<td>-13</td>
+</tr>
+	<tr>
+<td>-308</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-309</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-310</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-311</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-312</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-313</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-314</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-315</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-316</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-317</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-318</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-319</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-320</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-321</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-322</td>
+<td>-14</td>
+</tr>
+	<tr>
+<td>-306</td>
+<td>-15</td>
+</tr>
+	<tr>
+<td>-307</td>
+<td>-15</td>
+</tr>
+	<tr>
+<td>-308</td>
+<td>-15</td>
+</tr>
+	<tr>
+<td>-309</td>
+<td>-15</td>
+</tr>
+	<tr>
+<td>-310</td>
+<td>-15</td>
+</tr>
+	<tr>
+<td>-311</td>
+<td>-15</td>
+</tr>
+	<tr>
+<td>-313</td>
+<td>-15</td>
+</tr>
+	<tr>
+<td>⋮</td>
+<td>⋮</td>
+</tr>
+	<tr>
+<td>-375</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-376</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-377</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-378</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-379</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-380</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-381</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-382</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-383</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-384</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-385</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-386</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-391</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-392</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-393</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-394</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-395</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-406</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-407</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-408</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-409</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-410</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-411</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-412</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-413</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-414</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-415</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-416</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-417</td>
+<td>-636</td>
+</tr>
+	<tr>
+<td>-409</td>
+<td>-637</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(e)-(d)의-결과로-생성되-매트릭스의-첫번째-열을-x,-두번째-열을-y로-하고-산점도를-그려라.-(점의-색은-붉은색으로-하라)">
+<a class="anchor" href="#(e)-(d)%EC%9D%98-%EA%B2%B0%EA%B3%BC%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%98-%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4%EC%9D%98-%EC%B2%AB%EB%B2%88%EC%A7%B8-%EC%97%B4%EC%9D%84-x,-%EB%91%90%EB%B2%88%EC%A7%B8-%EC%97%B4%EC%9D%84-y%EB%A1%9C-%ED%95%98%EA%B3%A0-%EC%82%B0%EC%A0%90%EB%8F%84%EB%A5%BC-%EA%B7%B8%EB%A0%A4%EB%9D%BC.-(%EC%A0%90%EC%9D%98-%EC%83%89%EC%9D%80-%EB%B6%89%EC%9D%80%EC%83%89%EC%9C%BC%EB%A1%9C-%ED%95%98%EB%9D%BC)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(e) (d)의 결과로 생성되 매트릭스의 첫번째 열을 x, 두번째 열을 y로 하고 산점도를 그려라. (점의 색은 붉은색으로 하라)<a class="anchor-link" href="#(e)-(d)%EC%9D%98-%EA%B2%B0%EA%B3%BC%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%98-%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4%EC%9D%98-%EC%B2%AB%EB%B2%88%EC%A7%B8-%EC%97%B4%EC%9D%84-x,-%EB%91%90%EB%B2%88%EC%A7%B8-%EC%97%B4%EC%9D%84-y%EB%A1%9C-%ED%95%98%EA%B3%A0-%EC%82%B0%EC%A0%90%EB%8F%84%EB%A5%BC-%EA%B7%B8%EB%A0%A4%EB%9D%BC.-(%EC%A0%90%EC%9D%98-%EC%83%89%EC%9D%80-%EB%B6%89%EC%9D%80%EC%83%89%EC%9C%BC%EB%A1%9C-%ED%95%98%EB%9D%BC)"> </a>
+</h4>
+<p><code>-</code> 힌트: 아래와 같은 그림이 나와야 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://github.com/miruetoto/yechan/blob/master/_notebooks/fig2.png?raw=true" alt=""></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">mat2</span><span class="p">[,</span><span class="m">1</span><span class="p">],</span> <span class="n">mat2</span><span class="p">[,</span><span class="m">2</span><span class="p">],</span> <span class="n">col</span> <span class="o">=</span> <span class="s">'RED'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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" width="420" height="420">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="stahangryum/stahangryum"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/stahangryum/2021/11/03/_01_01_R%EC%9E%85%EB%AC%B8%EC%A4%91%EA%B0%84%EA%B3%A0%EC%82%AC-%EA%B9%80%EC%A7%80%EC%9A%B0.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/stahangryum/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/stahangryum/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/stahangryum/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/stahangryum" title="stahangryum"><svg class="svg-icon grey"><use xlink:href="/stahangryum/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

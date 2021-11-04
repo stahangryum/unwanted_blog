@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Title | stahangryum</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://stahangryum.github.io/stahangryum/2021/11/03/Untitled.html" />
+<meta property="og:url" content="https://stahangryum.github.io/stahangryum/2021/11/03/Untitled.html" />
+<meta property="og:site_name" content="stahangryum" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-03T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-11-03T00:00:00-05:00","url":"https://stahangryum.github.io/stahangryum/2021/11/03/Untitled.html","@type":"BlogPosting","headline":"Title","dateModified":"2021-11-03T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/2021/11/03/Untitled.html"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/stahangryum/">stahangryum</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/stahangryum/about/">About Me</a><a class="page-link" href="/stahangryum/search/">Search</a><a class="page-link" href="/stahangryum/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-11-03T00:00:00-05:00" itemprop="datePublished">
+        Nov 3, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/stahangryum/stahangryum/tree/master/_notebooks/Untitled.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/stahangryum/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/stahangryum/stahangryum/master?filepath=_notebooks%2FUntitled.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/stahangryum/stahangryum/blob/master/_notebooks/Untitled.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/Untitled.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">60</span><span class="p">)</span><span class="o">/</span><span class="m">10</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="m">2</span><span class="o">^</span><span class="n">x</span> <span class="o">+</span> <span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="m">2</span><span class="o">^</span><span class="n">x</span> <span class="o">-</span> <span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="m">-1</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.001</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+    <span class="p">(</span><span class="m">2</span><span class="o">^</span><span class="n">a</span> <span class="o">+</span> <span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="m">2</span><span class="o">^</span><span class="n">a</span> <span class="o">-</span> <span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span> <span class="m">-2</span><span class="p">)</span>
+
+<span class="n">aa</span><span class="o">&lt;-</span><span class="nf">min</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="m">+2</span><span class="p">))</span> <span class="o">==</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="m">+2</span><span class="p">)</span>
+<span class="n">a</span><span class="p">[</span><span class="n">aa</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+-0.792
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+v/3PF745BYykd0ibdr7ufWrbiilgJL1Den6xsUSIRekd0q/nkCwRYkm6hrS73h/aze+Hp8ES
+IRala0gvFxJa21gixJL0vI90PO73u935ksPwbkdCYm6sbIAAIUGAkCBASBAw0ZBgZr7xVZ6p
+43uf45tzT9si98pOVX2yvZD+YZF7ZafKPtlx8/77q1bOPWmL3Cs7VffJjh/8GFLl3FO2yL2y
+U4WfbH/x1na9556wRe6Vner6yWY0d51F7pWd6vrJZjR3nUXulZ3q+slmNHedRe6VnSr/ZD94
+S4ZFHp1l7pWdKv9kQnplkXtlp8o/mZBeWeRe2anyTyakVxa5V3aq/JN52zoQEkTIAAKEBAFC
+ggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQME5I+7+nHTbto1/7N32vd+Inb+Y8
+DW8OyxKOU9VhGuVAH//e8KvzrmzH2JKc1ztxnH1Ibw7LEo5T2WEa40AfN39t+G3bHB/+7XaE
+TYl5sxPHthtze37uzR4t4TjVHaYRQtq3q79CGtrh95837br/puS82Yn9vPfnf/ZoCcep7jCN
+EFIb/v759F27u5/9/4O/2Yl924+4OQFv9mgJx6nuMI0Q0vHVGz08/WXOpxP/sxO7dvj1+7R2
+tA36sTd7tITjVHeYxnlWVhHS2Y9/idRo1hJS6DAJKeN/vuxu7u9Pw3y/wVtHSLHDJKSMf+zE
+ab5Xi9cR0qPAYer3rFxer/9rRzZzPkDPe/WvnZjnXj14s0ezPk5P6g7TBEJ6vJJyN8+rQc97
+9a+dmO+X3Zs9mvVxelJ3mCbwrd31+dr+4ce/knZUb3Zi0x7Wocz4y+7NHi3hONUdpgmEtIQ7
+5m93Yng4WKfHG4CztI6VDbHDNG5Ijx+3M79QfHaxE+e9Om3O/zDj//t+vUeLOE5lh2kKIZ3O
+K3JH2ZCci534s1fb2V78vv/HHs39OJUdptmeC8OUCAkChAQBQoIAIUGAkCBASBAgJAgQEgQI
+CQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIA
+IUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQ5umwa7P/DeOLIqRZum5nSpoMIc1Sazf39zfN
+0ZsMh2LGhDQdDsVM3R2ur4Q0HQ7FPF09niSNvRk8cyhm6Vfb7g93QpoOh2KWzgkJaUIcillq
+7fb+6BxpQhyKWRoeT5F+58Q0CGmefrV2dXtou7G3gydCggAhQYCQIEBIECAkCBASBAgJAoQE
+AUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQ
+IEBIECAkCBASBAgJAv4D71Tpb0ARpNkAAAAASUVORK5CYII=" width="420" height="420" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">if</span><span class="p">((</span><span class="m">3</span><span class="o">==</span><span class="m">2</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="m">23</span><span class="o">==</span><span class="m">3</span><span class="p">)){</span>
+    <span class="nf">print</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">px</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="n">py</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="n">px</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">=</span> <span class="m">1</span>
+<span class="n">py</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">=</span> <span class="m">1</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="o">^</span><span class="m">12</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">((</span><span class="n">px</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="m">10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">py</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="m">2</span><span class="o">^</span><span class="m">10</span><span class="p">)){</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">break</span>
+    <span class="p">}</span>
+    
+    <span class="nf">if </span><span class="p">(</span><span class="n">py</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="n">px</span><span class="p">[</span><span class="n">i</span><span class="p">])){</span>
+        <span class="n">px</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="n">px</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">py</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="n">py</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="m">+1</span>
+    <span class="p">}</span>
+    <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">py</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="n">px</span><span class="p">[</span><span class="n">i</span><span class="p">])){</span>
+        <span class="n">px</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="n">px</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="m">+1</span>
+        <span class="n">py</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="m">1</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 2046
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="m">5</span>
+       <span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="m">-100</span><span class="o">:</span><span class="m">100</span><span class="p">)</span><span class="o">/</span><span class="m">10</span>
+<span class="n">x</span>
+<span class="nf">ifelse</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="m">5</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span> <span class="p">((</span><span class="m">2</span><span class="o">&lt;</span><span class="nf">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&lt;=</span><span class="m">5</span><span class="p">)),</span> <span class="m">5</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+&lt;ol class=list-inline&gt;<li>-10</li><li>-9.9</li><li>-9.8</li><li>-9.7</li><li>-9.6</li><li>-9.5</li><li>-9.4</li><li>-9.3</li><li>-9.2</li><li>-9.1</li><li>-9</li><li>-8.9</li><li>-8.8</li><li>-8.7</li><li>-8.6</li><li>-8.5</li><li>-8.4</li><li>-8.3</li><li>-8.2</li><li>-8.1</li><li>-8</li><li>-7.9</li><li>-7.8</li><li>-7.7</li><li>-7.6</li><li>-7.5</li><li>-7.4</li><li>-7.3</li><li>-7.2</li><li>-7.1</li><li>-7</li><li>-6.9</li><li>-6.8</li><li>-6.7</li><li>-6.6</li><li>-6.5</li><li>-6.4</li><li>-6.3</li><li>-6.2</li><li>-6.1</li><li>-6</li><li>-5.9</li><li>-5.8</li><li>-5.7</li><li>-5.6</li><li>-5.5</li><li>-5.4</li><li>-5.3</li><li>-5.2</li><li>-5.1</li><li>-5</li><li>-4.9</li><li>-4.8</li><li>-4.7</li><li>-4.6</li><li>-4.5</li><li>-4.4</li><li>-4.3</li><li>-4.2</li><li>-4.1</li><li>-4</li><li>-3.9</li><li>-3.8</li><li>-3.7</li><li>-3.6</li><li>-3.5</li><li>-3.4</li><li>-3.3</li><li>-3.2</li><li>-3.1</li><li>-3</li><li>-2.9</li><li>-2.8</li><li>-2.7</li><li>-2.6</li><li>-2.5</li><li>-2.4</li><li>-2.3</li><li>-2.2</li><li>-2.1</li><li>-2</li><li>-1.9</li><li>-1.8</li><li>-1.7</li><li>-1.6</li><li>-1.5</li><li>-1.4</li><li>-1.3</li><li>-1.2</li><li>-1.1</li><li>-1</li><li>-0.9</li><li>-0.8</li><li>-0.7</li><li>-0.6</li><li>-0.5</li><li>-0.4</li><li>-0.3</li><li>-0.2</li><li>-0.1</li><li>0</li><li>0.1</li><li>0.2</li><li>0.3</li><li>0.4</li><li>0.5</li><li>0.6</li><li>0.7</li><li>0.8</li><li>0.9</li><li>1</li><li>1.1</li><li>1.2</li><li>1.3</li><li>1.4</li><li>1.5</li><li>1.6</li><li>1.7</li><li>1.8</li><li>1.9</li><li>2</li><li>2.1</li><li>2.2</li><li>2.3</li><li>2.4</li><li>2.5</li><li>2.6</li><li>2.7</li><li>2.8</li><li>2.9</li><li>3</li><li>3.1</li><li>3.2</li><li>3.3</li><li>3.4</li><li>3.5</li><li>3.6</li><li>3.7</li><li>3.8</li><li>3.9</li><li>4</li><li>4.1</li><li>4.2</li><li>4.3</li><li>4.4</li><li>4.5</li><li>4.6</li><li>4.7</li><li>4.8</li><li>4.9</li><li>5</li><li>5.1</li><li>5.2</li><li>5.3</li><li>5.4</li><li>5.5</li><li>5.6</li><li>5.7</li><li>5.8</li><li>5.9</li><li>6</li><li>6.1</li><li>6.2</li><li>6.3</li><li>6.4</li><li>6.5</li><li>6.6</li><li>6.7</li><li>6.8</li><li>6.9</li><li>7</li><li>7.1</li><li>7.2</li><li>7.3</li><li>7.4</li><li>7.5</li><li>7.6</li><li>7.7</li><li>7.8</li><li>7.9</li><li>8</li><li>8.1</li><li>8.2</li><li>8.3</li><li>8.4</li><li>8.5</li><li>8.6</li><li>8.7</li><li>8.8</li><li>8.9</li><li>9</li><li>9.1</li><li>9.2</li><li>9.3</li><li>9.4</li><li>9.5</li><li>9.6</li><li>9.7</li><li>9.8</li><li>9.9</li><li>10</li>&lt;/ol&gt;
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+&lt;ol class=list-inline&gt;<li>-10</li><li>-9.9</li><li>-9.8</li><li>-9.7</li><li>-9.6</li><li>-9.5</li><li>-9.4</li><li>-9.3</li><li>-9.2</li><li>-9.1</li><li>-9</li><li>-8.9</li><li>-8.8</li><li>-8.7</li><li>-8.6</li><li>-8.5</li><li>-8.4</li><li>-8.3</li><li>-8.2</li><li>-8.1</li><li>-8</li><li>-7.9</li><li>-7.8</li><li>-7.7</li><li>-7.6</li><li>-7.5</li><li>-7.4</li><li>-7.3</li><li>-7.2</li><li>-7.1</li><li>-7</li><li>-6.9</li><li>-6.8</li><li>-6.7</li><li>-6.6</li><li>-6.5</li><li>-6.4</li><li>-6.3</li><li>-6.2</li><li>-6.1</li><li>-6</li><li>-5.9</li><li>-5.8</li><li>-5.7</li><li>-5.6</li><li>-5.5</li><li>-5.4</li><li>-5.3</li><li>-5.2</li><li>-5.1</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5</li><li>5.1</li><li>5.2</li><li>5.3</li><li>5.4</li><li>5.5</li><li>5.6</li><li>5.7</li><li>5.8</li><li>5.9</li><li>6</li><li>6.1</li><li>6.2</li><li>6.3</li><li>6.4</li><li>6.5</li><li>6.6</li><li>6.7</li><li>6.8</li><li>6.9</li><li>7</li><li>7.1</li><li>7.2</li><li>7.3</li><li>7.4</li><li>7.5</li><li>7.6</li><li>7.7</li><li>7.8</li><li>7.9</li><li>8</li><li>8.1</li><li>8.2</li><li>8.3</li><li>8.4</li><li>8.5</li><li>8.6</li><li>8.7</li><li>8.8</li><li>8.9</li><li>9</li><li>9.1</li><li>9.2</li><li>9.3</li><li>9.4</li><li>9.5</li><li>9.6</li><li>9.7</li><li>9.8</li><li>9.9</li><li>10</li>&lt;/ol&gt;
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">-1</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">-1</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+<span class="n">B</span> <span class="o">=</span> <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">7</span><span class="p">))</span>
+
+<span class="n">A</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="n">B</span>
+<span class="nf">solve</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">%*%</span> <span class="n">B</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A matrix: 4 × 4 of type dbl</caption>
+<tbody>
+	<tr><td>1</td><td>2</td><td> 3</td><td>4</td></tr>
+	<tr><td>2</td><td>2</td><td> 1</td><td>0</td></tr>
+	<tr><td>0</td><td>1</td><td>-1</td><td>0</td></tr>
+	<tr><td>3</td><td>1</td><td>-1</td><td>3</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A matrix: 4 × 1 of type dbl</caption>
+<tbody>
+	<tr><td>1</td></tr>
+	<tr><td>9</td></tr>
+	<tr><td>4</td></tr>
+	<tr><td>7</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A matrix: 4 × 1 of type dbl</caption>
+<tbody>
+	<tr><td> 2</td></tr>
+	<tr><td> 3</td></tr>
+	<tr><td>-1</td></tr>
+	<tr><td>-1</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">-1</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">-1</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+<span class="n">B</span> <span class="o">=</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">7</span><span class="p">))</span>
+<span class="nf">solve</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">%*%</span><span class="n">B</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A matrix: 4 × 1 of type dbl</caption>
+<tbody>
+	<tr><td> 2</td></tr>
+	<tr><td> 3</td></tr>
+	<tr><td>-1</td></tr>
+	<tr><td>-1</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/stahangryum/2021/11/03/Untitled.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/stahangryum/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/stahangryum/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/stahangryum/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/stahangryum" title="stahangryum"><svg class="svg-icon grey"><use xlink:href="/stahangryum/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
