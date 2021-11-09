@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Title | stahangryum</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://stahangryum.github.io/stahangryum/2021/11/08/Untitled.html" />
+<meta property="og:url" content="https://stahangryum.github.io/stahangryum/2021/11/08/Untitled.html" />
+<meta property="og:site_name" content="stahangryum" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-08T00:00:00-06:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-11-08T00:00:00-06:00","url":"https://stahangryum.github.io/stahangryum/2021/11/08/Untitled.html","@type":"BlogPosting","headline":"Title","dateModified":"2021-11-08T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/2021/11/08/Untitled.html"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/stahangryum/">stahangryum</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/stahangryum/about/">About Me</a><a class="page-link" href="/stahangryum/search/">Search</a><a class="page-link" href="/stahangryum/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-11-08T00:00:00-06:00" itemprop="datePublished">
+        Nov 8, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/stahangryum/stahangryum/tree/master/_notebooks/Untitled.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/stahangryum/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/stahangryum/stahangryum/master?filepath=_notebooks%2FUntitled.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/stahangryum/stahangryum/blob/master/_notebooks/Untitled.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/Untitled.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">file_url</span> <span class="o">&lt;-</span> <span class="s">&quot;http://www.lock5stat.com/datasets2e/InkjetPrinters.csv&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">inkjet</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+<span class="n">inkjet</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A data.frame: 20 × 6</caption>
+<thead>
+	<tr><th scope="col">Model</th><th scope="col">PPM</th><th scope="col">PhotoTime</th><th scope="col">Price</th><th scope="col">CostBW</th><th scope="col">CostColor</th></tr>
+	<tr><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>HP Photosmart Pro 8500A e-All-in-One       </td><td>3.9</td><td> 67</td><td>300</td><td>1.6</td><td> 7.2</td></tr>
+	<tr><td>Canon Pixma MX882                          </td><td>2.9</td><td> 63</td><td>199</td><td>5.2</td><td>13.4</td></tr>
+	<tr><td>Lexmark Impact S305                        </td><td>2.7</td><td> 43</td><td> 79</td><td>6.9</td><td> 9.0</td></tr>
+	<tr><td>Lexmark Interpret S405                     </td><td>2.9</td><td> 42</td><td>129</td><td>4.9</td><td>13.9</td></tr>
+	<tr><td>Epson Workforce 520                        </td><td>2.4</td><td>170</td><td> 70</td><td>4.9</td><td>14.4</td></tr>
+	<tr><td>Brother MFC-J6910DW                        </td><td>4.1</td><td>143</td><td>348</td><td>1.7</td><td> 7.9</td></tr>
+	<tr><td>HP Officejet 7500A Wide Format e-All-in-One</td><td>3.4</td><td> 66</td><td>299</td><td>2.7</td><td> 9.1</td></tr>
+	<tr><td>Canon Pixma iX7000 Inkjet Business Printer </td><td>2.8</td><td> 66</td><td>248</td><td>4.1</td><td> 9.8</td></tr>
+	<tr><td>Kodak ESP Office 2170 All-in-One Printer   </td><td>3.0</td><td> 42</td><td>150</td><td>3.7</td><td>11.3</td></tr>
+	<tr><td>HP Photosmart Plus e-All-in-One            </td><td>3.2</td><td> 77</td><td>150</td><td>4.2</td><td>11.4</td></tr>
+	<tr><td>Kodak ESP C310 All-in-One                  </td><td>2.7</td><td> 44</td><td> 87</td><td>3.7</td><td>11.3</td></tr>
+	<tr><td>Dell P513w All-in-One Wireless             </td><td>2.7</td><td> 45</td><td>100</td><td>8.3</td><td>18.6</td></tr>
+	<tr><td>Brother MFC-J410W                          </td><td>2.2</td><td> 96</td><td> 99</td><td>5.0</td><td>14.7</td></tr>
+	<tr><td>Dell V715w                                 </td><td>2.5</td><td> 41</td><td>189</td><td>3.8</td><td>12.4</td></tr>
+	<tr><td>Kodak ESP C310 All-in-One                  </td><td>2.7</td><td> 44</td><td> 99</td><td>3.7</td><td>11.3</td></tr>
+	<tr><td>Epson Stylus NX420                         </td><td>1.7</td><td>170</td><td> 60</td><td>5.7</td><td>14.6</td></tr>
+	<tr><td>Kodak ESP 7250 All-in-One                  </td><td>2.8</td><td> 58</td><td>199</td><td>2.2</td><td> 6.5</td></tr>
+	<tr><td>Canon Pixma 420 Wireless Inject Office     </td><td>1.8</td><td> 97</td><td>149</td><td>5.5</td><td>13.2</td></tr>
+	<tr><td>Canon Pixma MX360 Office Inkjet All-in-One </td><td>1.8</td><td> 94</td><td> 79</td><td>5.5</td><td>13.2</td></tr>
+	<tr><td>Epson WorkForce 635                        </td><td>4.1</td><td>134</td><td>199</td><td>3.0</td><td>10.2</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Price</span> <span class="o">~</span> <span class="n">PPM</span><span class="p">,</span> <span class="n">inkjet</span><span class="p">)</span>
+<span class="n">fit</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Price ~ PPM, data = inkjet)
+
+Coefficients:
+(Intercept)          PPM  
+     -94.22        90.88  
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Price ~ PPM, data = inkjet)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-79.38 -51.40  -3.49  43.85  87.76 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   -94.22      56.40  -1.671 0.112086    
+PPM            90.88      19.49   4.663 0.000193 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 58.55 on 18 degrees of freedom
+Multiple R-squared:  0.5471,	Adjusted R-squared:  0.522 
+F-statistic: 21.75 on 1 and 18 DF,  p-value: 0.0001934
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">RT</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;http://www.lock5stat.com/datasets2e/RestaurantTips.csv&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">RT</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A data.frame: 157 × 7</caption>
+<thead>
+	<tr><th scope="col">Bill</th><th scope="col">Tip</th><th scope="col">Credit</th><th scope="col">Guests</th><th scope="col">Day</th><th scope="col">Server</th><th scope="col">PctTip</th></tr>
+	<tr><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>23.70</td><td>10.00</td><td>n</td><td>2</td><td>f </td><td>A</td><td>42.2</td></tr>
+	<tr><td>36.11</td><td> 7.00</td><td>n</td><td>3</td><td>f </td><td>B</td><td>19.4</td></tr>
+	<tr><td>31.99</td><td> 5.01</td><td>y</td><td>2</td><td>f </td><td>A</td><td>15.7</td></tr>
+	<tr><td>17.39</td><td> 3.61</td><td>y</td><td>2</td><td>f </td><td>B</td><td>20.8</td></tr>
+	<tr><td>15.41</td><td> 3.00</td><td>n</td><td>2</td><td>f </td><td>B</td><td>19.5</td></tr>
+	<tr><td>18.62</td><td> 2.50</td><td>n</td><td>2</td><td>f </td><td>A</td><td>13.4</td></tr>
+	<tr><td>21.56</td><td> 3.44</td><td>n</td><td>2</td><td>f </td><td>B</td><td>16.0</td></tr>
+	<tr><td>19.58</td><td> 2.42</td><td>n</td><td>2</td><td>f </td><td>A</td><td>12.4</td></tr>
+	<tr><td>23.59</td><td> 3.00</td><td>n</td><td>2</td><td>f </td><td>A</td><td>12.7</td></tr>
+	<tr><td>18.67</td><td> 2.00</td><td>n</td><td>2</td><td>f </td><td>B</td><td>10.7</td></tr>
+	<tr><td>15.19</td><td> 1.75</td><td>n</td><td>1</td><td>f </td><td>B</td><td>11.5</td></tr>
+	<tr><td>10.17</td><td> 2.10</td><td>n</td><td>1</td><td>f </td><td>A</td><td>20.6</td></tr>
+	<tr><td> 8.08</td><td> 1.00</td><td>n</td><td>1</td><td>f </td><td>B</td><td>12.4</td></tr>
+	<tr><td> 8.83</td><td> 1.25</td><td>n</td><td>2</td><td>f </td><td>B</td><td>14.2</td></tr>
+	<tr><td> 8.88</td><td> 1.12</td><td>n</td><td>2</td><td>f </td><td>B</td><td>12.6</td></tr>
+	<tr><td>17.49</td><td> 3.00</td><td>n</td><td>3</td><td>f </td><td>B</td><td>17.2</td></tr>
+	<tr><td>18.40</td><td> 2.60</td><td>n</td><td>2</td><td>f </td><td>C</td><td>14.1</td></tr>
+	<tr><td>29.05</td><td> 5.91</td><td>y</td><td>2</td><td>th</td><td>C</td><td>20.3</td></tr>
+	<tr><td> 9.31</td><td> 1.25</td><td>n</td><td>1</td><td>th</td><td>C</td><td>13.4</td></tr>
+	<tr><td>41.94</td><td> 7.06</td><td>y</td><td>5</td><td>th</td><td>C</td><td>16.8</td></tr>
+	<tr><td>55.59</td><td>10.00</td><td>n</td><td>5</td><td>th</td><td>C</td><td>18.0</td></tr>
+	<tr><td>25.09</td><td> 5.00</td><td>y</td><td>2</td><td>th</td><td>C</td><td>19.9</td></tr>
+	<tr><td>13.11</td><td> 2.00</td><td>n</td><td>1</td><td>th</td><td>C</td><td>15.3</td></tr>
+	<tr><td>49.59</td><td>10.41</td><td>y</td><td>4</td><td>th</td><td>C</td><td>21.0</td></tr>
+	<tr><td>36.86</td><td> 6.14</td><td>y</td><td>2</td><td>th</td><td>B</td><td>16.7</td></tr>
+	<tr><td>22.68</td><td> 3.55</td><td>n</td><td>2</td><td>th</td><td>A</td><td>15.7</td></tr>
+	<tr><td>29.53</td><td> 4.47</td><td>y</td><td>3</td><td>th</td><td>B</td><td>15.1</td></tr>
+	<tr><td>18.62</td><td> 3.11</td><td>n</td><td>2</td><td>th</td><td>A</td><td>16.7</td></tr>
+	<tr><td>31.35</td><td> 4.50</td><td>n</td><td>2</td><td>th</td><td>A</td><td>14.4</td></tr>
+	<tr><td>24.34</td><td> 4.00</td><td>y</td><td>3</td><td>th</td><td>C</td><td>16.4</td></tr>
+	<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+	<tr><td>11.72</td><td> 2.28</td><td>y</td><td>1</td><td>w </td><td>A</td><td>19.5</td></tr>
+	<tr><td> 8.40</td><td> 1.60</td><td>y</td><td>1</td><td>w </td><td>A</td><td>19.0</td></tr>
+	<tr><td>17.44</td><td> 2.00</td><td>n</td><td>2</td><td>w </td><td>A</td><td>11.5</td></tr>
+	<tr><td>12.52</td><td> 1.50</td><td>n</td><td>1</td><td>w </td><td>B</td><td>12.0</td></tr>
+	<tr><td>14.34</td><td> 2.00</td><td>n</td><td>2</td><td>w </td><td>B</td><td>13.9</td></tr>
+	<tr><td>30.60</td><td> 5.00</td><td>y</td><td>2</td><td>w </td><td>B</td><td>16.3</td></tr>
+	<tr><td>18.08</td><td> 2.00</td><td>n</td><td>2</td><td>w </td><td>A</td><td>11.1</td></tr>
+	<tr><td>16.48</td><td> 3.00</td><td>n</td><td>2</td><td>m </td><td>B</td><td>18.2</td></tr>
+	<tr><td>24.50</td><td> 3.50</td><td>y</td><td>2</td><td>t </td><td>A</td><td>14.3</td></tr>
+	<tr><td>17.12</td><td> 3.72</td><td>n</td><td>2</td><td>t </td><td>A</td><td>21.7</td></tr>
+	<tr><td> 6.69</td><td> 1.00</td><td>n</td><td>1</td><td>m </td><td>B</td><td>14.9</td></tr>
+	<tr><td>16.26</td><td> 2.43</td><td>n</td><td>2</td><td>w </td><td>B</td><td>14.9</td></tr>
+	<tr><td>13.86</td><td> 1.14</td><td>n</td><td>1</td><td>t </td><td>C</td><td> 8.2</td></tr>
+	<tr><td>30.98</td><td> 4.02</td><td>y</td><td>4</td><td>t </td><td>C</td><td>13.0</td></tr>
+	<tr><td>18.40</td><td> 2.75</td><td>n</td><td>2</td><td>m </td><td>B</td><td>14.9</td></tr>
+	<tr><td>16.80</td><td> 2.20</td><td>y</td><td>2</td><td>m </td><td>B</td><td>13.1</td></tr>
+	<tr><td> 3.75</td><td> 0.25</td><td>n</td><td>2</td><td>m </td><td>B</td><td> 6.7</td></tr>
+	<tr><td>32.69</td><td> 5.00</td><td>n</td><td>2</td><td>m </td><td>B</td><td>15.3</td></tr>
+	<tr><td>35.68</td><td> 5.00</td><td>n</td><td>3</td><td>m </td><td>B</td><td>14.0</td></tr>
+	<tr><td> 9.84</td><td> 2.16</td><td>y</td><td>1</td><td>m </td><td>B</td><td>22.0</td></tr>
+	<tr><td>14.23</td><td> 2.15</td><td>n</td><td>2</td><td>w </td><td>B</td><td>15.1</td></tr>
+	<tr><td>29.85</td><td> 4.15</td><td>y</td><td>2</td><td>w </td><td>A</td><td>13.9</td></tr>
+	<tr><td>20.76</td><td> 3.00</td><td>n</td><td>2</td><td>m </td><td>B</td><td>14.5</td></tr>
+	<tr><td>24.82</td><td> 4.40</td><td>n</td><td>2</td><td>m </td><td>B</td><td>17.7</td></tr>
+	<tr><td>15.62</td><td> 2.81</td><td>n</td><td>2</td><td>th</td><td>B</td><td>18.0</td></tr>
+	<tr><td>31.30</td><td> 5.70</td><td>y</td><td>3</td><td>m </td><td>B</td><td>18.2</td></tr>
+	<tr><td>12.57</td><td> 2.00</td><td>n</td><td>3</td><td>m </td><td>B</td><td>15.9</td></tr>
+	<tr><td>14.87</td><td> 3.13</td><td>n</td><td>2</td><td>m </td><td>B</td><td>21.0</td></tr>
+	<tr><td>51.68</td><td>10.00</td><td>y</td><td>6</td><td>m </td><td>B</td><td>19.3</td></tr>
+	<tr><td>17.12</td><td> 2.50</td><td>n</td><td>2</td><td>m </td><td>B</td><td>14.6</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">RT</span><span class="o">$</span><span class="n">Bill</span><span class="p">,</span> <span class="n">RT</span><span class="o">$</span><span class="n">PctTip</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.135297576100098
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">2</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="nf">pt</span><span class="p">(</span><span class="m">1.7</span><span class="p">,</span> <span class="m">155</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.0911366746559272
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/stahangryum/2021/11/08/Untitled.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/stahangryum/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/stahangryum/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/stahangryum/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/stahangryum" title="stahangryum"><svg class="svg-icon grey"><use xlink:href="/stahangryum/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
