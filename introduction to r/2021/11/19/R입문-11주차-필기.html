@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -141,16 +141,16 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#runif(N):-균등분포">runif(N): 균등분포 </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Application">Application </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#rbinom(N,-size-=-a,-prob-=-b):-이항분포">rbinom(N, size = a, prob = b): 이항분포 </a></li>
-<li class="toc-entry toc-h2"><a href="#비복원-추출">비복원 추출 </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h1"><a href="#Problem">Problem </a>
+<li class="toc-entry toc-h3"><a href="#Problem">Problem </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Solution-I">Solution I </a></li>
-<li class="toc-entry toc-h2"><a href="#Solution-II">Solution II </a></li>
+<li class="toc-entry toc-h4"><a href="#Solution-I">Solution I </a></li>
+<li class="toc-entry toc-h4"><a href="#Solution-II">Solution II </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#rbinom(n,-size-=-a,-prob-=-b):-이항분포">rbinom(n, size = a, prob = b): 이항분포 </a></li>
+<li class="toc-entry toc-h2"><a href="#sample(a,-size-=-n,-prob-=-p,-replace-=-TRUE-or-FALSE):-집합에서의-샘플링">sample(a, size = n, prob = p, replace = TRUE or FALSE): 집합에서의 샘플링 </a></li>
 </ul>
 </li>
 </ul><!--
@@ -356,221 +356,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="rbinom(N,-size-=-a,-prob-=-b):-이항분포">
-<a class="anchor" href="#rbinom(N,-size-=-a,-prob-=-b):-%EC%9D%B4%ED%95%AD%EB%B6%84%ED%8F%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>rbinom(N, size = a, prob = b): 이항분포<a class="anchor-link" href="#rbinom(N,-size-=-a,-prob-=-b):-%EC%9D%B4%ED%95%AD%EB%B6%84%ED%8F%AC"> </a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><code>rbinom(N, size = a, prob = b)</code></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>앞면이 나올 확률이 <strong>b</strong>인 동전을 <strong>a</strong>번 던졌을 때 앞면이 나온 횟수를 리턴한다. 위 시행을 N번 반복한다.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>
-<strong>b=0.5</strong>이면 베르누이 분포이다.(베르누이 분포는 이항분포의 특수한 경우이다.)</li>
-</ul>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>[1] 8</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>위 코드는 앞면이 나올 확률이 0.9인 동전을 10번 던졌더니 8번 앞면이 나온 것이다.</li>
-</ul>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>[1] 7</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>위 코드는 앞면이 나올 확률이 0.9인 동전을 10번 던졌더니 7번 앞면이 나온 것이다. </li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>이러한 시행을 계속해서 반복하면, 즉 <strong>N</strong>의 크기를 늘린다면 그 평균은 9에 수렴하지 않겠는가? 실제로 그렇다.</li>
-</ul>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">10</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">mean</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>[1] 9.0044</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="비복원-추출">
-<a class="anchor" href="#%EB%B9%84%EB%B3%B5%EC%9B%90-%EC%B6%94%EC%B6%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>비복원 추출<a class="anchor-link" href="#%EB%B9%84%EB%B3%B5%EC%9B%90-%EC%B6%94%EC%B6%9C"> </a>
-</h2>
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">set</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'red'</span><span class="p">,</span> <span class="s">'red'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">)</span>
-<span class="n">set</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>[1] "red"  "red"  "blue" "blue" "blue"</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Problem">
+<h3 id="Problem">
 <a class="anchor" href="#Problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem<a class="anchor-link" href="#Problem"> </a>
-</h1>
+</h3>
 </div>
 </div>
 </div>
@@ -587,9 +375,9 @@ $$\text{Find}\int_0^2 |x^2(x-1)|dx$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Solution-I">
+<h4 id="Solution-I">
 <a class="anchor" href="#Solution-I" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution I<a class="anchor-link" href="#Solution-I"> </a>
-</h2>
+</h4>
 </div>
 </div>
 </div>
@@ -605,9 +393,9 @@ $$ \begin{aligned}
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Solution-II">
+<h4 id="Solution-II">
 <a class="anchor" href="#Solution-II" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution II<a class="anchor-link" href="#Solution-II"> </a>
-</h2>
+</h4>
 </div>
 </div>
 </div>
@@ -901,6 +689,384 @@ $$ \begin{aligned}
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="rbinom(n,-size-=-a,-prob-=-b):-이항분포">
+<a class="anchor" href="#rbinom(n,-size-=-a,-prob-=-b):-%EC%9D%B4%ED%95%AD%EB%B6%84%ED%8F%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>rbinom(n, size = a, prob = b): 이항분포<a class="anchor-link" href="#rbinom(n,-size-=-a,-prob-=-b):-%EC%9D%B4%ED%95%AD%EB%B6%84%ED%8F%AC"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>rbinom(N, size = a, prob = b)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>앞면이 나올 확률이 <strong>b</strong>인 동전을 <strong>a</strong>번 던졌을 때 앞면이 나온 횟수를 리턴한다. 위 시행을 <strong>n</strong>번 반복한다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<strong>b=0.5</strong>이면 베르누이 분포이다.(베르누이 분포는 이항분포의 특수한 경우이다.)</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>위 코드는 앞면이 나올 확률이 0.9인 동전을 10번 던졌더니 8번 앞면이 나온 것이다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 7</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>위 코드는 앞면이 나올 확률이 0.9인 동전을 10번 던졌더니 7번 앞면이 나온 것이다. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이러한 시행을 계속해서 반복하면, 즉 <strong>N</strong>의 크기를 늘린다면 그 평균은 9에 수렴하지 않겠는가? 실제로 그렇다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">10</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">mean</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 9.0044</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="sample(a,-size-=-n,-prob-=-p,-replace-=-TRUE-or-FALSE):-집합에서의-샘플링">
+<a class="anchor" href="#sample(a,-size-=-n,-prob-=-p,-replace-=-TRUE-or-FALSE):-%EC%A7%91%ED%95%A9%EC%97%90%EC%84%9C%EC%9D%98-%EC%83%98%ED%94%8C%EB%A7%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>sample(a, size = n, prob = p, replace = TRUE or FALSE): 집합에서의 샘플링<a class="anchor-link" href="#sample(a,-size-=-n,-prob-=-p,-replace-=-TRUE-or-FALSE):-%EC%A7%91%ED%95%A9%EC%97%90%EC%84%9C%EC%9D%98-%EC%83%98%ED%94%8C%EB%A7%81"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<code>sample(a, size = n)</code>를 실행하면 집합 <strong>a</strong>에서 <strong>n</strong>개의 원소를 비복원추출한다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<code>sample(a, size = n, replace = TRUE)</code>를 실행하면 집합 <strong>a</strong>에서 <strong>n</strong>개의 원소를 복원추출한다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<code>sample(a, size = n, prob = c(p_1, p_2 ....p_k))</code>을 실행하면 원소의 개수가 k인 집합 a에서 n개의 원소를 뽑되, 각 원소가 뽑힐 확률을 제어할 수 있다. 이 때 확률 벡터는 a의 인덱스 순으로 입력해야 한다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">set</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'red'</span><span class="p">,</span> <span class="s">'red'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">)</span>
+<span class="nf">sample</span><span class="p">(</span><span class="n">set</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "blue" "red"  "blue" "red" </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sample</span><span class="p">(</span><span class="n">set</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "blue" "blue" "blue" "red" </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sample</span><span class="p">(</span><span class="n">set</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "red"  "blue" "red"  "blue"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sample</span><span class="p">(</span><span class="n">set</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "blue" "red"  "red"  "blue"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">set</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'red'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">)</span>
+<span class="nf">sample</span><span class="p">(</span><span class="n">set</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span> <span class="m">0.8</span><span class="p">),</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "blue" "red"  "blue" "blue" "blue"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
