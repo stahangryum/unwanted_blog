@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>R : Integration | stahangryum</title>
+<title>R : Random Sampling and Integration | stahangryum</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="R : Integration" />
+<meta property="og:title" content="R : Random Sampling and Integration" />
 <meta name="author" content="Kim Jeewoo" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="전북대학교 R입문 11주차 필기" />
@@ -18,7 +18,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-11-19T00:00:00-06:00" />
 <script type="application/ld+json">
-{"datePublished":"2021-11-19T00:00:00-06:00","url":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/11/19/R%EC%9E%85%EB%AC%B8-11%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html","@type":"BlogPosting","image":"https://stahangryum.github.io/stahangryum/images/r_logo.PNG","headline":"R : Integration","dateModified":"2021-11-19T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/11/19/R%EC%9E%85%EB%AC%B8-11%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html"},"author":{"@type":"Person","name":"Kim Jeewoo"},"description":"전북대학교 R입문 11주차 필기","@context":"https://schema.org"}</script>
+{"datePublished":"2021-11-19T00:00:00-06:00","url":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/11/19/R%EC%9E%85%EB%AC%B8-11%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html","@type":"BlogPosting","image":"https://stahangryum.github.io/stahangryum/images/r_logo.PNG","headline":"R : Random Sampling and Integration","dateModified":"2021-11-19T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/introduction%20to%20r/2021/11/19/R%EC%9E%85%EB%AC%B8-11%EC%A3%BC%EC%B0%A8-%ED%95%84%EA%B8%B0.html"},"author":{"@type":"Person","name":"Kim Jeewoo"},"description":"전북대학교 R입문 11주차 필기","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -89,7 +89,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">R : Integration</h1><p class="page-description">전북대학교 R입문 11주차 필기</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-11-19T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">R : Random Sampling and Integration</h1><p class="page-description">전북대학교 R입문 11주차 필기</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-11-19T00:00:00-06:00" itemprop="datePublished">
         Nov 19, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -136,9 +136,13 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#runif(N)">runif(N) </a>
+<li class="toc-entry toc-h1"><a href="#랜덤변수의-생성">랜덤변수의 생성 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#runif(N):-균등분포">runif(N): 균등분포 </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Application">Application </a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Problem">Problem </a>
@@ -170,38 +174,23 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>-- <span class="ansi-bold">Attaching packages</span> ------------------------------------------------------------------------------- tidyverse 1.3.1 --
-
-<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">ggplot2</span> 3.3.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">purrr  </span> 0.3.4
-<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tibble </span> 3.1.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">dplyr  </span> 1.0.7
-<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tidyr  </span> 1.1.4     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">stringr</span> 1.4.0
-<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">readr  </span> 2.0.2     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">forcats</span> 0.5.1
-
--- <span class="ansi-bold">Conflicts</span> ---------------------------------------------------------------------------------- tidyverse_conflicts() --
-<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">filter()</span> masks <span class="ansi-blue-fg">stats</span>::filter()
-<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">lag()</span>    masks <span class="ansi-blue-fg">stats</span>::lag()
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="runif(N)">
-<a class="anchor" href="#runif(N)" aria-hidden="true"><span class="octicon octicon-link"></span></a>runif(N)<a class="anchor-link" href="#runif(N)"> </a>
+<h1 id="랜덤변수의-생성">
+<a class="anchor" href="#%EB%9E%9C%EB%8D%A4%EB%B3%80%EC%88%98%EC%9D%98-%EC%83%9D%EC%84%B1" aria-hidden="true"><span class="octicon octicon-link"></span></a>랜덤변수의 생성<a class="anchor-link" href="#%EB%9E%9C%EB%8D%A4%EB%B3%80%EC%88%98%EC%9D%98-%EC%83%9D%EC%84%B1"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="runif(N):-균등분포">
+<a class="anchor" href="#runif(N):-%EA%B7%A0%EB%93%B1%EB%B6%84%ED%8F%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>runif(N): 균등분포<a class="anchor-link" href="#runif(N):-%EA%B7%A0%EB%93%B1%EB%B6%84%ED%8F%AC"> </a>
 </h2>
 </div>
 </div>
@@ -209,7 +198,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>runif(N)</code>을 실행하면 0~1사이의 난수를 N개 리턴한다.</p>
+<p><code>runif(N)</code>을 실행하면 0 ~ 1 사이의 난수를 N개 리턴한다.</p>
+<p><code>runif(n = N, min = a, max = b)</code>을 실행하면 a ~ b 사이의 난수를 N개 리턴한다.</p>
 
 </div>
 </div>
@@ -236,7 +226,40 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea ">
-<pre>[1] 0.2412037 0.3951097 0.7716065 0.8553089 0.8819846</pre>
+<pre>[1] 0.5709525 0.3290620 0.7790794 0.7039090 0.5298897</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">runif</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 4.555367 3.458504 4.696115 4.381830 3.003170</pre>
 </div>
 
 </div>
@@ -311,7 +334,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea ">
-<pre>[1] 4.556669 6.314512 5.540722 4.835886 6.485544</pre>
+<pre>[1] 6.903503 5.121690 4.384095 6.892863 4.465766</pre>
 </div>
 
 </div>
@@ -353,9 +376,9 @@ $$\text{Find}\int_0^2 |x^2(x-1)|dx$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$ \begin{align*}
+$$ \begin{align\*}
 \int_0^2 |x^2(x-1)|dx &amp;= \int_0^1 |x^2(x-1)|dx + \int_1^2 |x^2(x-1)|dx\\\\\\&amp;=-\int_0^1 x^2(x-1)dx + \int_1^2 x^2(x-1)dx\\\\\\&amp;=-\int_0^1 (x^3-x^2)dx + \int_1^2 (x^3-x^2)dx\\\\\\&amp;= -\left[\dfrac{1}{4}x^4 - \dfrac{1}{3}x^3\right]_0^1 + \left[\dfrac{1}{4}x^4 - \dfrac{1}{3}x^3\right]_1^2\\\\\\&amp;= -\left(\dfrac{1}{4}-\dfrac{1}{3}\right) + \left(\dfrac{16}{4}-\dfrac{8}{3}\right)-\left(\dfrac{1}{4}-\dfrac{1}{3}\right)\\\\\\&amp;=\dfrac{3}{2}
-\end{align*}$$
+\end{align\*}$$
 </div>
 </div>
 </div>
