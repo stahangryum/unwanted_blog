@@ -144,6 +144,7 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#rbinom(N,-size-=-a,-prob-=-b):-이항분포">rbinom(N, size = a, prob = b): 이항분포 </a></li>
+<li class="toc-entry toc-h2"><a href="#비복원-추출">비복원 추출 </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Problem">Problem </a>
@@ -381,6 +382,17 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<strong>b=0.5</strong>이면 베르누이 분포이다.(베르누이 분포는 이항분포의 특수한 경우이다.)</li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -388,24 +400,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="o">-</span> 여기서 <span class="o">**</span><span class="n">b</span><span class="o">=</span><span class="m">1</span><span class="o">**</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">999</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.9999999</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -420,7 +415,146 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea ">
-<pre> [1] 999 999 999 999 999 999 999 999 999 999</pre>
+<pre>[1] 8</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>위 코드는 앞면이 나올 확률이 0.9인 동전을 10번 던졌더니 8번 앞면이 나온 것이다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 7</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>위 코드는 앞면이 나올 확률이 0.9인 동전을 10번 던졌더니 7번 앞면이 나온 것이다. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이러한 시행을 계속해서 반복하면, 즉 <strong>N</strong>의 크기를 늘린다면 그 평균은 9에 수렴하지 않겠는가? 실제로 그렇다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">10</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">mean</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 9.0044</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="비복원-추출">
+<a class="anchor" href="#%EB%B9%84%EB%B3%B5%EC%9B%90-%EC%B6%94%EC%B6%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>비복원 추출<a class="anchor-link" href="#%EB%B9%84%EB%B3%B5%EC%9B%90-%EC%B6%94%EC%B6%9C"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">set</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'red'</span><span class="p">,</span> <span class="s">'red'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">)</span>
+<span class="n">set</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "red"  "red"  "blue" "blue" "blue"</pre>
 </div>
 
 </div>
