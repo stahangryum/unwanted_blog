@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -160,6 +160,16 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Solution">Solution </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#Problem">Problem </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Solution">Solution </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#2명-모두-생존하는-경우">2명 모두 생존하는 경우 </a></li>
+<li class="toc-entry toc-h4"><a href="#1명만-생존하는-경우">1명만 생존하는 경우 </a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><!--
@@ -182,6 +192,30 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>-- <span class="ansi-bold">Attaching packages</span> ------------------------------------------------------------------------------- tidyverse 1.3.1 --
+
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">ggplot2</span> 3.3.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">purrr  </span> 0.3.4
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tibble </span> 3.1.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">dplyr  </span> 1.0.7
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tidyr  </span> 1.1.4     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">stringr</span> 1.4.0
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">readr  </span> 2.0.2     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">forcats</span> 0.5.1
+
+-- <span class="ansi-bold">Conflicts</span> ---------------------------------------------------------------------------------- tidyverse_conflicts() --
+<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">filter()</span> masks <span class="ansi-blue-fg">stats</span>::filter()
+<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">lag()</span>    masks <span class="ansi-blue-fg">stats</span>::lag()
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1582,6 +1616,128 @@ Traceback:
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem">
+<a class="anchor" href="#Problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem<a class="anchor-link" href="#Problem"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>강화유리와 유리를 랜덤으로 찍는 참가자가 2명 있다고 하자. (따라서 강화유리를 고를 확률이 50%이다.)</p>
+<p>(강화유리, 유리)의 징검다리가 3개 있다고 하자. (따라서 총 6개의 유리가 있고, 3번연속으로 강화유리를 고르면 2명 모두 살아남는다)</p>
+<p>8000번의 시뮬레이션을 하였을 경우 아래의 질문에 답하라.</p>
+<p>(질문1) 2명 모두 살아남는 경우는 몇번인가? 약 1000번</p>
+<p>(질문2) 1명만 살아남는 경우는 몇번정도인가? 약 3000번 정도..</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">
+<a class="anchor" href="#Solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution<a class="anchor-link" href="#Solution"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="2명-모두-생존하는-경우">
+<a class="anchor" href="#2%EB%AA%85-%EB%AA%A8%EB%91%90-%EC%83%9D%EC%A1%B4%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>2명 모두 생존하는 경우<a class="anchor-link" href="#2%EB%AA%85-%EB%AA%A8%EB%91%90-%EC%83%9D%EC%A1%B4%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">simulate_all_sulv</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="nf">return </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="nf">rbinom</span><span class="p">(</span><span class="m">8000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span> <span class="o">==</span> <span class="m">3</span><span class="p">))</span>
+
+<span class="nf">simulate_all_sulv</span><span class="p">(</span><span class="m">8000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+1003
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="1명만-생존하는-경우">
+<a class="anchor" href="#1%EB%AA%85%EB%A7%8C-%EC%83%9D%EC%A1%B4%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>1명만 생존하는 경우<a class="anchor-link" href="#1%EB%AA%85%EB%A7%8C-%EC%83%9D%EC%A1%B4%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">simulate_one_sulv</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">N</span><span class="p">){</span>
+    <span class="n">first_cross</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">8000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span>
+    <span class="n">second_cross</span> <span class="o">=</span> <span class="m">0</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">N</span><span class="p">){</span>
+        <span class="nf">if </span><span class="p">(</span> <span class="nf">sample</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="o">-</span><span class="n">first_cross</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">prob</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">),</span><span class="n">replace</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">prod</span> <span class="o">==</span> <span class="m">1</span><span class="p">)</span> <span class="n">second_cross</span> <span class="o">=</span> <span class="n">second_cross</span> <span class="o">+</span> <span class="m">1</span>  
+    <span class="p">}</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">second_cross</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">simulate_one_sulv</span><span class="p">(</span><span class="m">8000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+3398
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
