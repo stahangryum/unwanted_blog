@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://stahangryum.github.io/stahangryum/2021/11/21/Untitled.html" />
-<meta property="og:url" content="https://stahangryum.github.io/stahangryum/2021/11/21/Untitled.html" />
+<link rel="canonical" href="https://stahangryum.github.io/stahangryum/2021/11/22/Untitled.html" />
+<meta property="og:url" content="https://stahangryum.github.io/stahangryum/2021/11/22/Untitled.html" />
 <meta property="og:site_name" content="stahangryum" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-11-21T00:00:00-06:00" />
+<meta property="article:published_time" content="2021-11-22T00:00:00-06:00" />
 <script type="application/ld+json">
-{"datePublished":"2021-11-21T00:00:00-06:00","url":"https://stahangryum.github.io/stahangryum/2021/11/21/Untitled.html","@type":"BlogPosting","headline":"Title","dateModified":"2021-11-21T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/2021/11/21/Untitled.html"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
+{"datePublished":"2021-11-22T00:00:00-06:00","url":"https://stahangryum.github.io/stahangryum/2021/11/22/Untitled.html","@type":"BlogPosting","headline":"Title","dateModified":"2021-11-22T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/2021/11/22/Untitled.html"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -87,8 +87,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-11-21T00:00:00-06:00" itemprop="datePublished">
-        Nov 21, 2021
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-11-22T00:00:00-06:00" itemprop="datePublished">
+        Nov 22, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
     
@@ -140,26 +140,22 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="nf">dt</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">10000000000000000000000000000000</span><span class="p">)</span>
-<span class="n">a</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">record</span><span class="p">):</span>
+    <span class="n">sp_rec</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+        <span class="n">sp_rec</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sp_rec</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Enter&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">sp_rec</span>
+    <span class="c1"># sp_rec[0].replace(&quot;Enter&quot;, &quot;들어왔습니다&quot;)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sp_rec</span><span class="p">)</span>
+    
+    <span class="n">answer</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">answer</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-0.398942280401433
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -173,8 +169,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="nf">dnorm</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
-<span class="n">b</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">solution</span><span class="p">([</span><span class="s2">&quot;Enter uid1234 Muzi&quot;</span><span class="p">,</span> <span class="s2">&quot;Enter uid4567 Prodo&quot;</span><span class="p">,</span><span class="s2">&quot;Leave uid1234&quot;</span><span class="p">,</span><span class="s2">&quot;Enter uid1234 Prodo&quot;</span><span class="p">,</span><span class="s2">&quot;Change uid4567 Ryan&quot;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -186,41 +181,18 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-
-<div class="output_html rendered_html output_subarea ">
-0.398942280401433
-</div>
-
-</div>
-
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[&#39;Enter&#39;, &#39;uid1234&#39;, &#39;Muzi&#39;], [&#39;Enter&#39;, &#39;uid4567&#39;, &#39;Prodo&#39;], [&#39;Leave&#39;, &#39;uid1234&#39;], [&#39;Enter&#39;, &#39;uid1234&#39;, &#39;Prodo&#39;], [&#39;Change&#39;, &#39;uid4567&#39;, &#39;Ryan&#39;]]
+</pre>
 </div>
 </div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">a</span><span class="o">==</span><span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
 
 <div class="output_area">
 
 
-<div class="output_html rendered_html output_subarea ">
-TRUE
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;&#39;</pre>
 </div>
 
 </div>
@@ -235,7 +207,7 @@ TRUE
 
 
 
-  </div><a class="u-url" href="/stahangryum/2021/11/21/Untitled.html" hidden></a>
+  </div><a class="u-url" href="/stahangryum/2021/11/22/Untitled.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
