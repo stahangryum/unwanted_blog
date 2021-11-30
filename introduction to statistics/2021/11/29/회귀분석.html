@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Regression Analysis | stahangryum</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Regression Analysis" />
+<meta name="author" content="Kim Jeewoo" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="전북대학교 통계학 입문" />
+<meta property="og:description" content="전북대학교 통계학 입문" />
+<link rel="canonical" href="https://stahangryum.github.io/stahangryum/introduction%20to%20statistics/2021/11/29/%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.html" />
+<meta property="og:url" content="https://stahangryum.github.io/stahangryum/introduction%20to%20statistics/2021/11/29/%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.html" />
+<meta property="og:site_name" content="stahangryum" />
+<meta property="og:image" content="https://stahangryum.github.io/stahangryum/images/20211130linear.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-29T00:00:00-06:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-11-29T00:00:00-06:00","url":"https://stahangryum.github.io/stahangryum/introduction%20to%20statistics/2021/11/29/%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.html","@type":"BlogPosting","image":"https://stahangryum.github.io/stahangryum/images/20211130linear.png","headline":"Regression Analysis","dateModified":"2021-11-29T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/introduction%20to%20statistics/2021/11/29/%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.html"},"author":{"@type":"Person","name":"Kim Jeewoo"},"description":"전북대학교 통계학 입문","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/stahangryum/">stahangryum</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/stahangryum/about/">About Me</a><a class="page-link" href="/stahangryum/search/">Search</a><a class="page-link" href="/stahangryum/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Regression Analysis</h1><p class="page-description">전북대학교 통계학 입문</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-11-29T00:00:00-06:00" itemprop="datePublished">
+        Nov 29, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Kim Jeewoo</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/stahangryum/categories/#Introduction to Statistics">Introduction to Statistics</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/stahangryum/stahangryum/tree/master/_notebooks/2021-11-29-회귀분석.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/stahangryum/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/stahangryum/stahangryum/master?filepath=_notebooks%2F2021-11-29-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/stahangryum/stahangryum/blob/master/_notebooks/2021-11-29-회귀분석.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Example-5.2">Example 5.2 </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-11-29-회귀분석.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>-- <span class="ansi-bold">Attaching packages</span> ------------------------------------------------------------------------------- tidyverse 1.3.1 --
+
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">ggplot2</span> 3.3.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">purrr  </span> 0.3.4
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tibble </span> 3.1.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">dplyr  </span> 1.0.7
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tidyr  </span> 1.1.4     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">stringr</span> 1.4.0
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">readr  </span> 2.0.2     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">forcats</span> 0.5.1
+
+-- <span class="ansi-bold">Conflicts</span> ---------------------------------------------------------------------------------- tidyverse_conflicts() --
+<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">filter()</span> masks <span class="ansi-blue-fg">stats</span>::filter()
+<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">lag()</span>    masks <span class="ansi-blue-fg">stats</span>::lag()
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Example-5.2">
+<a class="anchor" href="#Example-5.2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example 5.2<a class="anchor-link" href="#Example-5.2"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">file_url</span> <span class="o">=</span>  <span class="s">"http://www.lock5stat.com/datasets2e/InkjetPrinters.csv"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">inkjet</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+<span class="n">inkjet</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A data.frame: 20 × 6</caption>
+<thead>
+	<tr>
+<th scope="col">Model</th>
+<th scope="col">PPM</th>
+<th scope="col">PhotoTime</th>
+<th scope="col">Price</th>
+<th scope="col">CostBW</th>
+<th scope="col">CostColor</th>
+</tr>
+	<tr>
+<th scope="col">&lt;chr&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<td>HP Photosmart Pro 8500A e-All-in-One       </td>
+<td>3.9</td>
+<td> 67</td>
+<td>300</td>
+<td>1.6</td>
+<td> 7.2</td>
+</tr>
+	<tr>
+<td>Canon Pixma MX882                          </td>
+<td>2.9</td>
+<td> 63</td>
+<td>199</td>
+<td>5.2</td>
+<td>13.4</td>
+</tr>
+	<tr>
+<td>Lexmark Impact S305                        </td>
+<td>2.7</td>
+<td> 43</td>
+<td> 79</td>
+<td>6.9</td>
+<td> 9.0</td>
+</tr>
+	<tr>
+<td>Lexmark Interpret S405                     </td>
+<td>2.9</td>
+<td> 42</td>
+<td>129</td>
+<td>4.9</td>
+<td>13.9</td>
+</tr>
+	<tr>
+<td>Epson Workforce 520                        </td>
+<td>2.4</td>
+<td>170</td>
+<td> 70</td>
+<td>4.9</td>
+<td>14.4</td>
+</tr>
+	<tr>
+<td>Brother MFC-J6910DW                        </td>
+<td>4.1</td>
+<td>143</td>
+<td>348</td>
+<td>1.7</td>
+<td> 7.9</td>
+</tr>
+	<tr>
+<td>HP Officejet 7500A Wide Format e-All-in-One</td>
+<td>3.4</td>
+<td> 66</td>
+<td>299</td>
+<td>2.7</td>
+<td> 9.1</td>
+</tr>
+	<tr>
+<td>Canon Pixma iX7000 Inkjet Business Printer </td>
+<td>2.8</td>
+<td> 66</td>
+<td>248</td>
+<td>4.1</td>
+<td> 9.8</td>
+</tr>
+	<tr>
+<td>Kodak ESP Office 2170 All-in-One Printer   </td>
+<td>3.0</td>
+<td> 42</td>
+<td>150</td>
+<td>3.7</td>
+<td>11.3</td>
+</tr>
+	<tr>
+<td>HP Photosmart Plus e-All-in-One            </td>
+<td>3.2</td>
+<td> 77</td>
+<td>150</td>
+<td>4.2</td>
+<td>11.4</td>
+</tr>
+	<tr>
+<td>Kodak ESP C310 All-in-One                  </td>
+<td>2.7</td>
+<td> 44</td>
+<td> 87</td>
+<td>3.7</td>
+<td>11.3</td>
+</tr>
+	<tr>
+<td>Dell P513w All-in-One Wireless             </td>
+<td>2.7</td>
+<td> 45</td>
+<td>100</td>
+<td>8.3</td>
+<td>18.6</td>
+</tr>
+	<tr>
+<td>Brother MFC-J410W                          </td>
+<td>2.2</td>
+<td> 96</td>
+<td> 99</td>
+<td>5.0</td>
+<td>14.7</td>
+</tr>
+	<tr>
+<td>Dell V715w                                 </td>
+<td>2.5</td>
+<td> 41</td>
+<td>189</td>
+<td>3.8</td>
+<td>12.4</td>
+</tr>
+	<tr>
+<td>Kodak ESP C310 All-in-One                  </td>
+<td>2.7</td>
+<td> 44</td>
+<td> 99</td>
+<td>3.7</td>
+<td>11.3</td>
+</tr>
+	<tr>
+<td>Epson Stylus NX420                         </td>
+<td>1.7</td>
+<td>170</td>
+<td> 60</td>
+<td>5.7</td>
+<td>14.6</td>
+</tr>
+	<tr>
+<td>Kodak ESP 7250 All-in-One                  </td>
+<td>2.8</td>
+<td> 58</td>
+<td>199</td>
+<td>2.2</td>
+<td> 6.5</td>
+</tr>
+	<tr>
+<td>Canon Pixma 420 Wireless Inject Office     </td>
+<td>1.8</td>
+<td> 97</td>
+<td>149</td>
+<td>5.5</td>
+<td>13.2</td>
+</tr>
+	<tr>
+<td>Canon Pixma MX360 Office Inkjet All-in-One </td>
+<td>1.8</td>
+<td> 94</td>
+<td> 79</td>
+<td>5.5</td>
+<td>13.2</td>
+</tr>
+	<tr>
+<td>Epson WorkForce 635                        </td>
+<td>4.1</td>
+<td>134</td>
+<td>199</td>
+<td>3.0</td>
+<td>10.2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Price</span> <span class="o">~</span> <span class="n">PPM</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">inkjet</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Price ~ PPM, data = inkjet)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-79.38 -51.40  -3.49  43.85  87.76 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   -94.22      56.40  -1.671 0.112086    
+PPM            90.88      19.49   4.663 0.000193 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 58.55 on 18 degrees of freedom
+Multiple R-squared:  0.5471,	Adjusted R-squared:  0.522 
+F-statistic: 21.75 on 1 and 18 DF,  p-value: 0.0001934
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="stahangryum/stahangryum"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/stahangryum/introduction%20to%20statistics/2021/11/29/%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/stahangryum/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/stahangryum/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/stahangryum/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/stahangryum" title="stahangryum"><svg class="svg-icon grey"><use xlink:href="/stahangryum/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
