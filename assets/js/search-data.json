@@ -4,9 +4,9 @@
         "post0": {
             "title": "Title",
             "content": "def solution(new_id): # 1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다. new_id = new_id.lower() # 2단계 new_id에서 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를 제외한 모든 문자를 제거합니다. able_list = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;, &#39;i&#39;, &#39;j&#39;, &#39;k&#39;, &#39;l&#39;, &#39;m&#39;, &#39;n&#39;, &#39;o&#39;, &#39;p&#39;, &#39;q&#39;, &#39;r&#39;, &#39;s&#39;, &#39;t&#39;, &#39;u&#39;, &#39;v&#39;, &#39;w&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;, &#39;0&#39;, &#39;-&#39;, &#39;_&#39;, &#39;.&#39;] new_id = list(new_id) temp_ = [] for i in new_id: if i in able_list: temp_.append(i) new_id = temp_ # 3단계 new_id에서 마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환합니다. temp_ = [] dot_conti = False for i in range(len(new_id)): if (new_id[i] == &#39;.&#39;) and (new_id[i] == new_id[i-1]): continue else: temp_.append(new_id[i]) new_id = temp_ # 4단계 new_id에서 마침표(.)가 처음이나 끝에 위치한다면 제거합니다. if len(new_id) == 0: pass elif len(new_id) == 1: if new_id[0] == &#39;.&#39;: del new_id[0] elif len(new_id) &gt;= 2: if (new_id[-1] == &quot;.&quot;): del new_id[-1] if new_id[0] == &#39;.&#39;: del new_id[0] # 5단계 new_id가 빈 문자열이라면, new_id에 &quot;a&quot;를 대입합니다. if len(new_id) == 0: new_id.append(&#39;a&#39;) # 6단계 new_id의 길이가 16자 이상이면, new_id의 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거합니다. # 만약 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거합니다. if len(new_id) &gt;= 16: del new_id[15:] if new_id[-1] == &#39;.&#39;: del new_id[-1] # 7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다. while len(new_id) &lt;= 2: new_id.append(new_id[-1]) answer = &quot;&quot;.join(new_id) return answer .",
-            "url": "https://stahangryum.github.io/stahangryum/2021/11/27/Untitled1.html",
-            "relUrl": "/2021/11/27/Untitled1.html",
-            "date": " • Nov 27, 2021"
+            "url": "https://stahangryum.github.io/stahangryum/2021/11/29/Untitled1.html",
+            "relUrl": "/2021/11/29/Untitled1.html",
+            "date": " • Nov 29, 2021"
         }
         
     
@@ -15,9 +15,9 @@
         ,"post1": {
             "title": "Title",
             "content": "def solution(record): sp_rec = [] for i in record: sp_rec.append(i.split(&quot; &quot;)) for i in sp_rec: if i[0] == &quot;Enter&quot;: i[0] sp_rec # sp_rec[0].replace(&quot;Enter&quot;, &quot;들어왔습니다&quot;) print(sp_rec) answer = &quot;&quot; return answer . solution([&quot;Enter uid1234 Muzi&quot;, &quot;Enter uid4567 Prodo&quot;,&quot;Leave uid1234&quot;,&quot;Enter uid1234 Prodo&quot;,&quot;Change uid4567 Ryan&quot;]) . [[&#39;Enter&#39;, &#39;uid1234&#39;, &#39;Muzi&#39;], [&#39;Enter&#39;, &#39;uid4567&#39;, &#39;Prodo&#39;], [&#39;Leave&#39;, &#39;uid1234&#39;], [&#39;Enter&#39;, &#39;uid1234&#39;, &#39;Prodo&#39;], [&#39;Change&#39;, &#39;uid4567&#39;, &#39;Ryan&#39;]] . &#39;&#39; .",
-            "url": "https://stahangryum.github.io/stahangryum/2021/11/27/Untitled.html",
-            "relUrl": "/2021/11/27/Untitled.html",
-            "date": " • Nov 27, 2021"
+            "url": "https://stahangryum.github.io/stahangryum/2021/11/29/Untitled.html",
+            "relUrl": "/2021/11/29/Untitled.html",
+            "date": " • Nov 29, 2021"
         }
         
     
