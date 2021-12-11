@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      23 min read
+      26 min read
     
 </span></p>
 
@@ -171,7 +171,13 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#과제">과제 </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Problem">Problem </a></li>
-<li class="toc-entry toc-h2"><a href="#Solution">Solution </a></li>
+<li class="toc-entry toc-h2"><a href="#Solution-I">Solution I </a></li>
+<li class="toc-entry toc-h2"><a href="#Solution-II">Solution II </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#장인이-맨-앞에-있는-경우">장인이 맨 앞에 있는 경우 </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Solution-III">Solution III </a></li>
 </ul>
 </li>
 </ul><!--
@@ -12194,8 +12200,8 @@ The downloaded binary packages are in
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Solution">
-<a class="anchor" href="#Solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution<a class="anchor-link" href="#Solution"> </a>
+<h2 id="Solution-I">
+<a class="anchor" href="#Solution-I" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution I<a class="anchor-link" href="#Solution-I"> </a>
 </h2>
 </div>
 </div>
@@ -12253,7 +12259,7 @@ The downloaded binary packages are in
 
 
 <div class="output_html rendered_html output_subarea ">
-8.41554
+8.52672
 </div>
 
 </div>
@@ -12268,7 +12274,7 @@ The downloaded binary packages are in
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>약 8.4명이 생존한다.</li>
+<li>약 8.5명이 생존한다.</li>
 </ul>
 
 </div>
@@ -12368,7 +12374,7 @@ The downloaded binary packages are in
 
 
 <div class="output_html rendered_html output_subarea ">
-7.506
+7.48
 </div>
 
 </div>
@@ -12418,7 +12424,586 @@ The downloaded binary packages are in
 
 
 <div class="output_html rendered_html output_subarea ">
-8.482
+8.5
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-II">
+<a class="anchor" href="#Solution-II" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution II<a class="anchor-link" href="#Solution-II"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="장인이-맨-앞에-있는-경우">
+<a class="anchor" href="#%EC%9E%A5%EC%9D%B8%EC%9D%B4-%EB%A7%A8-%EC%95%9E%EC%97%90-%EC%9E%88%EB%8A%94-%EA%B2%BD%EC%9A%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>장인이 맨 앞에 있는 경우<a class="anchor-link" href="#%EC%9E%A5%EC%9D%B8%EC%9D%B4-%EB%A7%A8-%EC%95%9E%EC%97%90-%EC%9E%88%EB%8A%94-%EA%B2%BD%EC%9A%B0"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 10명이 생존할 확률</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>장인이 모두 성공$0.8^5$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 9명이 생존할 확률</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>장인이 1번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</p>
+</li>
+<li>
+<p>장인이 2번째에서 탈락 $=0.8^1 \times 0.2^1 \times 0.5^3$</p>
+</li>
+<li>
+<p>장인이 3번째에서 탈락 $=0.8^2 \times 0.2^1 \times 0.5^2$</p>
+</li>
+<li>
+<p>장인이 4번째에서 탈락 $=0.8^3 \times 0.2^1 \times 0.5^1$</p>
+</li>
+<li>
+<p>장인이 5번째에서 탈락 $=0.8^4 \times 0.2^1 \times 0.5^0$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 8명이 생존할 확률</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>장인이 1번째에서 탈락 $=4 \times0.8^0 \times 0.2^1 \times 0.5^4$</p>
+<ul>
+<li>
+<p>일반인이 2번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</p>
+</li>
+<li>
+<p>일반인이 3번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</p>
+</li>
+<li>일반인이 4번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</li>
+<li>일반인이 5번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>장인이 2번째에서 탈락 $=3 \times0.8^1 \times 0.2^1 \times 0.5^3$</p>
+<ul>
+<li>일반인이 3번째에서 탈락 $=0.8^1 \times 0.2^1 \times 0.5^3$</li>
+<li>일반인이 4번째에서 탈락 $=0.8^1 \times 0.2^1 \times 0.5^3$</li>
+<li>일반인이 5번째에서 탈락 $=0.8^1 \times 0.2^1 \times 0.5^3$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>장인이 3번째에서 탈락 $=3\times 0.8^2 \times 0.2^1 \times 0.5^2$</p>
+<ul>
+<li>
+<p>일반인이 4번째에서 탈락 $=0.8^2 \times 0.2^1 \times 0.5^2$</p>
+</li>
+<li>
+<p>일반인이 5번째에서 탈락 $=0.8^2 \times 0.2^1 \times 0.5^2$</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>장인이 4번째에서 탈락 $=1\times0.8^2 \times 0.2^1 \times 0.5^1$</p>
+<ul>
+<li>일반인이 5번째에서 탈락 $=0.8^2 \times 0.2^1 \times 0.5^1$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 7명이 생존할 확률</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>장인이 1번째에서 탈락 $= choose(4, 2) \times0.8^0 \times 0.2^1 \times 0.5^4$</p>
+<ul>
+<li>일반인이 2, 3번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</li>
+<li>일반인이 2, 4번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</li>
+<li>일반인이 2, 5번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</li>
+<li>일반인이 3, 4번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</li>
+<li>일반인이 3, 5번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</li>
+<li>일반인이 4, 5번째에서 탈락 $=0.8^0 \times 0.2^1 \times 0.5^4$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>장인이 2번째에서 탈락 $= choose(3,2)\times0.8^1 \times 0.2^1 \times 0.5^3$</p>
+<ul>
+<li>일반인이 3, 4번째에서 탈락 $=0.8^1 \times 0.2^1 \times 0.5^3$</li>
+<li>일반인이 3, 5번째에서 탈락 $=0.8^1 \times 0.2^1 \times 0.5^3$</li>
+<li>일반인이 4, 5번째에서 탈락 $=0.8^1 \times 0.2^1 \times 0.5^3$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>장인이 3번째에서 탈락 $=choose(2,2)\times 0.8^2 \times 0.2^1 \times 0.5^2$</p>
+<ul>
+<li>일반인이 4, 5번째에서 탈락 $=0.8^2 \times 0.2^1 \times 0.5^2$ </li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 6명이 생존할 확률</p>
+<ul>
+<li>
+<p>장인이 1번째에서 탈락 $= choose(4, 3) \times0.8^0 \times 0.2^1 \times 0.5^4$</p>
+</li>
+<li>
+<p>장인이 2번째에서 탈락 $= choose(3,3)\times0.8^1 \times 0.2^1 \times 0.5^3$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 5명이 생존할 확률 $=0.2\times0.5^4$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Solution-III">
+<a class="anchor" href="#Solution-III" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution III<a class="anchor-link" href="#Solution-III"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">0.8</span> <span class="o">^</span> <span class="m">5</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.32768
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">surv9_prob</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">0</span><span class="o">:</span><span class="m">4</span><span class="p">)</span> <span class="n">surv9_prob</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="m">0.8</span><span class="o">^</span><span class="n">i</span> <span class="o">*</span> <span class="m">0.2</span> <span class="o">*</span> <span class="m">0.5</span><span class="o">^</span><span class="p">(</span><span class="m">4</span><span class="o">-</span><span class="n">i</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv9_prob</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.19762
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">surv8_prob</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">0</span><span class="o">:</span><span class="m">3</span><span class="p">)</span> <span class="n">surv8_prob</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="nf">choose</span><span class="p">(</span><span class="m">4</span><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span> <span class="o">*</span> <span class="m">0.8</span><span class="o">^</span><span class="n">i</span> <span class="o">*</span> <span class="m">0.2</span> <span class="o">*</span> <span class="m">0.5</span><span class="o">^</span><span class="p">(</span><span class="m">4</span><span class="o">-</span><span class="n">i</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv8_prob</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.2252
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">surv7_prob</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">0</span><span class="o">:</span><span class="m">2</span><span class="p">)</span> <span class="n">surv7_prob</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="nf">choose</span><span class="p">(</span><span class="m">4</span><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span> <span class="o">*</span> <span class="m">0.8</span><span class="o">^</span><span class="n">i</span> <span class="o">*</span> <span class="m">0.2</span> <span class="o">*</span> <span class="m">0.5</span><span class="o">^</span><span class="p">(</span><span class="m">4</span><span class="o">-</span><span class="n">i</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv7_prob</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.167
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">surv6_prob</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">0</span><span class="o">:</span><span class="m">1</span><span class="p">)</span> <span class="n">surv6_prob</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="nf">choose</span><span class="p">(</span><span class="m">4</span><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="o">*</span> <span class="m">0.8</span><span class="o">^</span><span class="n">i</span> <span class="o">*</span> <span class="m">0.2</span> <span class="o">*</span> <span class="m">0.5</span><span class="o">^</span><span class="p">(</span><span class="m">4</span><span class="o">-</span><span class="n">i</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv6_prob</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.07
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">surv5_prob</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">0</span><span class="o">:</span><span class="m">0</span><span class="p">)</span> <span class="n">surv5_prob</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">]</span> <span class="o">=</span> <span class="nf">choose</span><span class="p">(</span><span class="m">4</span><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span> <span class="o">*</span> <span class="m">0.8</span><span class="o">^</span><span class="n">i</span> <span class="o">*</span> <span class="m">0.2</span> <span class="o">*</span> <span class="m">0.5</span><span class="o">^</span><span class="p">(</span><span class="m">4</span><span class="o">-</span><span class="n">i</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv5_prob</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.0125
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>확률의 총 합은 1이 되어야 한다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">0.8</span><span class="o">^</span><span class="m">5</span><span class="o">+</span> 
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv9_prob</span><span class="p">)</span><span class="o">+</span> 
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv8_prob</span><span class="p">)</span><span class="o">+</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv7_prob</span><span class="p">)</span><span class="o">+</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv6_prob</span><span class="p">)</span><span class="o">+</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv5_prob</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+1
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>평균을 구하자</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">0.8</span><span class="o">^</span><span class="m">5</span> <span class="o">*</span><span class="m">10</span><span class="o">+</span> 
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv9_prob</span><span class="p">)</span> <span class="o">*</span><span class="m">9</span><span class="o">+</span> 
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv8_prob</span><span class="p">)</span> <span class="o">*</span><span class="m">8</span><span class="o">+</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv7_prob</span><span class="p">)</span> <span class="o">*</span><span class="m">7</span><span class="o">+</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv6_prob</span><span class="p">)</span> <span class="o">*</span><span class="m">6</span><span class="o">+</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">surv5_prob</span><span class="p">)</span> <span class="o">*</span><span class="m">5</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+8.50848
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">saves</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">j</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span>
+    <span class="n">rslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">B</span><span class="p">))</span> <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="m">4</span><span class="o">*</span><span class="nf">mean</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">B</span><span class="o">&gt;=</span><span class="m">5</span><span class="o">-</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span><span class="o">/</span><span class="m">1000</span> <span class="o">+</span> <span class="m">5</span>
+    <span class="n">saves</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span> 
+<span class="p">}</span>
+<span class="n">saves</span> <span class="o">%&gt;%</span> <span class="n">mean</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+8.475589804
 </div>
 
 </div>
