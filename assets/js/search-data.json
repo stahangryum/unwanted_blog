@@ -2,8 +2,8 @@
   
     
         "post0": {
-            "title": "MAIN",
-            "content": "library(tidyverse) . -- Attaching packages - tidyverse 1.3.1 -- v ggplot2 3.3.5 v purrr 0.3.4 v tibble 3.1.5 v dplyr 1.0.7 v tidyr 1.1.4 v stringr 1.4.0 v readr 2.0.2 v forcats 0.5.1 -- Conflicts - tidyverse_conflicts() -- x dplyr::filter() masks stats::filter() x dplyr::lag() masks stats::lag() . users = c(&quot;N1&quot;, &quot;N2&quot;, &quot;N3&quot;, &quot;N4&quot;, &quot;N5&quot;, &quot;N6&quot;, &quot;N7&quot;, &quot;N8&quot;, &quot;N9_PRO&quot;, &quot;N10&quot;) surv = 10 # 현재 생존자 숫자 player = users[surv] stage = 0 reset = function(){ surv &lt;&lt;- 10 player &lt;&lt;- users[surv] stage &lt;&lt;- 0 } jump_once = function(){ sof = rbinom(1, size = 1, prob = (0.5 + (player == &quot;N9_PRO&quot;)*0.45)) # Success or Failure if (sof == FALSE) surv &lt;&lt;- surv - 1 # 사망하면 surv가 1 감소한다. stage &lt;&lt;- stage + 1 # 사망 유무와 관계없이 stage는 하나 증가한다. player &lt;&lt;- users[surv] # surv = 0이면 player = character(0) } simulate = function(){ # 생존자 수를 return한다. reset() for (i in 1:20){ jump_once() if ( (stage == 20)|(surv == 0) ) break } return (surv) } . Type A . rsltA = c() users = c(&quot;N1&quot;, &quot;N2&quot;, &quot;N3&quot;, &quot;N4&quot;, &quot;N5&quot;, &quot;N6&quot;, &quot;N7&quot;, &quot;N8&quot;, &quot;N9_PRO&quot;, &quot;N10&quot;) for (i in 1:100000) rsltA[i] = ifelse((&quot;N8&quot; %in% users[0:simulate()]), TRUE, FALSE) (rsltA %&gt;% sum) / 100000 . 0.44104 Type B . rsltB = c() users = rev(c(&quot;N1&quot;, &quot;N2&quot;, &quot;N3&quot;, &quot;N4&quot;, &quot;N5&quot;, &quot;N6&quot;, &quot;N7&quot;, &quot;N8&quot;, &quot;N9_PRO&quot;, &quot;N10&quot;)) for (i in 1:100000) rsltB[i] = ifelse((&quot;N8&quot; %in% users[0:simulate()]), TRUE, FALSE) (rsltB %&gt;% sum) / 100000 . 0.13191 결론적으로 8번 참가자의 생존률은 Type B에서가 더 높다. | .",
+            "title": "Title",
+            "content": "",
             "url": "https://stahangryum.github.io/stahangryum/2021/12/18/noteanything.html",
             "relUrl": "/2021/12/18/noteanything.html",
             "date": " • Dec 18, 2021"
