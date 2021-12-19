@@ -1,0 +1,3054 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Multiple Regression Analysis | stahangryum</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Multiple Regression Analysis" />
+<meta name="author" content="Kim Jeewoo" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Introduction to Statistics" />
+<meta property="og:description" content="Introduction to Statistics" />
+<link rel="canonical" href="https://stahangryum.github.io/stahangryum/introduction%20to%20statistics/2021/12/13/%EB%8B%A4%EC%A4%91-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.html" />
+<meta property="og:url" content="https://stahangryum.github.io/stahangryum/introduction%20to%20statistics/2021/12/13/%EB%8B%A4%EC%A4%91-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.html" />
+<meta property="og:site_name" content="stahangryum" />
+<meta property="og:image" content="https://stahangryum.github.io/stahangryum/images/20211130linear.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-12-13T00:00:00-06:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-12-13T00:00:00-06:00","url":"https://stahangryum.github.io/stahangryum/introduction%20to%20statistics/2021/12/13/%EB%8B%A4%EC%A4%91-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.html","@type":"BlogPosting","image":"https://stahangryum.github.io/stahangryum/images/20211130linear.png","headline":"Multiple Regression Analysis","dateModified":"2021-12-13T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://stahangryum.github.io/stahangryum/introduction%20to%20statistics/2021/12/13/%EB%8B%A4%EC%A4%91-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.html"},"author":{"@type":"Person","name":"Kim Jeewoo"},"description":"Introduction to Statistics","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/stahangryum/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://stahangryum.github.io/stahangryum/feed.xml" title="stahangryum" /><link rel="shortcut icon" type="image/x-icon" href="/stahangryum/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/stahangryum/">stahangryum</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/stahangryum/about/">About Me</a><a class="page-link" href="/stahangryum/search/">Search</a><a class="page-link" href="/stahangryum/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Multiple Regression Analysis</h1><p class="page-description">Introduction to Statistics</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-12-13T00:00:00-06:00" itemprop="datePublished">
+        Dec 13, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Kim Jeewoo</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      11 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/stahangryum/categories/#Introduction to Statistics">Introduction to Statistics</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/stahangryum/stahangryum/tree/master/_notebooks/2021-12-13-다중 회귀분석.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/stahangryum/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/stahangryum/stahangryum/master?filepath=_notebooks%2F2021-12-13-%EB%8B%A4%EC%A4%91+%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/stahangryum/stahangryum/blob/master/_notebooks/2021-12-13-다중 회귀분석.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/stahangryum/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Problem-6.1">Problem 6.1 </a></li>
+<li class="toc-entry toc-h1"><a href="#Problem-6.2">Problem 6.2 </a></li>
+<li class="toc-entry toc-h1"><a href="#Prooblem-6.3">Prooblem 6.3 </a></li>
+<li class="toc-entry toc-h1"><a href="#Problem-6.5">Problem 6.5 </a></li>
+<li class="toc-entry toc-h1"><a href="#Problem-6.6">Problem 6.6 </a></li>
+<li class="toc-entry toc-h1"><a href="#Problem-6.7">Problem 6.7 </a></li>
+<li class="toc-entry toc-h1"><a href="#Problem-6.8">Problem 6.8 </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-12-13-다중 회귀분석.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>-- <span class="ansi-bold">Attaching packages</span> ------------------------------------------------------------------------------- tidyverse 1.3.1 --
+
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">ggplot2</span> 3.3.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">purrr  </span> 0.3.4
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tibble </span> 3.1.5     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">dplyr  </span> 1.0.7
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">tidyr  </span> 1.1.4     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">stringr</span> 1.4.0
+<span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">readr  </span> 2.0.2     <span class="ansi-green-fg">v</span> <span class="ansi-blue-fg">forcats</span> 0.5.1
+
+-- <span class="ansi-bold">Conflicts</span> ---------------------------------------------------------------------------------- tidyverse_conflicts() --
+<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">filter()</span> masks <span class="ansi-blue-fg">stats</span>::filter()
+<span class="ansi-red-fg">x</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">lag()</span>    masks <span class="ansi-blue-fg">stats</span>::lag()
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-6.1">
+<a class="anchor" href="#Problem-6.1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 6.1<a class="anchor-link" href="#Problem-6.1"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>A</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">43.4</span> <span class="o">-</span> <span class="m">6.82</span><span class="o">*</span><span class="m">5</span> <span class="o">+</span> <span class="m">1.7</span><span class="o">*</span><span class="m">7</span> <span class="o">+</span> <span class="m">1.7</span><span class="o">*</span><span class="m">5</span> <span class="o">+</span> <span class="m">0.442</span><span class="o">*</span><span class="m">75</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+62.85
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>잔차는 60 - 62.85 = -2.85</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>B</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>검증 통계량 t = b / SE = -6.820 / 1.059 = -5.93012275731822</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">-6.820</span> <span class="o">/</span> <span class="m">1.059</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+-6.44003777148253
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-6.2">
+<a class="anchor" href="#Problem-6.2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 6.2<a class="anchor-link" href="#Problem-6.2"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">file_url</span> <span class="o">=</span> <span class="s">"http://www.lock5stat.com/datasets2e/HomesForSale.csv"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">homes</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Price</span> <span class="o">~</span> <span class="n">Size</span> <span class="o">+</span> <span class="n">Beds</span> <span class="o">+</span> <span class="n">Baths</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">homes</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Price ~ Size + Beds + Baths, data = homes)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-796.5 -210.4  -29.9  132.1 4168.2 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  -217.00     145.90  -1.487   0.1396    
+Size          330.58      72.62   4.552 1.32e-05 ***
+Beds         -134.52      57.03  -2.359   0.0200 *  
+Baths         200.03      78.94   2.534   0.0126 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 507.7 on 116 degrees of freedom
+Multiple R-squared:  0.4671,	Adjusted R-squared:  0.4533 
+F-statistic: 33.89 on 3 and 116 DF,  p-value: 8.383e-16
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A anova: 4 × 5</caption>
+<thead>
+	<tr>
+<th></th>
+<th scope="col">Df</th>
+<th scope="col">Sum Sq</th>
+<th scope="col">Mean Sq</th>
+<th scope="col">F value</th>
+<th scope="col">Pr(&gt;F)</th>
+</tr>
+	<tr>
+<th></th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<th scope="row">Size</th>
+<td>  1</td>
+<td>23887215.7</td>
+<td>23887215.7</td>
+<td>92.670339</td>
+<td>1.779851e-16</td>
+</tr>
+	<tr>
+<th scope="row">Beds</th>
+<td>  1</td>
+<td>  661533.2</td>
+<td>  661533.2</td>
+<td> 2.566415</td>
+<td>1.118746e-01</td>
+</tr>
+	<tr>
+<th scope="row">Baths</th>
+<td>  1</td>
+<td> 1655204.6</td>
+<td> 1655204.6</td>
+<td> 6.421359</td>
+<td>1.260895e-02</td>
+</tr>
+	<tr>
+<th scope="row">Residuals</th>
+<td>116</td>
+<td>29900797.2</td>
+<td>  257765.5</td>
+<td>       NA</td>
+<td>          NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">-217</span> <span class="o">+</span> <span class="m">330.58</span><span class="o">*</span><span class="m">2.5</span>  <span class="m">-134.52</span><span class="o">*</span><span class="m">4</span> <span class="m">+200.03</span><span class="o">*</span><span class="m">2.5</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+571.445
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="nf">anova</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">]</span> <span class="o">+</span> <span class="nf">anova</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">]</span> <span class="o">+</span> <span class="nf">anova</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+1.14107961154056
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Prooblem-6.3">
+<a class="anchor" href="#Prooblem-6.3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prooblem 6.3<a class="anchor-link" href="#Prooblem-6.3"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">file_url</span> <span class="o">=</span> <span class="s">"https://enook.jbnu.ac.kr/170/ch06/sec0601/05/NBAStandings2016.csv"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">NBA</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">WinPct</span> <span class="o">~</span> <span class="n">PtsFor</span> <span class="o">+</span> <span class="n">PtsAgainst</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">NBA</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = WinPct ~ PtsFor + PtsAgainst, data = NBA)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.069620 -0.020778 -0.002802  0.017225  0.082893 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.492410   0.245244   2.008   0.0548 .  
+PtsFor       0.032230   0.001731  18.624   &lt;2e-16 ***
+PtsAgainst  -0.032155   0.001756 -18.313   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.03524 on 27 degrees of freedom
+Multiple R-squared:  0.9597,	Adjusted R-squared:  0.9567 
+F-statistic: 321.2 on 2 and 27 DF,  p-value: &lt; 2.2e-16
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A anova: 3 × 5</caption>
+<thead>
+	<tr>
+<th></th>
+<th scope="col">Df</th>
+<th scope="col">Sum Sq</th>
+<th scope="col">Mean Sq</th>
+<th scope="col">F value</th>
+<th scope="col">Pr(&gt;F)</th>
+</tr>
+	<tr>
+<th></th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<th scope="row">PtsFor</th>
+<td> 1</td>
+<td>0.38142294</td>
+<td>0.381422941</td>
+<td>307.1068</td>
+<td>2.819595e-16</td>
+</tr>
+	<tr>
+<th scope="row">PtsAgainst</th>
+<td> 1</td>
+<td>0.41650009</td>
+<td>0.416500089</td>
+<td>335.3496</td>
+<td>9.398116e-17</td>
+</tr>
+	<tr>
+<th scope="row">Residuals</th>
+<td>27</td>
+<td>0.03353367</td>
+<td>0.001241988</td>
+<td>      NA</td>
+<td>          NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>적합된 회귀선</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$WinPct = 0.492 + 0.032230\times PtsFor -  0.032155\times PtsAgainst$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이 팀의 예측된 승률</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="p">(</span><span class="m">0.492</span> <span class="o">+</span> <span class="m">0.032230</span> <span class="o">*</span> <span class="m">114.9</span> <span class="o">-</span> <span class="m">0.032155</span> <span class="o">*</span> <span class="m">104.1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.847891500000001
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>잔차</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">0.89</span> <span class="o">-</span> <span class="m">0.847</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.043
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>유의수준 1%에서 효과 있는 변수는 PtsFor, PtsAgainst이다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>PtsFor 변수만 가지고 모형을 만들 때 결정계수 값과 오차표준편차</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">WinPct</span> <span class="o">~</span> <span class="n">PtsFor</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">NBA</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = WinPct ~ PtsFor, data = NBA)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.21858 -0.10572  0.01607  0.07650  0.29177 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -2.607670   0.638332  -4.085 0.000334 ***
+PtsFor       0.030270   0.006214   4.871 3.94e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1268 on 28 degrees of freedom
+Multiple R-squared:  0.4587,	Adjusted R-squared:  0.4394 
+F-statistic: 23.73 on 1 and 28 DF,  p-value: 3.941e-05
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A anova: 2 × 5</caption>
+<thead>
+	<tr>
+<th></th>
+<th scope="col">Df</th>
+<th scope="col">Sum Sq</th>
+<th scope="col">Mean Sq</th>
+<th scope="col">F value</th>
+<th scope="col">Pr(&gt;F)</th>
+</tr>
+	<tr>
+<th></th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<th scope="row">PtsFor</th>
+<td> 1</td>
+<td>0.3814229</td>
+<td>0.38142294</td>
+<td>23.7312</td>
+<td>3.941263e-05</td>
+</tr>
+	<tr>
+<th scope="row">Residuals</th>
+<td>28</td>
+<td>0.4500338</td>
+<td>0.01607263</td>
+<td>     NA</td>
+<td>          NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>결정계수의 값 $= 0.4587$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$S_\epsilon = 0.1268$</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">0.381</span><span class="o">/</span><span class="p">(</span><span class="m">0.381+0.45</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.458483754512635
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>PtsAgainst 변수만 가지고 모형을 만들 때 결정계수 값과 오차항의 표준편차</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">WinPct</span> <span class="o">~</span> <span class="n">PtsAgainst</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">NBA</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = WinPct ~ PtsAgainst, data = NBA)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.22935 -0.04506 -0.00873  0.06213  0.43319 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  3.593558   0.657878   5.462 7.85e-06 ***
+PtsAgainst  -0.030132   0.006404  -4.705 6.20e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1288 on 28 degrees of freedom
+Multiple R-squared:  0.4416,	Adjusted R-squared:  0.4216 
+F-statistic: 22.14 on 1 and 28 DF,  p-value: 6.203e-05
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A anova: 2 × 5</caption>
+<thead>
+	<tr>
+<th></th>
+<th scope="col">Df</th>
+<th scope="col">Sum Sq</th>
+<th scope="col">Mean Sq</th>
+<th scope="col">F value</th>
+<th scope="col">Pr(&gt;F)</th>
+</tr>
+	<tr>
+<th></th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<th scope="row">PtsAgainst</th>
+<td> 1</td>
+<td>0.3671558</td>
+<td>0.36715575</td>
+<td>22.14159</td>
+<td>6.203471e-05</td>
+</tr>
+	<tr>
+<th scope="row">Residuals</th>
+<td>28</td>
+<td>0.4643009</td>
+<td>0.01658218</td>
+<td>      NA</td>
+<td>          NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>PtsAgainst와 PtsAgainst 변수로 모형을 만들 때 결정계수 값과 오차항의 표준편차</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">WinPct</span> <span class="o">~</span> <span class="n">PtsFor</span> <span class="o">+</span> <span class="n">PtsAgainst</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">NBA</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = WinPct ~ PtsFor + PtsAgainst, data = NBA)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.069620 -0.020778 -0.002802  0.017225  0.082893 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.492410   0.245244   2.008   0.0548 .  
+PtsFor       0.032230   0.001731  18.624   &lt;2e-16 ***
+PtsAgainst  -0.032155   0.001756 -18.313   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.03524 on 27 degrees of freedom
+Multiple R-squared:  0.9597,	Adjusted R-squared:  0.9567 
+F-statistic: 321.2 on 2 and 27 DF,  p-value: &lt; 2.2e-16
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A anova: 3 × 5</caption>
+<thead>
+	<tr>
+<th></th>
+<th scope="col">Df</th>
+<th scope="col">Sum Sq</th>
+<th scope="col">Mean Sq</th>
+<th scope="col">F value</th>
+<th scope="col">Pr(&gt;F)</th>
+</tr>
+	<tr>
+<th></th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<th scope="row">PtsFor</th>
+<td> 1</td>
+<td>0.38142294</td>
+<td>0.381422941</td>
+<td>307.1068</td>
+<td>2.819595e-16</td>
+</tr>
+	<tr>
+<th scope="row">PtsAgainst</th>
+<td> 1</td>
+<td>0.41650009</td>
+<td>0.416500089</td>
+<td>335.3496</td>
+<td>9.398116e-17</td>
+</tr>
+	<tr>
+<th scope="row">Residuals</th>
+<td>27</td>
+<td>0.03353367</td>
+<td>0.001241988</td>
+<td>      NA</td>
+<td>          NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="p">(</span><span class="m">0.381</span> <span class="o">+</span> <span class="m">0.417</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">0.381</span> <span class="o">+</span> <span class="m">0.417</span> <span class="o">+</span> <span class="m">0.03353</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.959676740466369
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-6.5">
+<a class="anchor" href="#Problem-6.5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 6.5<a class="anchor-link" href="#Problem-6.5"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">file_url</span> <span class="o">=</span> <span class="s">"http://www.lock5stat.com/datasets2e/StudentSurvey.csv"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">Student</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Weight</span> <span class="o">~</span>  <span class="n">Height</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">student</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">Student</span><span class="o">$</span><span class="n">Weight</span> <span class="o">~</span> <span class="n">Student</span><span class="o">$</span><span class="n">Height</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">"red"</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">"Height"</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">"Weight"</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="nf">points</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">63</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="m">200</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">"blue"</span><span class="p">,</span> <span class="n">pch</span><span class="o">=</span><span class="m">16</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAANlBMVEUAAAAAAP9NTU1oaGh8%0AfHyMjIyampqnp6eysrK9vb3Hx8fQ0NDZ2dnh4eHp6enw8PD/AAD////xw1/KAAAACXBIWXMA%0AABJ0AAASdAHeZh94AAAgAElEQVR4nO3di3qiOhiF4WwPtU5rLfd/s7ueWlQSISySP8n3Ps9u%0AnXFDMsgScgBcB2A2l7sCQA0IEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQI%0AECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQI%0AECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQI%0AECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQI%0AECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQI%0AECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQI%0AECRAgCABAgQJECBIgABBAgQSBMkBhYnYy/XByVAEoESQAAGCBAgQJECAIAECBAkQIEiAAEEC%0ABAgSIECQAAGCBAgQJECAIAECBAkQIEiAAEECBAgSIECQAAGChNS+v79zV0GPICGtc4rqixJB%0AQlrfvZ8VIUhI6vvhdy0IEpIiSHMWMVgE8iBIcxYxWAQyoY00YxGDRSATeu1mLGKwCGTDOFL0%0AIgaLAJQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBI%0AgABBAgQIEiBAkAABggQIECRAgCABAgQJECBILanyjnI2EKR2VHqPUxsIUjsqveu2DQSpGbU+%0AB8IGgtQMgrQkgtQMgrQkgtQO2kgLIkjtoNduQQSpJYwjLYYgAQIECRAgSIAAQQIECBIgQJAA%0AAYIECBAknDHENA9BQsekh/kIEjqm4c1HkMDEcAGCBIIkQJBAkAQIEjraSPMRJHT02s1HkHDG%0AONI8BAkQIEiAAEECBAgSIECQAAGCBAgQJECAINWHIaEMCFJtmKSQBUGqDdPmsiBIlWEidx5J%0A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" width="420" height="420">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Weight ~ Height, data = student)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-100.052  -13.810   -3.058   11.765  101.411 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -170.2694    22.4122  -7.597 2.79e-13 ***
+Height         4.8231     0.3268  14.760  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 24.89 on 350 degrees of freedom
+  (10 observations deleted due to missingness)
+Multiple R-squared:  0.3836,	Adjusted R-squared:  0.3819 
+F-statistic: 217.9 on 1 and 350 DF,  p-value: &lt; 2.2e-16
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">-170.27</span> <span class="o">+</span> <span class="m">4.82</span> <span class="o">*</span> <span class="m">63</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+133.39
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">200</span> <span class="o">-</span> <span class="m">133.59</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+66.41
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">hist</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">residual</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="m">20</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">"잔차"</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">"빈도"</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">""</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAAM1BMVEUAAABNTU1oaGh8fHyM%0AjIyampqnp6eysrK9vb3Hx8fQ0NDT09PZ2dnh4eHp6enw8PD///8uNL8wAAAACXBIWXMAABJ0%0AAAASdAHeZh94AAAW5ElEQVR4nO3d4VpTSbOA0R3AgBxCuP+rPbJVRD8nkU2lq7qy1g8N0w+z%0Ae7ryGkgyuLwAn7ZkbwA6EBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIE%0AEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIE%0AEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIE%0AEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIE%0AEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIE%0AEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIE%0AEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEBIEEFJpy0nZ%0Au+MXwyht+b8TzK4QwyhNSLMwjNKENAvDKE1IszCM0oQ0C8MoTUizMIzShDQLwyhNSLMwjNKE%0ANAvDKE1IszCM0oQ0C8MoTUizMIzShDQLwyhNSLMwjNKENAvDKE1IszCM0oQ0C8MoTUizMIzS%0AhDQLwyhNSLMwjNKENAvDKE1IszCM0oQ0i+3DeLq/W3+42t3+KXA//EZIs9g6jOPNux9UeBu6%0AJX4R0iy2DmO/7L4e1lvPj7tlH7ch3hPSLLYOY7cc3m4fll3MZviTkGaxdRi//eBpP4X6UoQ0%0AC49IpQlpFp/4Hunxeb3le6QLEtIsNg/j9t2zdjfHyC3xi5Bm8YnXkfbr60i7u3uvI12MkGZh%0AGKUJaRYXGoa/WC6GkGaxeRjPX5bd/cvLw82yO/NUg3lvJ6RZbH6L0O71sebh/h/eImTe2wlp%0AFtuf/v72OLTfLV+OL8f96ae/zXs7Ic1i+wuy62cv6xPfp1+QNe/thDSLz71F6McTCaefTzDv%0A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%0ARU5ErkJggg==" width="420" height="420">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">residual</span> <span class="o">~</span> <span class="n">fit</span><span class="o">$</span><span class="n">fitted.value</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">"red"</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">"적합치"</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">"잔차"</span><span class="p">)</span>
+<span class="nf">points</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">133.59</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">66.41</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">"blue"</span><span class="p">,</span> <span class="n">pch</span> <span class="o">=</span> <span class="m">16</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAANlBMVEUAAAAAAP9NTU1oaGh8%0AfHyMjIyampqnp6eysrK9vb3Hx8fQ0NDZ2dnh4eHp6enw8PD/AAD////xw1/KAAAACXBIWXMA%0AABJ0AAASdAHeZh94AAAgAElEQVR4nO3d7ULiOhSF4R6UQVRA7v9mj6Cj1WkC3V3Z2Unf5wcy%0Ah1NSIIt8NC3DGcBiQ+0dAHpAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRA%0AgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRA%0AgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRA%0AgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRA%0AgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRA%0AgCABAgQJECBIgABBAgQIEiBAkAABggQIECRAgCABAgQJECBIgABBAgQIEiBAkAABggQIECRA%0AgCABAgQJECBIgABBAgQIEiDgEKQBaIyhluuDU6EIQIkgAQIECRAgSIAAQQIECBIgQJAAAYIE%0ACBAkQIAgAQIECRBwDdLr0/a6LGm7ey1VBFCFY5BOD6Mlfo9FigAqcQzSbtg8H673ji+bYVei%0ACKASxyBthsPX/cOwKVEEUIljkH6cspE/f4MgoTG0SICA7xjp5Xi9xxgJvfGc/n4czdo9nIoU%0AofP29lZ7F9AQ3+NIu+txpM32KfpxpGuKiBLuxsqGSW+jW+A2gjTl7ddf4AaWCE0hSJiJJUJT%0ACBJmYonQJMZImIcDspOYtcM8cZYILbz+qxrHkTAHLRIgwBIhQIAlQoAAS4QAAVY2AAIECRAg%0ASIAAQQIECBIg4Lqy4e7FCwQJjXEM0p4goVueXbvDJn/yhKAIoA7XMdIhvzBIUQRQhe9kw360%0AbrVQEUANzNoBAgRpTTjJqhiCtB6c9lsQQVoPLkRREEFaDS6NVBJBWg2CVBJBWg2CVBJBWg/G%0ASAURpPVg1q4ggrQmHEcqhiABAgQJECBIgABBAgQIEiBAkAABgtQfJrkrIEi94bBrFQSpNywE%0A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" width="420" height="420">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-6.6">
+<a class="anchor" href="#Problem-6.6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 6.6<a class="anchor-link" href="#Problem-6.6"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>A</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>X3의 $p-value$가 자장 높으므로 X3변수를 제거하여 모형을 개선한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>B</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$R^2 = \dfrac{277.02}{665.00}=41.7\,$ (컴퓨터 출력에 의함)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">277.02</span><span class="o">/</span><span class="m">665</span> <span class="c1">#ANOVA Table에 적혀있다.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.416571428571429
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>C</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>해당 변수가 유의하더라도 또는 유의하지 않더라도 변수를 제거하면 $R^2$은 항상 감소한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>D</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>변수를 제거했을 때, $R^2$이 적게 감소하면 잘한 것이고 크게 감소하면 잘못한 것이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>E</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>ANOVA Table에 적혀있는 $p-value$는 0.031이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>F</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$p-value$는 감소할 것이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>G</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>ANOVA Table에 적혀있는 $F-Statistic = 3.81$이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>H</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>유의하지 않은 변수를 제거하면 $F-Statistics$는 증가할 가능성이 높다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-6.7">
+<a class="anchor" href="#Problem-6.7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 6.7<a class="anchor-link" href="#Problem-6.7"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">file_url</span> <span class="o">=</span> <span class="s">"http://www.lock5stat.com/datasets2e/BaseballTimes.csv"</span>
+<span class="n">Base</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">Base</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A data.frame: 6 × 9</caption>
+<thead>
+	<tr>
+<th></th>
+<th scope="col">Away</th>
+<th scope="col">Home</th>
+<th scope="col">Runs</th>
+<th scope="col">Margin</th>
+<th scope="col">Hits</th>
+<th scope="col">Errors</th>
+<th scope="col">Pitchers</th>
+<th scope="col">Walks</th>
+<th scope="col">Time</th>
+</tr>
+	<tr>
+<th></th>
+<th scope="col">&lt;chr&gt;</th>
+<th scope="col">&lt;chr&gt;</th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;int&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<th scope="row">1</th>
+<td>TEX</td>
+<td>CHW</td>
+<td>10</td>
+<td>10</td>
+<td>20</td>
+<td>2</td>
+<td> 5</td>
+<td> 5</td>
+<td>184</td>
+</tr>
+	<tr>
+<th scope="row">2</th>
+<td>CLE</td>
+<td>DET</td>
+<td>15</td>
+<td> 1</td>
+<td>24</td>
+<td>0</td>
+<td>11</td>
+<td>10</td>
+<td>225</td>
+</tr>
+	<tr>
+<th scope="row">3</th>
+<td>BOS</td>
+<td>KCR</td>
+<td> 7</td>
+<td> 5</td>
+<td>13</td>
+<td>1</td>
+<td> 8</td>
+<td> 7</td>
+<td>213</td>
+</tr>
+	<tr>
+<th scope="row">4</th>
+<td>BAL</td>
+<td>LAA</td>
+<td> 8</td>
+<td> 6</td>
+<td>20</td>
+<td>4</td>
+<td> 5</td>
+<td> 5</td>
+<td>155</td>
+</tr>
+	<tr>
+<th scope="row">5</th>
+<td>NYY</td>
+<td>MIN</td>
+<td> 3</td>
+<td> 3</td>
+<td>13</td>
+<td>2</td>
+<td> 9</td>
+<td> 8</td>
+<td>187</td>
+</tr>
+	<tr>
+<th scope="row">6</th>
+<td>TOR</td>
+<td>OAK</td>
+<td> 1</td>
+<td> 1</td>
+<td> 5</td>
+<td>0</td>
+<td> 4</td>
+<td> 4</td>
+<td>158</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>A</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">Base</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">,</span> <span class="m">3</span><span class="o">:</span><span class="m">9</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A matrix: 7 × 7 of type dbl</caption>
+<thead>
+	<tr>
+<th></th>
+<th scope="col">Runs</th>
+<th scope="col">Margin</th>
+<th scope="col">Hits</th>
+<th scope="col">Errors</th>
+<th scope="col">Pitchers</th>
+<th scope="col">Walks</th>
+<th scope="col">Time</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<th scope="row">Runs</th>
+<td>1.0000000</td>
+<td> 0.1920353</td>
+<td>0.80885328</td>
+<td> 0.11206361</td>
+<td> 0.4960020</td>
+<td> 0.33932892</td>
+<td> 0.50373658</td>
+</tr>
+	<tr>
+<th scope="row">Margin</th>
+<td>0.1920353</td>
+<td> 1.0000000</td>
+<td>0.20585484</td>
+<td> 0.36115522</td>
+<td>-0.2525044</td>
+<td>-0.17676637</td>
+<td>-0.11609314</td>
+</tr>
+	<tr>
+<th scope="row">Hits</th>
+<td>0.8088533</td>
+<td> 0.2058548</td>
+<td>1.00000000</td>
+<td> 0.29642001</td>
+<td> 0.4898898</td>
+<td> 0.09791874</td>
+<td> 0.34870927</td>
+</tr>
+	<tr>
+<th scope="row">Errors</th>
+<td>0.1120636</td>
+<td> 0.3611552</td>
+<td>0.29642001</td>
+<td> 1.00000000</td>
+<td>-0.1851266</td>
+<td>-0.06015092</td>
+<td>-0.04012749</td>
+</tr>
+	<tr>
+<th scope="row">Pitchers</th>
+<td>0.4960020</td>
+<td>-0.2525044</td>
+<td>0.48988981</td>
+<td>-0.18512663</td>
+<td> 1.0000000</td>
+<td> 0.41041997</td>
+<td> 0.72079998</td>
+</tr>
+	<tr>
+<th scope="row">Walks</th>
+<td>0.3393289</td>
+<td>-0.1767664</td>
+<td>0.09791874</td>
+<td>-0.06015092</td>
+<td> 0.4104200</td>
+<td> 1.00000000</td>
+<td> 0.56496536</td>
+</tr>
+	<tr>
+<th scope="row">Time</th>
+<td>0.5037366</td>
+<td>-0.1160931</td>
+<td>0.34870927</td>
+<td>-0.04012749</td>
+<td> 0.7208000</td>
+<td> 0.56496536</td>
+<td> 1.00000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Time과 Runs : 0.504</p>
+<p>Time과 Margin : -0.116</p>
+<p>Time과 Hits : 0.349</p>
+<p>Time과 Errors : -0.040</p>
+<p>Time과 Pitchers : 0.721</p>
+<p>Time과 Walks : 0.565</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>B</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span><span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Time</span> <span class="o">~</span> <span class="n">Runs</span> <span class="o">+</span> <span class="n">Margin</span> <span class="o">+</span> <span class="n">Hits</span> <span class="o">+</span> <span class="n">Errors</span> <span class="o">+</span> <span class="n">Pitchers</span> <span class="o">+</span> <span class="n">Walks</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Base</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="nf">anova</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Time ~ Runs + Margin + Hits + Errors + Pitchers + 
+    Walks, data = Base)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-21.271  -8.109  -2.990   8.276  26.168 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  123.191     13.492   9.131 4.13e-09 ***
+Runs           1.627      1.243   1.309  0.20350    
+Margin         0.318      1.150   0.277  0.78459    
+Hits          -1.173      1.022  -1.148  0.26283    
+Errors         2.561      2.923   0.876  0.39007    
+Pitchers       6.419      1.769   3.628  0.00141 ** 
+Walks          1.713      1.125   1.523  0.14141    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 13.71 on 23 degrees of freedom
+  (330 observations deleted due to missingness)
+Multiple R-squared:  0.6463,	Adjusted R-squared:  0.554 
+F-statistic: 7.005 on 6 and 23 DF,  p-value: 0.0002478
+</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A anova: 7 × 5</caption>
+<thead>
+	<tr>
+<th></th>
+<th scope="col">Df</th>
+<th scope="col">Sum Sq</th>
+<th scope="col">Mean Sq</th>
+<th scope="col">F value</th>
+<th scope="col">Pr(&gt;F)</th>
+</tr>
+	<tr>
+<th></th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<th scope="row">Runs</th>
+<td> 1</td>
+<td>3102.9039571</td>
+<td>3102.9039571</td>
+<td>16.501196260</td>
+<td>0.0004820223</td>
+</tr>
+	<tr>
+<th scope="row">Margin</th>
+<td> 1</td>
+<td> 575.0939180</td>
+<td> 575.0939180</td>
+<td> 3.058340748</td>
+<td>0.0936594436</td>
+</tr>
+	<tr>
+<th scope="row">Hits</th>
+<td> 1</td>
+<td>  80.6644160</td>
+<td>  80.6644160</td>
+<td> 0.428972143</td>
+<td>0.5189909885</td>
+</tr>
+	<tr>
+<th scope="row">Errors</th>
+<td> 1</td>
+<td>   0.3289861</td>
+<td>   0.3289861</td>
+<td> 0.001749543</td>
+<td>0.9669971731</td>
+</tr>
+	<tr>
+<th scope="row">Pitchers</th>
+<td> 1</td>
+<td>3708.1147638</td>
+<td>3708.1147638</td>
+<td>19.719698165</td>
+<td>0.0001876824</td>
+</tr>
+	<tr>
+<th scope="row">Walks</th>
+<td> 1</td>
+<td> 436.1141253</td>
+<td> 436.1141253</td>
+<td> 2.319248315</td>
+<td>0.1414137241</td>
+</tr>
+	<tr>
+<th scope="row">Residuals</th>
+<td>23</td>
+<td>4324.9465003</td>
+<td> 188.0411522</td>
+<td>          NA</td>
+<td>          NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span><span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Time</span> <span class="o">~</span> <span class="n">Runs</span> <span class="o">+</span> <span class="n">Hits</span> <span class="o">+</span> <span class="n">Errors</span> <span class="o">+</span> <span class="n">Pitchers</span> <span class="o">+</span> <span class="n">Walks</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Base</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Time ~ Runs + Hits + Errors + Pitchers + Walks, 
+    data = Base)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-20.428  -7.964  -2.654   7.890  26.966 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  124.629     12.208  10.209 3.28e-10 ***
+Runs           1.703      1.189   1.433 0.164847    
+Hits          -1.171      1.002  -1.169 0.253720    
+Errors         2.754      2.784   0.989 0.332460    
+Pitchers       6.285      1.669   3.767 0.000948 ***
+Walks          1.668      1.091   1.528 0.139497    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 13.45 on 24 degrees of freedom
+  (330 observations deleted due to missingness)
+Multiple R-squared:  0.6451,	Adjusted R-squared:  0.5712 
+F-statistic: 8.726 on 5 and 24 DF,  p-value: 7.979e-05
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span><span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Time</span> <span class="o">~</span> <span class="n">Runs</span> <span class="o">+</span> <span class="n">Hits</span> <span class="o">+</span> <span class="n">Pitchers</span> <span class="o">+</span> <span class="n">Walks</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Base</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Time ~ Runs + Hits + Pitchers + Walks, data = Base)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.304  -8.537  -1.504   8.716  28.393 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 125.9902    12.1246  10.391 1.47e-10 ***
+Runs          1.4420     1.1585   1.245  0.22479    
+Hits         -0.7249     0.8938  -0.811  0.42502    
+Pitchers      5.6219     1.5272   3.681  0.00112 ** 
+Walks         1.8530     1.0748   1.724  0.09705 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 13.44 on 25 degrees of freedom
+  (330 observations deleted due to missingness)
+Multiple R-squared:  0.6307,	Adjusted R-squared:  0.5716 
+F-statistic: 10.67 on 4 and 25 DF,  p-value: 3.477e-05
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span><span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Time</span> <span class="o">~</span> <span class="n">Runs</span> <span class="o">+</span> <span class="n">Pitchers</span> <span class="o">+</span> <span class="n">Walks</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Base</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Time ~ Runs + Pitchers + Walks, data = Base)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-18.211  -9.313  -1.534   7.452  30.592 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 120.0827     9.6286  12.471 1.78e-12 ***
+Runs          0.7016     0.7086   0.990  0.33120    
+Pitchers      5.2547     1.4490   3.627  0.00123 ** 
+Walks         2.1966     0.9813   2.238  0.03398 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 13.35 on 26 degrees of freedom
+  (330 observations deleted due to missingness)
+Multiple R-squared:  0.621,	Adjusted R-squared:  0.5772 
+F-statistic:  14.2 on 3 and 26 DF,  p-value: 1.123e-05
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span><span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Time</span> <span class="o">~</span> <span class="n">Pitchers</span> <span class="o">+</span> <span class="n">Walks</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Base</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Time ~ Pitchers + Walks, data = Base)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.540 -10.083  -3.671   6.713  29.097 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 120.5499     9.6136  12.540 9.01e-13 ***
+Pitchers      5.8514     1.3172   4.442 0.000136 ***
+Walks         2.3632     0.9664   2.445 0.021281 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 13.35 on 27 degrees of freedom
+  (330 observations deleted due to missingness)
+Multiple R-squared:  0.6067,	Adjusted R-squared:  0.5775 
+F-statistic: 20.82 on 2 and 27 DF,  p-value: 3.384e-06
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span><span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Time</span> <span class="o">~</span> <span class="n">Pitchers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Base</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Time ~ Pitchers, data = Base)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-21.181  -9.931  -2.421   6.742  29.819 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  125.794     10.170  12.369 7.27e-13 ***
+Pitchers       7.173      1.304   5.503 7.03e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 14.49 on 28 degrees of freedom
+  (330 observations deleted due to missingness)
+Multiple R-squared:  0.5196,	Adjusted R-squared:  0.5024 
+F-statistic: 30.28 on 1 and 28 DF,  p-value: 7.033e-06
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>최종 모형에 포함되는 변수는 Pitchers이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-6.8">
+<a class="anchor" href="#Problem-6.8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem 6.8<a class="anchor-link" href="#Problem-6.8"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">file_url</span> <span class="o">&lt;-</span> <span class="s">"http://www.lock5stat.com/datasets2e/BikeCommute.csv"</span>
+<span class="n">Bike</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">Bike</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A data.frame: 6 × 13</caption>
+<thead>
+	<tr>
+<th></th>
+<th scope="col">Bike</th>
+<th scope="col">Date</th>
+<th scope="col">Distance</th>
+<th scope="col">Time</th>
+<th scope="col">Minutes</th>
+<th scope="col">AvgSpeed</th>
+<th scope="col">TopSpeed</th>
+<th scope="col">Seconds</th>
+<th scope="col">Month</th>
+<th scope="col">X</th>
+<th scope="col">X.1</th>
+<th scope="col">X.2</th>
+<th scope="col">X.3</th>
+</tr>
+	<tr>
+<th></th>
+<th scope="col">&lt;chr&gt;</th>
+<th scope="col">&lt;chr&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;chr&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;dbl&gt;</th>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;chr&gt;</th>
+<th scope="col">&lt;lgl&gt;</th>
+<th scope="col">&lt;lgl&gt;</th>
+<th scope="col">&lt;lgl&gt;</th>
+<th scope="col">&lt;lgl&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<th scope="row">1</th>
+<td>Steel </td>
+<td>20/01/10</td>
+<td>27.20</td>
+<td>1:55:04</td>
+<td>115.07</td>
+<td>14.10</td>
+<td>31.50</td>
+<td>6904</td>
+<td>1Jan</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+	<tr>
+<th scope="row">2</th>
+<td>Carbon</td>
+<td>21/01/10</td>
+<td>27.46</td>
+<td>1:55:35</td>
+<td>115.58</td>
+<td>14.25</td>
+<td>30.64</td>
+<td>6935</td>
+<td>1Jan</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+	<tr>
+<th scope="row">3</th>
+<td>Steel </td>
+<td>25/01/10</td>
+<td>27.20</td>
+<td>1:55:45</td>
+<td>115.75</td>
+<td>14.10</td>
+<td>30.92</td>
+<td>6945</td>
+<td>1Jan</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+	<tr>
+<th scope="row">4</th>
+<td>Carbon</td>
+<td>26/01/10</td>
+<td>27.52</td>
+<td>1:53:56</td>
+<td>113.93</td>
+<td>14.49</td>
+<td>33.02</td>
+<td>6836</td>
+<td>1Jan</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+	<tr>
+<th scope="row">5</th>
+<td>Carbon</td>
+<td>27/01/10</td>
+<td>27.51</td>
+<td>1:59:12</td>
+<td>119.20</td>
+<td>13.84</td>
+<td>30.92</td>
+<td>7152</td>
+<td>2Feb</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+	<tr>
+<th scope="row">6</th>
+<td>Steel </td>
+<td>01/02/10</td>
+<td>27.17</td>
+<td>1:48:44</td>
+<td>108.73</td>
+<td>14.99</td>
+<td>32.09</td>
+<td>6524</td>
+<td>2Feb</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">BikeX</span> <span class="o">=</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">Bike</span><span class="o">$</span><span class="n">Bike</span> <span class="o">==</span> <span class="s">"Steel"</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="n">BikeX</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+&lt;ol class=list-inline&gt;<li>1</li>
+<li>0</li>
+<li>1</li>
+<li>0</li>
+<li>0</li>
+<li>1</li>
+<li>1</li>
+<li>0</li>
+<li>0</li>
+<li>1</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>1</li>
+<li>1</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>1</li>
+<li>1</li>
+<li>1</li>
+<li>1</li>
+<li>0</li>
+<li>1</li>
+<li>1</li>
+<li>1</li>
+<li>1</li>
+<li>1</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>1</li>
+<li>0</li>
+<li>1</li>
+<li>0</li>
+<li>1</li>
+<li>1</li>
+<li>0</li>
+<li>1</li>
+<li>1</li>
+<li>1</li>
+<li>1</li>
+<li>0</li>
+<li>1</li>
+<li>1</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>1</li>
+<li>0</li>
+<li>1</li>
+<li>0</li>
+<li>0</li>
+<li>1</li>
+<li>1</li>
+<li>0</li>&lt;/ol&gt;
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Minutes</span> <span class="o">~</span> <span class="n">BikeX</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Bike</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>
+Call:
+lm(formula = Minutes ~ BikeX, data = Bike)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-10.1193  -4.5266  -0.5608   4.1009  14.9877 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  108.342      1.087  99.624   &lt;2e-16 ***
+BikeX         -0.553      1.486  -0.372    0.711    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.545 on 54 degrees of freedom
+Multiple R-squared:  0.002558,	Adjusted R-squared:  -0.01591 
+F-statistic: 0.1385 on 1 and 54 DF,  p-value: 0.7112
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$Minutes = 108.342 -0.553 \times Bike\,$ (강철 자전거이면 1, 탄소 자전거이면 0)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>A</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">108.342</span> <span class="o">-</span> <span class="m">0.553</span> <span class="o">*</span> <span class="m">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+107.789
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>B</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">108.342</span> <span class="o">-</span> <span class="m">0.553</span> <span class="o">*</span> <span class="m">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+108.342
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>C</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$p-value$가 0.7112이므로 유의한 차이가 있다고 보기 어렵다.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="stahangryum/stahangryum"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/stahangryum/introduction%20to%20statistics/2021/12/13/%EB%8B%A4%EC%A4%91-%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/stahangryum/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/stahangryum/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/stahangryum/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/stahangryum" title="stahangryum"><svg class="svg-icon grey"><use xlink:href="/stahangryum/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

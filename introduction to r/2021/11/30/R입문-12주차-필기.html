@@ -238,6 +238,88 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>각 열의 자료형이 달라도 가능하다.</p>
+</li>
+<li>
+<p>티블의 형태는 매트릭스 같지만 이처럼 다른 자료형이 들어가는 것은 리스트를 연상시킴.</p>
+</li>
+<li>
+<p>data.frame()과 as_tibble()는 결과가 다를 수 있다.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">tibble</span><span class="p">(</span><span class="n">v1</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">v2</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="bp">T</span><span class="p">,</span><span class="bp">F</span><span class="p">,</span><span class="bp">T</span><span class="p">),</span> <span class="n">v3</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"c"</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A tibble: 3 × 3</caption>
+<thead>
+	<tr>
+<th scope="col">v1</th>
+<th scope="col">v2</th>
+<th scope="col">v3</th>
+</tr>
+	<tr>
+<th scope="col">&lt;int&gt;</th>
+<th scope="col">&lt;lgl&gt;</th>
+<th scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+<td>1</td>
+<td> TRUE</td>
+<td>a</td>
+</tr>
+	<tr>
+<td>2</td>
+<td>FALSE</td>
+<td>b</td>
+</tr>
+	<tr>
+<td>3</td>
+<td> TRUE</td>
+<td>c</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -257,18 +339,6 @@ window.onload = wrap_img;
 
 <div class="output_wrapper">
 <div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Warning message:
-"The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.
-Using compatibility `.name_repair`.
-<span class="ansi-black-intense-fg">This warning is displayed once every 8 hours.</span>
-<span class="ansi-black-intense-fg">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</span>"
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -294,74 +364,74 @@ Using compatibility `.name_repair`.
 </thead>
 <tbody>
 	<tr>
-<td> 1.36007190</td>
-<td>-0.73793104</td>
-<td>-0.81053576</td>
-<td>-0.22171163</td>
-<td>-0.4435196</td>
+<td> 1.4156578</td>
+<td>-0.17125610</td>
+<td>-1.7313930</td>
+<td> 0.1455482</td>
+<td>-0.2804810</td>
 </tr>
 	<tr>
-<td> 0.53584545</td>
-<td> 0.09181352</td>
-<td> 0.58065814</td>
-<td> 1.69826333</td>
-<td>-0.3276056</td>
+<td> 0.3954659</td>
+<td>-0.34227105</td>
+<td>-0.4212156</td>
+<td> 0.7136948</td>
+<td> 1.2536741</td>
 </tr>
 	<tr>
-<td> 0.90624156</td>
-<td> 2.85523537</td>
-<td>-1.06706911</td>
-<td>-0.03372118</td>
-<td> 1.6288003</td>
+<td> 0.4800526</td>
+<td>-0.70912994</td>
+<td>-0.5134955</td>
+<td>-0.7337184</td>
+<td> 0.8434726</td>
 </tr>
 	<tr>
-<td> 1.70929906</td>
-<td> 1.13885998</td>
-<td>-0.69105256</td>
-<td> 0.90800474</td>
-<td>-1.5250155</td>
+<td> 0.6632595</td>
+<td> 0.68414299</td>
+<td> 1.1789606</td>
+<td>-0.8619294</td>
+<td> 0.5626651</td>
 </tr>
 	<tr>
-<td> 0.19758044</td>
-<td> 0.25588517</td>
-<td>-0.09596958</td>
-<td> 0.19389942</td>
-<td> 0.6184074</td>
+<td> 0.1069044</td>
+<td> 0.26311003</td>
+<td> 1.6324381</td>
+<td>-0.2888884</td>
+<td> 0.2593232</td>
 </tr>
 	<tr>
-<td>-0.91999842</td>
-<td>-0.55179290</td>
-<td> 1.10549004</td>
-<td>-1.82995542</td>
-<td>-1.3931623</td>
+<td>-0.7984260</td>
+<td> 0.53849973</td>
+<td>-0.7847584</td>
+<td>-0.8668501</td>
+<td>-1.2704236</td>
 </tr>
 	<tr>
-<td>-1.60525138</td>
-<td>-0.69143779</td>
-<td>-0.51414387</td>
-<td> 1.08352406</td>
-<td>-0.9960136</td>
+<td>-0.4439789</td>
+<td>-2.15763049</td>
+<td> 0.4731601</td>
+<td>-0.3775199</td>
+<td> 2.4229921</td>
 </tr>
 	<tr>
-<td> 0.13403321</td>
-<td> 1.09364788</td>
-<td>-2.41510714</td>
-<td>-1.25122594</td>
-<td> 1.6910696</td>
+<td> 0.8248081</td>
+<td> 0.71613584</td>
+<td>-0.7878226</td>
+<td> 1.1882329</td>
+<td> 0.4668327</td>
 </tr>
 	<tr>
-<td>-0.08960615</td>
-<td> 1.32145228</td>
-<td>-0.42417048</td>
-<td>-0.86940762</td>
-<td>-1.6689878</td>
+<td> 0.4666291</td>
+<td> 0.09525957</td>
+<td>-0.1940346</td>
+<td>-1.0307426</td>
+<td>-0.6601901</td>
 </tr>
 	<tr>
-<td> 1.80364011</td>
-<td>-2.31312123</td>
-<td> 0.11079088</td>
-<td> 0.25294523</td>
-<td> 0.8213772</td>
+<td> 1.2009142</td>
+<td>-1.70974395</td>
+<td> 0.7930038</td>
+<td>-0.6876462</td>
+<td> 0.4909343</td>
 </tr>
 </tbody>
 </table>
@@ -460,74 +530,74 @@ Using compatibility `.name_repair`.
 </thead>
 <tbody>
 	<tr>
-<td> 1.36007190</td>
-<td>-0.73793104</td>
-<td>-0.81053576</td>
-<td>-0.22171163</td>
-<td>-0.4435196</td>
+<td> 1.4156578</td>
+<td>-0.17125610</td>
+<td>-1.7313930</td>
+<td> 0.1455482</td>
+<td>-0.2804810</td>
 </tr>
 	<tr>
-<td> 0.53584545</td>
-<td> 0.09181352</td>
-<td> 0.58065814</td>
-<td> 1.69826333</td>
-<td>-0.3276056</td>
+<td> 0.3954659</td>
+<td>-0.34227105</td>
+<td>-0.4212156</td>
+<td> 0.7136948</td>
+<td> 1.2536741</td>
 </tr>
 	<tr>
-<td> 0.90624156</td>
-<td> 2.85523537</td>
-<td>-1.06706911</td>
-<td>-0.03372118</td>
-<td> 1.6288003</td>
+<td> 0.4800526</td>
+<td>-0.70912994</td>
+<td>-0.5134955</td>
+<td>-0.7337184</td>
+<td> 0.8434726</td>
 </tr>
 	<tr>
-<td> 1.70929906</td>
-<td> 1.13885998</td>
-<td>-0.69105256</td>
-<td> 0.90800474</td>
-<td>-1.5250155</td>
+<td> 0.6632595</td>
+<td> 0.68414299</td>
+<td> 1.1789606</td>
+<td>-0.8619294</td>
+<td> 0.5626651</td>
 </tr>
 	<tr>
-<td> 0.19758044</td>
-<td> 0.25588517</td>
-<td>-0.09596958</td>
-<td> 0.19389942</td>
-<td> 0.6184074</td>
+<td> 0.1069044</td>
+<td> 0.26311003</td>
+<td> 1.6324381</td>
+<td>-0.2888884</td>
+<td> 0.2593232</td>
 </tr>
 	<tr>
-<td>-0.91999842</td>
-<td>-0.55179290</td>
-<td> 1.10549004</td>
-<td>-1.82995542</td>
-<td>-1.3931623</td>
+<td>-0.7984260</td>
+<td> 0.53849973</td>
+<td>-0.7847584</td>
+<td>-0.8668501</td>
+<td>-1.2704236</td>
 </tr>
 	<tr>
-<td>-1.60525138</td>
-<td>-0.69143779</td>
-<td>-0.51414387</td>
-<td> 1.08352406</td>
-<td>-0.9960136</td>
+<td>-0.4439789</td>
+<td>-2.15763049</td>
+<td> 0.4731601</td>
+<td>-0.3775199</td>
+<td> 2.4229921</td>
 </tr>
 	<tr>
-<td> 0.13403321</td>
-<td> 1.09364788</td>
-<td>-2.41510714</td>
-<td>-1.25122594</td>
-<td> 1.6910696</td>
+<td> 0.8248081</td>
+<td> 0.71613584</td>
+<td>-0.7878226</td>
+<td> 1.1882329</td>
+<td> 0.4668327</td>
 </tr>
 	<tr>
-<td>-0.08960615</td>
-<td> 1.32145228</td>
-<td>-0.42417048</td>
-<td>-0.86940762</td>
-<td>-1.6689878</td>
+<td> 0.4666291</td>
+<td> 0.09525957</td>
+<td>-0.1940346</td>
+<td>-1.0307426</td>
+<td>-0.6601901</td>
 </tr>
 	<tr>
-<td> 1.80364011</td>
-<td>-2.31312123</td>
-<td> 0.11079088</td>
-<td> 0.25294523</td>
-<td> 0.8213772</td>
+<td> 1.2009142</td>
+<td>-1.70974395</td>
+<td> 0.7930038</td>
+<td>-0.6876462</td>
+<td> 0.4909343</td>
 </tr>
 </tbody>
 </table>
