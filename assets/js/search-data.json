@@ -2,21 +2,21 @@
   
     
         "post0": {
-            "title": "Title",
-            "content": "",
-            "url": "https://stahangryum.github.io/stahangryum/2022/03/14/noteanything.html",
-            "relUrl": "/2022/03/14/noteanything.html",
-            "date": " • Mar 14, 2022"
+            "title": "Anaconda Install",
+            "content": "https://www.anaconda.com/products/individual . conda create -n py39r41 python=3.9 . | conda activate py39r41 . | conda install -c conda-forge r-essentials=4.1 . | conda install -c conda-forge jupyterlab . | R . | install.packages(&quot;IRKernel&quot;) . | library(IRkernel) . | installspec() . | q() . | pip install numpy . | pip install SciPy . | pip install matplotli pip install pandas . | .",
+            "url": "https://stahangryum.github.io/stahangryum/2022/03/15/anaconda_install.html",
+            "relUrl": "/2022/03/15/anaconda_install.html",
+            "date": " • Mar 15, 2022"
         }
         
     
   
     
         ,"post1": {
-            "title": "Anaconda Install",
-            "content": "https://www.anaconda.com/products/individual . conda create -n py39r41 python=3.9 . | conda activate py39r41 . | conda install -c conda-forge r-essentials=4.1 . | conda install -c conda-forge jupyterlab . | R . | install.packages(&quot;IRKernel&quot;) . | library(IRkernel) . | installspec() . | q() . | pip install numpy . | pip install SciPy . | pip install matplotli pip install pandas . | .",
-            "url": "https://stahangryum.github.io/stahangryum/2022/03/14/Untitled.html",
-            "relUrl": "/2022/03/14/Untitled.html",
+            "title": "Title",
+            "content": "",
+            "url": "https://stahangryum.github.io/stahangryum/2022/03/14/noteanything.html",
+            "relUrl": "/2022/03/14/noteanything.html",
             "date": " • Mar 14, 2022"
         }
         
